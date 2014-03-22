@@ -133,7 +133,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Добавить";
+            this.button1.Text = "Dobavit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.addNewExp);
             // 
@@ -233,7 +233,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 11;
-            this.button3.Text = "Gjlhj,ytt";
+            this.button3.Text = "Podrobnee";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.infoExp);
             // 
