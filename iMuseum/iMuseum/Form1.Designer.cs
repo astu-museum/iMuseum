@@ -36,6 +36,7 @@
             this.вЫСТАВКИToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.нАСТРОЙКИПОИСКАToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.иСТОЧНИКИToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пОИСКToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -49,7 +50,6 @@
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.пОИСКToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +117,14 @@
             this.иСТОЧНИКИToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.иСТОЧНИКИToolStripMenuItem.Text = "ИСТОЧНИКИ";
             this.иСТОЧНИКИToolStripMenuItem.Click += new System.EventHandler(this.showSources);
+            // 
+            // пОИСКToolStripMenuItem
+            // 
+            this.пОИСКToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.пОИСКToolStripMenuItem.Name = "пОИСКToolStripMenuItem";
+            this.пОИСКToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.пОИСКToolStripMenuItem.Text = "ПОИСК";
+            this.пОИСКToolStripMenuItem.Click += new System.EventHandler(this.searchSett);
             // 
             // button1
             // 
@@ -225,17 +233,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 11;
-            this.button3.Text = "Подробнее";
+            this.button3.Text = "Gjlhj,ytt";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.infoExp);
-            // 
-            // пОИСКToolStripMenuItem
-            // 
-            this.пОИСКToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.пОИСКToolStripMenuItem.Name = "пОИСКToolStripMenuItem";
-            this.пОИСКToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.пОИСКToolStripMenuItem.Text = "ПОИСК";
-            this.пОИСКToolStripMenuItem.Click += new System.EventHandler(this.searchSett);
             // 
             // Form1
             // 
