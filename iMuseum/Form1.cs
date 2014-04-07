@@ -24,6 +24,9 @@ namespace iMuseum
         /// <param name="e"></param>
         private void addNewExp(object sender, EventArgs e)
         {
+
+         
+
             Form2 f2 = new Form2();
             f2.ShowDialog();
         }
@@ -60,6 +63,57 @@ namespace iMuseum
         {
             mainSettings mst = new mainSettings();
             mst.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+          
+
+
+
+
+            
+            List<Exponat> ls = new List<Exponat>();
+
+          
+
+
+            DataSet1TableAdapters.EXPONATTableAdapter exponatTableAdapter = new DataSet1TableAdapters.EXPONATTableAdapter();
+
+
+ 
+        
+            
+           
+
+
+           DataSet1.EXPONATDataTable customerData = exponatTableAdapter.GetData();
+            
+
+            foreach (DataSet1.EXPONATRow customerRow in customerData)
+            {
+                Exponat currentCustomer = new Exponat();
+                currentCustomer.pk_exponat = Convert.ToInt32( customerRow.PK_EXPONAT);
+                currentCustomer.pk_source = Convert.ToInt32(customerRow.PK_SOURCE);
+
+                currentCustomer.date = customerRow.DATE_GET;
+
+                ls.Add(currentCustomer);
+                //  customerBindingSource.Add(currentCustomer);
+
+            }
+
+            dataGridView1.DataSource = null;
+
+
+            source.DataPropertyName = "pk_source";
+            number.DataPropertyName = "date";
+            title.DataPropertyName = "pk_exponat";
+
+            dataGridView1.DataSource = ls;
+          //source.DataP
+
+           
         }
     }
 }

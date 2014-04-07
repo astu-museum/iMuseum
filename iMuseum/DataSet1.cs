@@ -7,3 +7,10 @@
         }
     }
 }
+
+namespace iMuseum.DataSet1TableAdapters {
+    
+    
+    public partial class EXPONATTableAdapter {
+    }
+}

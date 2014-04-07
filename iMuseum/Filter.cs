@@ -13,7 +13,22 @@ namespace iMuseum
     {
         public Filter()
         {
+           // DataSet1TableAdapters.CATEGORYTableAdapter st = new DataSet1TableAdapters.CATEGORYTableAdapter();
+
+            /*
+            DataSet1.CATEGORYDataTable customerData = st.GetData();
+
+            checkBoxComboBox3.DataSource = customerData.Rows;
+            */
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+          
+            
+
+          //  MessageBox.Show(checkBoxComboBox3.SelectedIndex.ToString());
         }
     }
 }

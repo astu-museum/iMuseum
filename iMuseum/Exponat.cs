@@ -60,7 +60,7 @@ namespace iMuseum
         /// <summary>
         ///  ПК ,который однзачно определяет Категорию
         /// </summary>
-        public int pk_category
+        public int pk_categoryaut
         {
             get { return pk_categoryautValue; }
             set { pk_categoryautValue = value; }
@@ -71,11 +71,24 @@ namespace iMuseum
         /// <summary>
         ///  ПК ,который однзачно определяет Категорию
         /// </summary>
-        public int pk_category
+        public int pk_categoryaud
         {
             get { return pk_categoryaudValue; }
             set { pk_categoryaudValue = value; }
         }
+
+
+
+        private DateTime dateValue;
+        /// <summary>
+        ///  Дата получения экспоната
+        /// </summary>
+        public DateTime date
+        {
+            get { return dateValue; }
+            set { dateValue = value; }
+        }
+
 
 
 
