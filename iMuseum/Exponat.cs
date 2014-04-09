@@ -10,7 +10,7 @@ namespace iMuseum
     /// </summary>
     class Exponat
     {
-        /*
+       
         /// <summary>
         /// Создать экземпляр класса экспоната
         /// </summary>
@@ -18,6 +18,8 @@ namespace iMuseum
         {
         }
 
+
+        /*
         // ПК ,который однзачно определяет Экспонат
         private int pk_exponatValue;
         /// <summary>
@@ -98,7 +100,7 @@ namespace iMuseum
         private string sourceString;
 
 
-        public string pk_sourceValue
+        public string sourceValue
         {
             get { return sourceString; }
             set { sourceString = value; }
@@ -165,17 +167,8 @@ namespace iMuseum
             set { nameValue = value; }
         }
 
-        private string descrValue;
 
-        /// <summary>
-        ///Описание Экспоната
-        /// </summary>
-        public string description
-        {
-            get { return descrValue; }
-            set { descrValue = value; }
-        }
-
+      
       
         private string inumberValue;
         /// <summary>
@@ -262,6 +255,12 @@ namespace iMuseum
         private string pic;
         public void setPic(string id) { this.pic = id; }
         public string getPic() { return this.pic; }
+
+        //Путь к картинке
+        private string description;
+        public void setDescr(string id) { this.description = id; }
+        public string getDescr() { return this.description; }
+
      
 
 

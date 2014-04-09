@@ -29,6 +29,11 @@ namespace iMuseum
 
             Form2 f2 = new Form2();
             f2.ShowDialog();
+
+
+            //Вдруг доабвили что-то подходящее под фильтр?Надо вывести
+            Load_Exponats();
+
         }
         /// <summary>
         /// Подробнее об экспонате
@@ -45,6 +50,9 @@ namespace iMuseum
         {
             Filter fltr = new Filter();
             fltr.ShowDialog();
+
+            //Вновь пофильтруем
+            Load_Exponats();
         }
 
         private void showExib(object sender, EventArgs e)
@@ -65,54 +73,94 @@ namespace iMuseum
             mst.ShowDialog();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Производит загружку всех экспонатов и фильтрует по заданному фильтру
+        /// </summary>
+        private void Load_Exponats()
         {
-          
-
-
-
-            /*
-            
-            List<Exponat> ls = new List<Exponat>();
-
-          
-
+            //Обнулили
+            User.exponats = new List<Exponat>();
 
             DataSet1TableAdapters.EXPONATTableAdapter exponatTableAdapter = new DataSet1TableAdapters.EXPONATTableAdapter();
 
-
- 
-        
             
-           
+            DataSet1.EXPONATDataTable customerData = exponatTableAdapter.GetData();
 
-
-           DataSet1.EXPONATDataTable customerData = exponatTableAdapter.GetData();
-            
 
             foreach (DataSet1.EXPONATRow customerRow in customerData)
             {
                 Exponat currentCustomer = new Exponat();
-                currentCustomer.pk_exponat = Convert.ToInt32( customerRow.PK_EXPONAT);
-                currentCustomer.pk_source = Convert.ToInt32(customerRow.PK_SOURCE);
-               
-                currentCustomer.date = customerRow.DATE_GET;
 
-                ls.Add(currentCustomer);
-                //  customerBindingSource.Add(currentCustomer);
+                //Ключи и неотражаемая в гриде ересь
+                currentCustomer.setPkExponat(Convert.ToInt32(customerRow.PK_EXPONAT));
+                currentCustomer.setPkSource (Convert.ToInt32(customerRow.PK_SOURCE));
+                currentCustomer.setPkCategoryExp(Convert.ToInt32(customerRow.PK_CATEGORYEXPONAT));
+                currentCustomer.setPkCategoryAut(Convert.ToInt32(customerRow.PK_CATEGORYAUTHOR));
+                currentCustomer.setPkCategoryAud(Convert.ToInt32(customerRow.PK_CATEGORYAUDITORY));
+                currentCustomer.setPkType(Convert.ToInt32(customerRow.PK_TYPE));
+
+                currentCustomer.setFlag(Convert.ToInt32(customerRow.FLAG));
+              //  currentCustomer.setFio(customerRow.FIO);
+               // currentCustomer.setPic(customerRow.PICREFERENCE);
+
+
+                //Нужен перевод в строковую форму
+                currentCustomer.setTypeSob(Convert.ToInt32(customerRow.TYPESOB));
+                currentCustomer.typeSobStr = User.typeSobString[currentCustomer.getTypeSob()];
+                currentCustomer.setPlace(Convert.ToInt32(customerRow.PLACE_));
+                currentCustomer.placeStr = User.placeString[currentCustomer.getPlace()];
+                currentCustomer.setDamage(Convert.ToInt32(customerRow.DAMAGE));
+                currentCustomer.damageStr = User.damageString[currentCustomer.getDamage()];
+
+                currentCustomer.sourceValue ="";
+                //СЮДА ВПЛЕСТИ ИСТОЧНИК!
+                
+
+                //Просто отображаемые части
+                currentCustomer.date = customerRow.DATE_GET;
+                currentCustomer.inumber=customerRow.INUMBER;
+                currentCustomer.name = customerRow.DESCR;
+                currentCustomer.price = Convert.ToDouble(customerRow.PRICE_);
+                
+
+                //ПРОВЕРКА,ЧТО НЕ СПИСАН???А НАДО?
+                if (currentCustomer.getFlag()==0)
+                {
+                    User.exponats.Add(currentCustomer);
+               }
+                
+              
 
             }
 
+
+            //ТУТ ДЕЛАЕМ ФИЛЬТРЕЦ
+
             dataGridView1.DataSource = null;
 
+            number.DataPropertyName = "inumber";
+            title.DataPropertyName = "name";
+            source.DataPropertyName = "sourceValue";
+            date.DataPropertyName = "date";
+            typesob.DataPropertyName = "typeSobStr";
+            mesto.DataPropertyName = "placeStr";
+            damage.DataPropertyName = "damageStr";
+            price.DataPropertyName = "price";
 
-            source.DataPropertyName = "pk_source";
-          //  number.DataPropertyName = "date";
-            title.DataPropertyName = "pk_exponat";
 
-            dataGridView1.DataSource = ls;
+            dataGridView1.DataSource = User.exponats;
+          
 
-          */
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+
+
+            Load_Exponats();
+
+         
           
 
            
