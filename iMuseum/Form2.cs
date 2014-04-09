@@ -20,6 +20,24 @@ namespace iMuseum
 
         DataSet1.TYPEEXPONATDataTable texp;
 
+        //После добавления нового источника грузим всё заново
+        void MiniLoad()
+        {
+
+            DataSet1TableAdapters.SOURCETableAdapter sauceTableAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
+
+
+            User.dtrip = sauceTableAdapter.GetData();
+
+
+
+            comboBox8.DataSource = User.dtrip;
+            comboBox8.ValueMember = "NAME_";
+            comboBox8.BindingContext = this.BindingContext;
+
+        }
+
+        //Загружаем всю ересь из базы
         void LoadSome()
         {
 
@@ -106,6 +124,9 @@ namespace iMuseum
         {
             AddSource asrc = new AddSource();
             asrc.ShowDialog();
+
+            MiniLoad();
+
         }
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
@@ -385,6 +406,66 @@ namespace iMuseum
             nExp.save();
 
             this.Close();
+        }
+
+
+        //ГЕНЕРАТОРЫ
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            DataSet1TableAdapters.EXPONATTableAdapter eta = new DataSet1TableAdapters.EXPONATTableAdapter();
+
+
+            int p =Convert.ToInt32(eta.CatAutQuery((Convert.ToInt32(cataut.Rows[comboBox2.SelectedIndex]["pk_category"].ToString()))));
+
+
+            int asdasd = comboBox2.SelectedValue.GetHashCode();
+            if (asdasd < 0) asdasd *= -1;
+
+            fir = asdasd.ToString() + (p + 1).ToString();
+           // MessageBox.Show(fir);
+
+            textBox2.Text = fir + sec + tyr;
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataSet1TableAdapters.EXPONATTableAdapter eta = new DataSet1TableAdapters.EXPONATTableAdapter();
+
+
+            int p = Convert.ToInt32(eta.CatExpQuery((Convert.ToInt32(catexp.Rows[comboBox3.SelectedIndex]["pk_category"].ToString()))));
+
+            int asdasd = comboBox3.SelectedValue.GetHashCode();
+            if (asdasd < 0) asdasd *= -1;
+
+
+            sec = asdasd.ToString() + (p + 1).ToString();
+            // MessageBox.Show(fir);
+
+            textBox2.Text = fir + sec + tyr;
+
+
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataSet1TableAdapters.EXPONATTableAdapter eta = new DataSet1TableAdapters.EXPONATTableAdapter();
+
+
+            int p = Convert.ToInt32(eta.CatAudQuery((Convert.ToInt32(cataud.Rows[comboBox4.SelectedIndex]["pk_category"].ToString()))));
+
+
+            int asdasd = comboBox4.SelectedValue.GetHashCode();
+          if (asdasd < 0) asdasd *= -1;
+
+            tyr = asdasd.ToString() + (p + 1).ToString();
+            //MessageBox.Show(fir);
+
+            textBox2.Text = fir + sec + tyr;
+
+
         }
     }
 }
