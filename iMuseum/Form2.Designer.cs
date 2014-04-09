@@ -409,7 +409,7 @@
             this.acceptButton.TabIndex = 11;
             this.acceptButton.Text = "Сохранить";
             this.acceptButton.UseVisualStyleBackColor = true;
-            this.acceptButton.UseWaitCursor = true;
+            this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
             // cancelButton
             // 

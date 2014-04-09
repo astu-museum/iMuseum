@@ -12,6 +12,8 @@ namespace iMuseum
     public partial class Form2 : Form
     {
 
+        string fir, sec, tyr;//Куски Инвентарника
+
         DataSet1.CATEGORYDataTable catexp;
         DataSet1.CATEGORYDataTable cataut;
         DataSet1.CATEGORYDataTable cataud;
@@ -36,7 +38,7 @@ namespace iMuseum
             comboBox8.ValueMember = "NAME_";
             comboBox8.BindingContext = this.BindingContext;
 
-            //ЭКСПОНАТОКАТЕГОРИЯ
+            //АВТОРОКАТЕГОРИЯ
             DataSet1TableAdapters.CATEGORYTableAdapter cta = new DataSet1TableAdapters.CATEGORYTableAdapter();
 
 
@@ -50,18 +52,20 @@ namespace iMuseum
 
 
 
-            //АВТОРОКАТЕГОРИЯ
-            cataut = cta.GetDataAud();
+            //АУДИОТРЕКАТЕГОРИЯ
+            DataSet1TableAdapters.CATEGORYTableAdapter cto = new DataSet1TableAdapters.CATEGORYTableAdapter();
+            cataud = cto.GetDataAud();
 
 
 
-            comboBox4.DataSource = cataut;
+            comboBox4.DataSource = cataud;
             comboBox4.ValueMember = "NAME_";
             comboBox4.BindingContext = this.BindingContext;
 
 
-            //Целевая адутиоря
-            catexp = cta.GetDataExp();
+            //Категория Экспоанат
+            DataSet1TableAdapters.CATEGORYTableAdapter cte = new DataSet1TableAdapters.CATEGORYTableAdapter();
+            catexp = cte.GetDataExp();
 
 
 
@@ -106,8 +110,69 @@ namespace iMuseum
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //СГЕНЕРИМ ЗДЕСБ ИНВЕНТАРНИК?
+
             //ПРОВЕРКА ВОХМОЖНОСТИТ ПОЛУЧЕНИЯ ВЕСЕЛОЙ ШТУКОВИНЫ
           //  MessageBox.Show(User.dtrip.Rows[comboBox8.SelectedIndex]["pk_source"].ToString());
+        }
+
+        private void acceptButton_Click(object sender, EventArgs e)
+        {
+            //ЗДЕСЬ ПРОВЕРКИ,КОТОРЫЕ ВЫХОДЯТ,ЕСЛИ КОСЯК
+
+
+
+            //ВНОСИМ НОВЫЙЭКСПОНАТ
+            Exponat nExp = new Exponat();
+           
+            nExp.setPkCategoryExp(Convert.ToInt32(catexp.Rows[comboBox3.SelectedIndex]["pk_category"].ToString()));
+
+           
+            nExp.setPkCategoryAut(Convert.ToInt32(cataut.Rows[comboBox2.SelectedIndex]["pk_category"].ToString()));
+           // MessageBox.Show(nExp.getPkCategoryAut().ToString());
+            nExp.setPkCategoryAud(Convert.ToInt32(cataud.Rows[comboBox4.SelectedIndex]["pk_category"].ToString()));
+
+            
+            nExp.setPkSource(Convert.ToInt32(User.dtrip.Rows[comboBox8.SelectedIndex]["pk_source"].ToString()));
+
+            
+            
+            nExp.inumber= textBox2.Text;
+            nExp.name = textBox1.Text;
+          
+            nExp.price = Convert.ToDouble(textBox3.Text)+(Convert.ToDouble(textBox4.Text))/100;
+           
+            nExp.date = dateTimePicker1.Value;
+         
+            nExp.setTypeSob(comboBox1.SelectedIndex);
+            
+            nExp.setDescr(textBox6.Text);
+    
+            nExp.setPlace(comboBox7.SelectedIndex);
+        
+            nExp.setDamage(comboBox5.SelectedIndex);
+          
+            nExp.setFlag(0);
+      
+            if (textBox7.Text != "")
+            {
+                nExp.setFio(textBox7.Text);
+            }
+            else
+            {
+                nExp.setFio(" ");
+            }
+
+      
+
+            //Вставить нормальное извлечение пути до картинки
+            nExp.setPic(" ");
+       
+            nExp.setPkType(Convert.ToInt32(texp.Rows[comboBox6.SelectedIndex]["pk_type"].ToString()));
+
+            nExp.save();
+
+            this.Close();
         }
     }
 }

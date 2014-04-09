@@ -261,8 +261,26 @@ namespace iMuseum
         public void setDescr(string id) { this.description = id; }
         public string getDescr() { return this.description; }
 
-     
 
+
+        //СОХРАНЕНИЕ В БАЗУ
+        public void save()
+        {
+            //INSERT INTO "KOMRAZR"."EXPONAT" ( "PK_CATEGORYEXPONAT", "PK_CATEGORYAUTHOR", 
+           // "PK_CATEGORYAUDITORY", "PK_SOURCE", "INUMBER", "NAME_", "PRICE_", "DATE_GET", "TYPESOB",
+          //  "DESCR", "PLACE_", "DAMAGE", "FLAG", "FIO", "PICREFERENCE", "PK_TYPE") VALUES (?, ?, ?, ?, ?
+            //    , ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+
+
+            DataSet1TableAdapters.EXPONATTableAdapter regionTableAdapter =
+             new DataSet1TableAdapters.EXPONATTableAdapter();
+
+
+
+
+             regionTableAdapter.InsertExp(Convert.ToDecimal(pk_categoryExp),Convert.ToDecimal(pk_categoryAut),Convert.ToDecimal(pk_categoryAud),Convert.ToDecimal(pk_source),inumber,name,Convert.ToDecimal(price),date,typeSob,description,place,damage,flag,fio,pic,pk_type);
+
+        }
 
 
     }
