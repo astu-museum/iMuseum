@@ -145,7 +145,7 @@ namespace iMuseum
 
             //ТУТ ДЕЛАЕМ ФИЛЬТРЕЦ
 
-            dataGridView1.DataSource = null;
+           // dataGridView1.DataSource = null;
 
             number.DataPropertyName = "inumber";
             title.DataPropertyName = "name";
@@ -157,8 +157,11 @@ namespace iMuseum
             price.DataPropertyName = "price";
 
 
+
             dataGridView1.DataSource = User.exponats;
-          
+
+         
+
 
         }
 

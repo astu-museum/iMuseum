@@ -27,5 +27,8 @@ namespace iMuseum
         public static List<string> placeString = new List<string>(5) { "Выставка", "Резерв","На хранении у стороненго лица" };
         public static List<string> damageString = new List<string>(5) { "Отличное", "Хорошее","Удовлетворительное","Неудовлетворительное" };
         public static List<string> numberString = new List<string>(5) {"Категория экспоната", "Категория автора", "Целевая аудитория" };
+
+        //Создадим адаптер,шоб шифроваться
+        public static DataSet1.SOURCEDataTable dtrip;
     }
 }

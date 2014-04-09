@@ -187,14 +187,11 @@
             this.comboBox8.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
-            "Стас Михайлов, Москва, Рублевское ш.",
-            "Григорий Лепс, Москва, ул. Улица",
-            "Грач А.В., Барнаул, ул. Старая"});
             this.comboBox8.Location = new System.Drawing.Point(7, 19);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(542, 21);
             this.comboBox8.TabIndex = 0;
+            this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
             // 
             // groupBox5
             // 
@@ -260,10 +257,6 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Художник",
-            "Народное творчество",
-            "Детское творчество"});
             this.comboBox2.Location = new System.Drawing.Point(7, 34);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(275, 21);
@@ -283,13 +276,6 @@
             // 
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "0+",
-            "3+",
-            "6+",
-            "12+",
-            "16+",
-            "18+"});
             this.comboBox4.Location = new System.Drawing.Point(6, 19);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(276, 21);
@@ -367,12 +353,6 @@
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Птицы",
-            "Насекомые",
-            "Травы",
-            "Животные",
-            "Кустарники"});
             this.comboBox3.Location = new System.Drawing.Point(6, 19);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(276, 21);
@@ -416,12 +396,6 @@
             // 
             this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "Чучело",
-            "Репродукция",
-            "Гербарий",
-            "Предмет",
-            "Картина"});
             this.comboBox6.Location = new System.Drawing.Point(6, 19);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(276, 21);
