@@ -228,10 +228,40 @@ namespace iMuseum
             set { placeStrValue = value; }
         }
 
-        //DAMAGE FLAG FIO PICREFERNCE
+     
+
+        //Состояние(число)
+        private int damage;
+        public void setDamage(int id) { this.damage = id; }
+        public int getDamage() { return this.damage; }
 
 
+        private string damageStrValue;
+        /// <summary>
+        /// Строковое Представления Состояния
+        /// </summary>
+        /// 
+        public string damageStr
+        {
+            get { return damageStrValue; }
+            set { damageStrValue = value; }
+        }
 
+
+        //Флаг СПисания
+        private int flag;
+        public void setFlag(int id) { this.flag = id; }
+        public int getFlag() { return this.flag; }
+
+        //ФИО Автора
+        private string fio;
+        public void setFio(string id) { this.fio = id; }
+        public string getFio() { return this.fio; }
+
+        //Путь к картинке
+        private string pic;
+        public void setPic(string id) { this.pic = id; }
+        public string getPic() { return this.pic; }
      
 
 
