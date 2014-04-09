@@ -140,6 +140,7 @@
       <DependentUpon>sourceSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Type.cs" />
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="AddExib.resx">
       <DependentUpon>AddExib.cs</DependentUpon>
     </EmbeddedResource>

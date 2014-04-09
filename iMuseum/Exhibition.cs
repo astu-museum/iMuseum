@@ -18,6 +18,16 @@ namespace iMuseum
         }
 
 
+        /// <summary>
+        /// Список экспонатов выставки
+        /// </summary>
+        List<Exponat> exponats;
+
+
+        //Добавить список Экспонатов и Категорий
+
+
+        /*
         private int pk_exhibitionValue;
 
 
@@ -28,13 +38,21 @@ namespace iMuseum
         {
             get { return pk_exhibitionValue; }
             set { pk_exhibitionValue = value; }
-        }
+        }*/
 
-        private string nameValue;
+        /// <summary>
+        /// ПК выставк
+        /// </summary>
+        private int pk_exhibition;
+        public void setPkExhibition(int id) { this.pk_exhibition = id; }
+        public int getPkExhibition() { return this.pk_exhibition; }
+
 
         /// <summary>
         /// Наименование категории
         /// </summary>
+        private string nameValue;
+           
         public string name
         {
             get { return nameValue; }

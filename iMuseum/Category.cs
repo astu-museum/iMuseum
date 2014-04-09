@@ -16,9 +16,14 @@ namespace iMuseum
         /// </summary>
         public Category()
         {
+            pk_category = 0;
+            nameValue = "";
+            number = "";
+            numberInt = 0;
         }
 
 
+        /*
         private int pk_categoryValue;
 
 
@@ -30,6 +35,12 @@ namespace iMuseum
             get { return pk_categoryValue; }
             set { pk_categoryValue = value; }
         }
+         */
+
+        private int pk_category;
+        public void setPkCategory(int id) { this.pk_category = id; }
+        public int getPkCategory() { return this.pk_category; }
+         
 
         private string nameValue;
 
@@ -42,12 +53,25 @@ namespace iMuseum
             set { nameValue = value; }
         }
 
-        private int numberValue;
+        /// <summary>
+        /// Тип категории(число)
+        /// </summary>
+        private int numberInt;
+        /// <summary>
+        /// Сеттер числовго предстваления типа категории
+        /// </summary>
+        /// <param name="id"></param>
+        public void setNumberInt(int id) { this.numberInt = id; }
+        public int getNumberInt() { return this.numberInt; }
+
 
         /// <summary>
-        /// Тип категории(1 - категория экспоната,2-Категория автора,3-категория целевой аудитории)
+        /// Тип категории(строка)(1 - категория экспоната,2-Категория автора,3-категория целевой аудитории)
         /// </summary>
-        public int number
+        private string numberValue;
+
+        
+        public string number
         {
             get { return numberValue; }
             set { numberValue = value; }

@@ -15,9 +15,11 @@ namespace iMuseum
         /// </summary>
         public Type()
         {
+            pk_type = 0;
+            nameValue = "";
         }
 
-        private int pk_typeValue;
+      /*  private int pk_typeValue;
 
 
         /// <summary>
@@ -28,6 +30,13 @@ namespace iMuseum
             get { return pk_typeValue; }
             set { pk_typeValue = value; }
         }
+        */
+
+        private int pk_type;
+        public void setPkType(int id) { this.pk_type = id; }
+        public int getPkType() { return this.pk_type; }
+
+
 
         private string nameValue;
 

@@ -71,7 +71,7 @@ namespace iMuseum
 
 
 
-
+            /*
             
             List<Exponat> ls = new List<Exponat>();
 
@@ -95,7 +95,7 @@ namespace iMuseum
                 Exponat currentCustomer = new Exponat();
                 currentCustomer.pk_exponat = Convert.ToInt32( customerRow.PK_EXPONAT);
                 currentCustomer.pk_source = Convert.ToInt32(customerRow.PK_SOURCE);
-
+               
                 currentCustomer.date = customerRow.DATE_GET;
 
                 ls.Add(currentCustomer);
@@ -107,11 +107,13 @@ namespace iMuseum
 
 
             source.DataPropertyName = "pk_source";
-            number.DataPropertyName = "date";
+          //  number.DataPropertyName = "date";
             title.DataPropertyName = "pk_exponat";
 
             dataGridView1.DataSource = ls;
-          //source.DataP
+
+          */
+          
 
            
         }

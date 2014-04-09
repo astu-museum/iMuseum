@@ -17,8 +17,11 @@ namespace iMuseum
         /// </summary>
         public Sauce()
         {
+            pk_source = 0;
+            address = "";
         }
 
+        /*
         private int pk_sourceValue;
 
 
@@ -30,6 +33,11 @@ namespace iMuseum
             get { return pk_sourceValue; }
             set { pk_sourceValue = value; }
         }
+        */
+
+        private int pk_source;
+        public void setPkSource(int id) { this.pk_source = id; }
+        public int getPkSource() { return this.pk_source; }
 
         private string nameValue;
 
@@ -45,7 +53,7 @@ namespace iMuseum
         private string addressValue;
 
         /// <summary>
-        /// Тип категории(1 - категория экспоната,2-Категория автора,3-категория целевой аудитории)
+        /// Адрес Источник
         /// </summary>
         public string address
         {
