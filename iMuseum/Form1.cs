@@ -100,6 +100,7 @@ namespace iMuseum
                 currentCustomer.setPkType(Convert.ToInt32(customerRow.PK_TYPE));
 
                 currentCustomer.setFlag(Convert.ToInt32(customerRow.FLAG));
+                currentCustomer.setDescr(customerRow.DESCR);
                 currentCustomer.setFio(customerRow.FIO);
                 currentCustomer.setPic(customerRow.PICREFERENCE);
 
@@ -128,7 +129,7 @@ namespace iMuseum
                 //Просто отображаемые части
                 currentCustomer.date = customerRow.DATE_GET;
                 currentCustomer.inumber=customerRow.INUMBER;
-                currentCustomer.name = customerRow.DESCR;
+                currentCustomer.name = customerRow.NAME_;
                 currentCustomer.price = Convert.ToDouble(customerRow.PRICE_);
                 
 

@@ -122,6 +122,201 @@ namespace iMuseum
 
 
 
+        //    MessageBox.Show(textBox2.Text.GetHashCode().ToString());
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Заполните поле Наименование");
+                return;
+            }
+
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("Заполните поле Инвентарный Номер");
+                return;
+            }
+
+            if (textBox2.Text.Length > 100)
+            {
+                MessageBox.Show("Сликшмо длинный Инвентарный Номер");
+                return;
+
+            }
+
+            //Проверка отсутствия всякого мусора в наименовании, инвентарнике,авторе
+
+            int cnt = 0;
+            int cnt1 = 0;
+
+
+            for (int i = 0; i < textBox1.Text.Length; i++)
+            {
+
+                if (((textBox1.Text[i] < 'а') || (textBox1.Text[i] > 'я')) && ((textBox1.Text[i] < 'А') || (textBox1.Text[i] > 'Я')) && (textBox1.Text[i] != ' ') && (textBox1.Text[i] != '-') && ((textBox1.Text[i] < '0') || (textBox1.Text[i] > '9')))
+                {
+                    MessageBox.Show("Наименование содержит только  буквы,цифры,тире и пробелы");
+                    return;
+
+                }
+            }
+
+            for (int i = 0; i < textBox2.Text.Length; i++)
+            {
+
+
+                if ((textBox2.Text[i] < '0') || (textBox2.Text[i] > '9')) {
+                    MessageBox.Show("Инвентарный номер содержит только цифры");
+                    return;
+
+                }
+            }
+
+            for (int i = 0; i < textBox7.Text.Length; i++)
+            {
+
+                if (((textBox7.Text[i] < 'а') || (textBox7.Text[i] > 'я')) && ((textBox7.Text[i] < 'А') || (textBox7.Text[i] > 'Я')) && (textBox7.Text[i] != ' ') && (textBox7.Text[i] != '-'))
+                {
+                    MessageBox.Show("ФИО может содержать только буквы и пробелы");
+                    return;
+
+                }
+
+                if (textBox7.Text[i] == ' ')
+                {
+                    cnt++;
+                }
+
+                if (textBox7.Text[i] == '-')
+                {
+                    cnt1++;
+                }
+                if (cnt1 > 1)
+                {
+                    MessageBox.Show("Сомнтиельно ,что у автора настолько множественная фамилия");
+                    return;
+                }
+
+                if (cnt1 + cnt >= textBox7.Text.Length - 3)
+                {
+                    MessageBox.Show("Фио");
+                    return;
+                }
+
+            }
+
+
+
+            if (textBox3.Text == "")
+            {
+
+                MessageBox.Show("Не оставляйте цену пустой");
+                return;
+
+            }
+
+
+            if (textBox4.Text == "")
+            {
+
+                MessageBox.Show("Не оставляйте цену пустой");
+                return;
+
+            }
+
+
+            if (textBox3.TextLength > 8)
+            {
+                MessageBox.Show("Дороговато для Краевого музея");
+                return;
+            }
+
+            for (int i = 0; i < textBox3.Text.Length; i++)
+            {
+
+                
+
+                if ((textBox3.Text[i] < '0') || (textBox3.Text[i] > '9'))
+                {
+                    MessageBox.Show("Стоимость(руб) только цифры");
+                    return;
+
+                }
+            }
+
+            if (textBox4.TextLength > 2)
+            {
+                MessageBox.Show("Копеек не больше 99");
+                return;
+            }
+
+            for (int i = 0; i < textBox4.Text.Length; i++)
+            {
+
+
+
+                if ((textBox4.Text[i] < '0') || (textBox4.Text[i] > '9'))
+                {
+                    MessageBox.Show("Стоимость(руб) только цифры");
+                    return;
+
+                }
+            }
+
+
+
+
+
+            //ПРоверка дублирования Инвентарника
+
+            DataSet1TableAdapters.EXPONATTableAdapter eta = new DataSet1TableAdapters.EXPONATTableAdapter();
+            if (eta.DoubleNumberQuery(textBox2.Text).ToString() != "0")
+            {
+                MessageBox.Show("Уже есть такой Инвентарный Номер");
+                return;
+            }
+      
+           //Проверим стоимость
+
+        
+            if (comboBox2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите Категорию Автора");
+                return;
+            }
+
+            if (comboBox3.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите Категорию Экспоната");
+                return;
+            }
+
+
+            if (comboBox4.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите Категорию Целевой Аудитории");
+                return;
+            }
+
+            if (comboBox6.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите Тип Экспоната");
+                return;
+            }
+
+            if (comboBox8.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите Источник получения экспоната");
+                return;
+            }
+
+
+
+
+
+
+
+            
+
+
             //ВНОСИМ НОВЫЙЭКСПОНАТ
             Exponat nExp = new Exponat();
            
@@ -145,8 +340,18 @@ namespace iMuseum
             nExp.date = dateTimePicker1.Value;
          
             nExp.setTypeSob(comboBox1.SelectedIndex);
-            
-            nExp.setDescr(textBox6.Text);
+
+
+            if (textBox6.Text != "")
+            {
+                nExp.setDescr(textBox6.Text);
+            }
+            else
+            {
+                nExp.setDescr(" ");
+
+            }
+
     
             nExp.setPlace(comboBox7.SelectedIndex);
         
@@ -165,8 +370,15 @@ namespace iMuseum
 
       
 
-            //Вставить нормальное извлечение пути до картинки
-            nExp.setPic(" ");
+        
+            if (openFileDialog1.FileName.ToString() == "openFileDialog1")
+            {
+                nExp.setPic(" ");
+            }
+            else
+            {
+                nExp.setPic(openFileDialog1.FileName);
+            }
        
             nExp.setPkType(Convert.ToInt32(texp.Rows[comboBox6.SelectedIndex]["pk_type"].ToString()));
 
