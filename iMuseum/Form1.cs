@@ -100,8 +100,8 @@ namespace iMuseum
                 currentCustomer.setPkType(Convert.ToInt32(customerRow.PK_TYPE));
 
                 currentCustomer.setFlag(Convert.ToInt32(customerRow.FLAG));
-              //  currentCustomer.setFio(customerRow.FIO);
-               // currentCustomer.setPic(customerRow.PICREFERENCE);
+                currentCustomer.setFio(customerRow.FIO);
+                currentCustomer.setPic(customerRow.PICREFERENCE);
 
 
                 //Нужен перевод в строковую форму
@@ -112,9 +112,18 @@ namespace iMuseum
                 currentCustomer.setDamage(Convert.ToInt32(customerRow.DAMAGE));
                 currentCustomer.damageStr = User.damageString[currentCustomer.getDamage()];
 
-                currentCustomer.sourceValue ="";
-                //СЮДА ВПЛЕСТИ ИСТОЧНИК!
-                
+                //currentCustomer.sourceValue ="";
+                //ОПАСНОЕ ВПЛЕТЕНИЕ ИСТОЧНИКА
+                DataSet1TableAdapters.SOURCETableAdapter ta = new DataSet1TableAdapters.SOURCETableAdapter();
+
+
+                DataSet1.SOURCEDataTable dt = ta.HitlerSource(currentCustomer.getPkSource());
+
+                foreach (DataSet1.SOURCERow sRow in dt)
+                {
+                    currentCustomer.sourceValue=sRow.NAME_;
+                }
+
 
                 //Просто отображаемые части
                 currentCustomer.date = customerRow.DATE_GET;
