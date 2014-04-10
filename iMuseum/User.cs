@@ -34,6 +34,127 @@ namespace iMuseum
         //FILTER
         public static void filter()
         {
+            for (int i = 0; i < exponats.Count; i++)
+            {
+
+                //Проверка соответствия типа
+                bool flag = false;
+
+                if (typeFilter.Count == 0)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    for (int j = 0; (j < typeFilter.Count)&&!flag; j++)
+                    {
+                        if (exponats[i].getPkType() == typeFilter[j])
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+
+                if (!flag)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+                else
+                {
+                    flag = false;
+                }
+
+                //Проверка категории экспоната
+                if (categoryExponatFilter.Count == 0)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    for (int j = 0; (j < categoryExponatFilter.Count) && !flag; j++)
+                    {
+                        if (exponats[i].getPkCategoryExp() == categoryExponatFilter[j])
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+
+                if (!flag)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+                else
+                {
+                    flag = false;
+                }
+
+
+                //Проверка категории Автора
+                if (categoryAuthorFilter.Count == 0)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    for (int j = 0; (j < categoryAuthorFilter.Count) && !flag; j++)
+                    {
+                        if (exponats[i].getPkCategoryAut() == categoryAuthorFilter[j])
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+
+                if (!flag)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+                else
+                {
+                    flag = false;
+                }
+
+
+                //Проверка категории Аудитории
+                if (categoryAuditoryFilter.Count == 0)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    for (int j = 0; (j < categoryAuditoryFilter.Count) && !flag; j++)
+                    {
+                        if (exponats[i].getPkCategoryAud() == categoryAuditoryFilter[j])
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+
+                if (!flag)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+                else
+                {
+                    flag = false;
+                }
+
+
+
+
+
+            }
+
         }
 
 

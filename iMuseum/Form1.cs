@@ -53,7 +53,7 @@ namespace iMuseum
 
             //Вновь пофильтруем
             Load_Exponats();
-            User.filter();
+           
 
         }
 
@@ -67,12 +67,16 @@ namespace iMuseum
         {
             Source src = new Source();
             src.ShowDialog();
+
+            Load_Exponats();
         }
 
         private void searchSett(object sender, EventArgs e)
         {
             mainSettings mst = new mainSettings();
             mst.ShowDialog();
+
+            Load_Exponats();
         }
 
         /// <summary>
@@ -81,7 +85,7 @@ namespace iMuseum
         private void Load_Exponats()
         {
             User.load_exponats();
-
+            User.filter();
 
             //ТУТ ДЕЛАЕМ ФИЛЬТРЕЦ
 
