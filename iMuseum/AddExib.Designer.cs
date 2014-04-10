@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            PresentationControls.CheckBoxProperties checkBoxProperties5 = new PresentationControls.CheckBoxProperties();
             PresentationControls.CheckBoxProperties checkBoxProperties1 = new PresentationControls.CheckBoxProperties();
             PresentationControls.CheckBoxProperties checkBoxProperties2 = new PresentationControls.CheckBoxProperties();
             PresentationControls.CheckBoxProperties checkBoxProperties3 = new PresentationControls.CheckBoxProperties();
+            PresentationControls.CheckBoxProperties checkBoxProperties4 = new PresentationControls.CheckBoxProperties();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -118,14 +118,14 @@
             this.groupBox6.Location = new System.Drawing.Point(12, 124);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(271, 49);
-            this.groupBox6.TabIndex = 12;
+            this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Тип экспоната";
             // 
             // objectTypeCB
             // 
-            checkBoxProperties5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.objectTypeCB.CheckBoxProperties = checkBoxProperties5;
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.objectTypeCB.CheckBoxProperties = checkBoxProperties1;
             this.objectTypeCB.DisplayMemberSingleItem = "";
             this.objectTypeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.objectTypeCB.FormattingEnabled = true;
@@ -140,14 +140,14 @@
             this.groupBox12.Location = new System.Drawing.Point(290, 124);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(271, 49);
-            this.groupBox12.TabIndex = 11;
+            this.groupBox12.TabIndex = 5;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Категория экспоната";
             // 
             // checkBoxComboBox1
             // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties1;
+            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties2;
             this.checkBoxComboBox1.DisplayMemberSingleItem = "";
             this.checkBoxComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox1.FormattingEnabled = true;
@@ -162,14 +162,14 @@
             this.groupBox8.Location = new System.Drawing.Point(290, 179);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(271, 49);
-            this.groupBox8.TabIndex = 10;
+            this.groupBox8.TabIndex = 7;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Целевая аудитория";
             // 
             // checkBoxComboBox3
             // 
-            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox3.CheckBoxProperties = checkBoxProperties2;
+            checkBoxProperties3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox3.CheckBoxProperties = checkBoxProperties3;
             this.checkBoxComboBox3.DisplayMemberSingleItem = "";
             this.checkBoxComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox3.FormattingEnabled = true;
@@ -184,14 +184,14 @@
             this.groupBox4.Location = new System.Drawing.Point(12, 179);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(271, 49);
-            this.groupBox4.TabIndex = 27;
+            this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Категория автора";
             // 
             // checkBoxComboBox2
             // 
-            checkBoxProperties3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox2.CheckBoxProperties = checkBoxProperties3;
+            checkBoxProperties4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox2.CheckBoxProperties = checkBoxProperties4;
             this.checkBoxComboBox2.DisplayMemberSingleItem = "";
             this.checkBoxComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox2.FormattingEnabled = true;
@@ -225,7 +225,7 @@
             this.button1.Location = new System.Drawing.Point(486, 241);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
+            this.button1.TabIndex = 9;
             this.button1.Text = "Отмена";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -235,7 +235,7 @@
             this.button2.Location = new System.Drawing.Point(382, 241);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 23);
-            this.button2.TabIndex = 29;
+            this.button2.TabIndex = 8;
             this.button2.Text = "Сформировать";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.forming);
