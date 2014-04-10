@@ -130,7 +130,12 @@ namespace iMuseum
 
             }
 
+            //ЗАБАБАХАЕМ ГЕНЕРАЦИЮ
+            User.load_exponats();
+             User.filterExh();
+            //GENERATE ЕЩЕ
 
+            //ЗАБАБАХ КОНЧИЛСЯ
 
             AddExpExb aee = new AddExpExb();
 

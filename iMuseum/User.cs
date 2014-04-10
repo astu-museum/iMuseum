@@ -160,6 +160,115 @@ namespace iMuseum
         }
 
 
+        //СПЕЦИАЛЬНАЯ ПРОВЕРКА ДЛЯ ВЫСТАВОК
+        //FILTER
+        public static void filterExh()
+        {
+            for (int i = 0; i < exponats.Count; i++)
+            {
+
+                //Проверка соответствия типа
+                bool flag = false;
+
+                if (exhibitions[0].getTypes().Count == 0)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    for (int j = 0; (j < exhibitions[0].getTypes().Count) && !flag; j++)
+                    {
+                        if (exponats[i].getPkType() == exhibitions[0].getTypes(j))
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+
+                if (!flag)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+                else
+                {
+                    flag = false;
+                }
+
+                //Проверка категории экспоната
+                if (categoryExponatFilter.Count == 0)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    for (int j = 0; (j < categoryExponatFilter.Count) && !flag; j++)
+                    {
+                        if (exponats[i].getPkCategoryExp() == categoryExponatFilter[j])
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+
+               
+
+                //Проверка категории Автора
+                if (categoryAuthorFilter.Count == 0)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    for (int j = 0; (j < categoryAuthorFilter.Count) && !flag; j++)
+                    {
+                        if (exponats[i].getPkCategoryAut() == categoryAuthorFilter[j])
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+
+            
+
+
+                //Проверка категории Аудитории
+                if (categoryAuditoryFilter.Count == 0)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    for (int j = 0; (j < categoryAuditoryFilter.Count) && !flag; j++)
+                    {
+                        if (exponats[i].getPkCategoryAud() == categoryAuditoryFilter[j])
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+
+                if (!flag)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+                else
+                {
+                    flag = false;
+                }
+
+
+
+
+
+            }
+
+        }
+
+
         //Загрузка всех выставок
         public static void load_exhibitions()
         {

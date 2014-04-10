@@ -165,6 +165,7 @@
             this.price});
             this.dataGridView1.Location = new System.Drawing.Point(-1, 27);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1010, 558);
             this.dataGridView1.TabIndex = 10;
@@ -174,12 +175,14 @@
             this.number.Frozen = true;
             this.number.HeaderText = "Инв. номер";
             this.number.Name = "number";
+            this.number.ReadOnly = true;
             // 
             // title
             // 
             this.title.Frozen = true;
             this.title.HeaderText = "Наименование";
             this.title.Name = "title";
+            this.title.ReadOnly = true;
             this.title.Width = 150;
             // 
             // source
@@ -187,6 +190,7 @@
             this.source.Frozen = true;
             this.source.HeaderText = "Источник получения";
             this.source.Name = "source";
+            this.source.ReadOnly = true;
             this.source.Width = 150;
             // 
             // date
@@ -195,6 +199,7 @@
             this.date.HeaderText = "Дата получения";
             this.date.MinimumWidth = 125;
             this.date.Name = "date";
+            this.date.ReadOnly = true;
             this.date.Width = 125;
             // 
             // typesob
@@ -203,6 +208,7 @@
             this.typesob.HeaderText = "Тип собственности";
             this.typesob.MinimumWidth = 125;
             this.typesob.Name = "typesob";
+            this.typesob.ReadOnly = true;
             this.typesob.Width = 125;
             // 
             // mesto
@@ -211,6 +217,7 @@
             this.mesto.HeaderText = "Место хранения";
             this.mesto.MinimumWidth = 150;
             this.mesto.Name = "mesto";
+            this.mesto.ReadOnly = true;
             this.mesto.Width = 150;
             // 
             // damage
@@ -218,12 +225,14 @@
             this.damage.Frozen = true;
             this.damage.HeaderText = "Состояние";
             this.damage.Name = "damage";
+            this.damage.ReadOnly = true;
             // 
             // price
             // 
             this.price.Frozen = true;
             this.price.HeaderText = "Стоимость";
             this.price.Name = "price";
+            this.price.ReadOnly = true;
             // 
             // button3
             // 

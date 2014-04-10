@@ -21,5 +21,38 @@ namespace iMuseum
             sourceSettings srccc = new sourceSettings();
             srccc.ShowDialog();
         }
+
+
+        private void Load_some()
+        {
+
+        
+
+            List<Exponat> ls = User.exponats;
+            title.DataPropertyName = "name";
+            mesto.DataPropertyName = "placeStr";
+            damage.DataPropertyName = "damageStr";
+            price.DataPropertyName = "price";
+
+
+            a.DataPropertyName = "inumber";
+            b.DataPropertyName = "sourceValue";
+            c.DataPropertyName = "date";
+            d.DataPropertyName = "typeSobStr";
+
+
+
+            dataGridView1.DataSource = ls;//User.exponats;
+
+
+
+
+        }
+        
+
+        private void AddExpExb_Load(object sender, EventArgs e)
+        {
+            Load_some();
+        }
     }
 }
