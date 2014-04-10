@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            PresentationControls.CheckBoxProperties checkBoxProperties5 = new PresentationControls.CheckBoxProperties();
             PresentationControls.CheckBoxProperties checkBoxProperties1 = new PresentationControls.CheckBoxProperties();
             PresentationControls.CheckBoxProperties checkBoxProperties2 = new PresentationControls.CheckBoxProperties();
             PresentationControls.CheckBoxProperties checkBoxProperties3 = new PresentationControls.CheckBoxProperties();
-            PresentationControls.CheckBoxProperties checkBoxProperties4 = new PresentationControls.CheckBoxProperties();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -124,17 +124,11 @@
             // 
             // objectTypeCB
             // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.objectTypeCB.CheckBoxProperties = checkBoxProperties1;
+            checkBoxProperties5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.objectTypeCB.CheckBoxProperties = checkBoxProperties5;
             this.objectTypeCB.DisplayMemberSingleItem = "";
             this.objectTypeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.objectTypeCB.FormattingEnabled = true;
-            this.objectTypeCB.Items.AddRange(new object[] {
-            "Чучело",
-            "Репродукция",
-            "Гербарий",
-            "Предмет",
-            "Картина"});
             this.objectTypeCB.Location = new System.Drawing.Point(6, 19);
             this.objectTypeCB.Name = "objectTypeCB";
             this.objectTypeCB.Size = new System.Drawing.Size(259, 21);
@@ -152,17 +146,11 @@
             // 
             // checkBoxComboBox1
             // 
-            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties2;
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties1;
             this.checkBoxComboBox1.DisplayMemberSingleItem = "";
             this.checkBoxComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox1.FormattingEnabled = true;
-            this.checkBoxComboBox1.Items.AddRange(new object[] {
-            "Птицы",
-            "Насекомые",
-            "Травы",
-            "Животные",
-            "Кустарники"});
             this.checkBoxComboBox1.Location = new System.Drawing.Point(6, 19);
             this.checkBoxComboBox1.Name = "checkBoxComboBox1";
             this.checkBoxComboBox1.Size = new System.Drawing.Size(259, 21);
@@ -180,18 +168,11 @@
             // 
             // checkBoxComboBox3
             // 
-            checkBoxProperties3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox3.CheckBoxProperties = checkBoxProperties3;
+            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox3.CheckBoxProperties = checkBoxProperties2;
             this.checkBoxComboBox3.DisplayMemberSingleItem = "";
             this.checkBoxComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox3.FormattingEnabled = true;
-            this.checkBoxComboBox3.Items.AddRange(new object[] {
-            "0+",
-            "3+",
-            "6+",
-            "12+",
-            "16+",
-            "18+"});
             this.checkBoxComboBox3.Location = new System.Drawing.Point(6, 19);
             this.checkBoxComboBox3.Name = "checkBoxComboBox3";
             this.checkBoxComboBox3.Size = new System.Drawing.Size(259, 21);
@@ -209,15 +190,11 @@
             // 
             // checkBoxComboBox2
             // 
-            checkBoxProperties4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox2.CheckBoxProperties = checkBoxProperties4;
+            checkBoxProperties3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox2.CheckBoxProperties = checkBoxProperties3;
             this.checkBoxComboBox2.DisplayMemberSingleItem = "";
             this.checkBoxComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox2.FormattingEnabled = true;
-            this.checkBoxComboBox2.Items.AddRange(new object[] {
-            "Художник",
-            "Народное творчество",
-            "Детское творчество"});
             this.checkBoxComboBox2.Location = new System.Drawing.Point(6, 19);
             this.checkBoxComboBox2.Name = "checkBoxComboBox2";
             this.checkBoxComboBox2.Size = new System.Drawing.Size(259, 21);
@@ -237,6 +214,7 @@
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(6, 19);
             this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.ReadOnly = true;
             this.numericUpDown1.Size = new System.Drawing.Size(259, 20);
             this.numericUpDown1.TabIndex = 0;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -250,6 +228,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "Отмена";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -287,6 +266,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Добавление выставки";
+            this.Load += new System.EventHandler(this.AddExib_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

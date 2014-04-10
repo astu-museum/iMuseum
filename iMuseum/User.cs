@@ -21,6 +21,8 @@ namespace iMuseum
         public static List<int> categoryAuthorFilter;
         public static List<int> categoryAuditoryFilter;
 
+        //Фил
+
 
         //Строковые представления того,что хранися в виде Интовых Чисел
         public static List<string> typeSobString = new List<string>(5) { "Собственность музея","На временном пользовании"};
@@ -150,6 +152,59 @@ namespace iMuseum
                 }
 
 
+
+
+
+            }
+
+        }
+
+
+        //Загрузка всех выставок
+        public static void load_exhibitions()
+        {
+
+            User.exhibitions = new List<Exhibition>();
+
+            DataSet1TableAdapters.EXHIBITIONTableAdapter exponatTableAdapter = new DataSet1TableAdapters.EXHIBITIONTableAdapter();
+
+
+            DataSet1.EXHIBITIONDataTable customerData = exponatTableAdapter.GetData();
+
+
+            foreach (DataSet1.EXHIBITIONRow customerRow in customerData)
+            {
+                Exhibition currentCustomer = new Exhibition();
+
+                //Ключи и неотражаемая в гриде ересь
+                currentCustomer.setPkExhibition(Convert.ToInt32(customerRow.PK_EXHIBITION));
+
+
+
+                //Просто отображаемые части
+                currentCustomer.datestart = customerRow.DATESTART;
+                currentCustomer.dateend = customerRow.DATEEND;
+                currentCustomer.name = customerRow.NAME_;
+
+
+                /*
+                    //ОПАСНОЕ ВПЛЕТЕНИЕ ИСТОЧНИКА
+                DataSet1TableAdapters.SOURCETableAdapter ta = new DataSet1TableAdapters.SOURCETableAdapter();
+
+
+                DataSet1.SOURCEDataTable dt = ta.HitlerSource(currentCustomer.getPkSource());
+
+                foreach (DataSet1.SOURCERow sRow in dt)
+                {
+                    currentCustomer.sourceValue = sRow.NAME_;
+                }
+
+
+   
+
+                */
+                    User.exhibitions.Add(currentCustomer);
+                
 
 
 
