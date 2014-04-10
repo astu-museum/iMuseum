@@ -19,46 +19,58 @@ namespace iMuseum
 
         private void button2_Click(object sender, EventArgs e)
         {
+           
           
             //FILL ARRAYS OF FILTER
 
-            for (int i = 0; i < checkBoxComboBox1.Items.Count; i++)
+
+            User.typeFilter.Clear();
+            User.categoryExponatFilter.Clear();
+            User.categoryAuthorFilter.Clear();
+            User.categoryAuditoryFilter.Clear();
+
+
+            for (int i = 1; i < checkBoxComboBox1.Items.Count; i++)
             {
+               // MessageBox.Show(checkBoxComboBox1.Items[i].ToString());
                   if (checkBoxComboBox1.CheckBoxItems[i].Checked)
                   {
-                      User.categoryExponatFilter.Add(ex[i]);
+                      User.categoryExponatFilter.Add(ex[i-1]);
                   }
                
 
             }
 
-            for (int i = 0; i < checkBoxComboBox2.Items.Count; i++)
+            
+            for (int i = 1; i < checkBoxComboBox2.Items.Count; i++)
             {
+               
+              //  MessageBox.Show(checkBoxComboBox2.Items[i].ToString());
                 if (checkBoxComboBox2.CheckBoxItems[i].Checked)
                 {
-                    User.categoryAuthorFilter.Add(av[i]);
+                    User.categoryAuthorFilter.Add(av[i-1]);
                 }
-
+        
 
             }
 
-
-            for (int i = 0; i < checkBoxComboBox3.Items.Count; i++)
+            
+            for (int i = 1; i < checkBoxComboBox3.Items.Count; i++)
             {
                 if (checkBoxComboBox3.CheckBoxItems[i].Checked)
                 {
-                    User.categoryAuditoryFilter.Add(ad[i]);
+                    User.categoryAuditoryFilter.Add(ad[i-1]);
                 }
 
 
             }
 
 
-            for (int i = 0; i < objectTypeCB.Items.Count; i++)
+            for (int i = 1; i < objectTypeCB.Items.Count; i++)
             {
                 if (objectTypeCB.CheckBoxItems[i].Checked)
                 {
-                    User.typeFilter.Add(ty[i]);
+                    User.typeFilter.Add(ty[i-1]);
                 }
 
 
@@ -103,22 +115,25 @@ namespace iMuseum
             cataut = cta.GetDataAut();
 
 
-            foreach (DataSet1.CATEGORYRow  dr in cataut.Rows) { 
+            foreach (DataSet1.CATEGORYRow  dr in cataut.Rows) {
+
+               
                 checkBoxComboBox2.Items.Add(dr.NAME_);
 
+           
                 int p = Convert.ToInt32(dr.PK_CATEGORY);
-
+               
                 //ВЫСТАВИМ ЧЕКИ
                 for(int i =0;i < User.categoryAuthorFilter.Count;i++){
                     if(User.categoryAuthorFilter[i]==p){
-                        checkBoxComboBox2.CheckBoxItems[checkBoxComboBox2.CheckBoxItems.Count-2].Checked = true;
+                        checkBoxComboBox2.CheckBoxItems[checkBoxComboBox2.CheckBoxItems.Count-1].Checked = true;
                     }
                 }
                     
                 av.Add(p);
             }
 
-
+          
             //AUDITROY
             DataSet1TableAdapters.CATEGORYTableAdapter cto = new DataSet1TableAdapters.CATEGORYTableAdapter();
 
@@ -128,8 +143,23 @@ namespace iMuseum
 
             foreach (DataSet1.CATEGORYRow dr in cataud.Rows)
             {
+              
                 checkBoxComboBox3.Items.Add(dr.NAME_);
-                ad.Add(Convert.ToInt32(dr.PK_CATEGORY));
+
+                int p = Convert.ToInt32(dr.PK_CATEGORY);
+
+
+                //ВЫСТАВИМ ЧЕКИ
+                for (int i = 0; i < User.categoryAuditoryFilter.Count; i++)
+                {
+                    if (User.categoryAuditoryFilter[i] == p)
+                    {
+                        checkBoxComboBox3.CheckBoxItems[checkBoxComboBox3.CheckBoxItems.Count - 1].Checked = true;
+                    }
+                }
+
+
+                ad.Add(p);
             }
 
             //EXPONAT
@@ -142,7 +172,21 @@ namespace iMuseum
             foreach (DataSet1.CATEGORYRow dr in catexp.Rows)
             {
                 checkBoxComboBox1.Items.Add(dr.NAME_);
-                ex.Add(Convert.ToInt32(dr.PK_CATEGORY));
+
+
+                int p = Convert.ToInt32(dr.PK_CATEGORY);
+
+                //ВЫСТАВИМ ЧЕКИ
+                for (int i = 0; i < User.categoryExponatFilter.Count; i++)
+                {
+                    if (User.categoryExponatFilter[i] == p)
+                    {
+                        checkBoxComboBox1.CheckBoxItems[checkBoxComboBox1.CheckBoxItems.Count - 1].Checked = true;
+                    }
+                }
+
+
+                ex.Add(p);
             }
 
             //TYPE
@@ -156,9 +200,22 @@ namespace iMuseum
             foreach (DataSet1.TYPEEXPONATRow dr in texp.Rows)
             {
                objectTypeCB.Items.Add(dr.NAME_);
-                ty.Add(Convert.ToInt32(dr.PK_TYPE));
+
+                int p = (Convert.ToInt32(dr.PK_TYPE));
+
+                //ВЫСТАВИМ ЧЕКИ
+                for (int i = 0; i < User.typeFilter.Count; i++)
+                {
+                    if (User.typeFilter[i] == p)
+                    {
+                        objectTypeCB.CheckBoxItems[objectTypeCB.CheckBoxItems.Count - 1].Checked = true;
+                    }
+                }
+
+                ty.Add(p);
             }
 
+       
         
             
 
@@ -175,10 +232,7 @@ namespace iMuseum
 
 
             for(int i= 0;i < checkBoxComboBox1.Items.Count;i++){
-              /*  if (checkBoxComboBox1.CheckBoxItems[i].Checked)
-                {
-                    MessageBox.Show(checkBoxComboBox1.Items[i].ToString());
-                }*/
+       
                 checkBoxComboBox1.CheckBoxItems[i].Checked = false;
 
             }
@@ -204,7 +258,7 @@ namespace iMuseum
 
             }
 
-            this.Close();
+          //  this.Close();
 
 
         
