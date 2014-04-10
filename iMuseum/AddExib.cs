@@ -48,14 +48,89 @@ namespace iMuseum
             }
 
 
+            if (dateTimePicker2.Value < dateTimePicker1.Value)
+            {
+                MessageBox.Show("Выставка не может кончаться раньше чем началась");
+                return;
+            }
+
+
+
+            //Создадим новую выставку
+
+            Exhibition exh = new Exhibition();
+            
+            exh.name = textBox1.Text.ToString();
+            exh.datestart = dateTimePicker1.Value;
+            exh.dateend = dateTimePicker2.Value;
+
+            for (int i = 1; i < checkBoxComboBox1.Items.Count; i++)
+            {
+                // MessageBox.Show(checkBoxComboBox1.Items[i].ToString());
+                if (checkBoxComboBox1.CheckBoxItems[i].Checked)
+                {
+                   
+                    exh.addCategory(ex[i - 1]);
+                    exh.addCname(checkBoxComboBox1.Items[i].ToString());
+                
+                }
+
+
+            }
+
+
+            for (int i = 1; i < checkBoxComboBox2.Items.Count; i++)
+            {
+
+                //  MessageBox.Show(checkBoxComboBox2.Items[i].ToString());
+                if (checkBoxComboBox2.CheckBoxItems[i].Checked)
+                {
+                    exh.addCategory(av[i - 1]);
+                    exh.addCname(checkBoxComboBox2.Items[i].ToString());
+
+                }
+
+
+            }
+
+
+            for (int i = 1; i < checkBoxComboBox3.Items.Count; i++)
+            {
+                if (checkBoxComboBox3.CheckBoxItems[i].Checked)
+                {
+                    exh.addCategory(ad[i - 1]);
+                    exh.addCname(checkBoxComboBox3.Items[i].ToString());
+                }
+
+
+            }
+
+
+            for (int i = 1; i < objectTypeCB.Items.Count; i++)
+            {
+                if (objectTypeCB.CheckBoxItems[i].Checked)
+                {
+                    exh.addType(ty[i - 1]);
+                    exh.addCname(objectTypeCB.Items[i].ToString());
+
+                  
+                }
+
+
+            }
+
 
 
             AddExpExb aee = new AddExpExb();
-            aee.ShowDialog();
+
+           aee.ShowDialog();
         }
 
         void LoadSome()
         {
+
+            User.exhibitions = new List<Exhibition>();
+
             ex = new List<int>();
             av = new List<int>();
             ad = new List<int>();

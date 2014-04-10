@@ -37,7 +37,7 @@ namespace iMuseum
         //начальная загрузка
         void Load_Exh()
         {
-
+            
 
             DataSet1TableAdapters.EXHIBITIONTableAdapter exhTableAdapter = new DataSet1TableAdapters.EXHIBITIONTableAdapter();
 
