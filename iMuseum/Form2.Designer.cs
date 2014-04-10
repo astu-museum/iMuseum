@@ -86,7 +86,7 @@
             this.groupBox1.Location = new System.Drawing.Point(11, 67);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(288, 49);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Инвентарный номер";
             // 
@@ -107,7 +107,7 @@
             this.groupBox2.Location = new System.Drawing.Point(305, 67);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(288, 49);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Стоимость";
             // 
@@ -149,7 +149,7 @@
             this.groupBox3.Location = new System.Drawing.Point(11, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(582, 49);
-            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Наименование";
             // 
@@ -167,7 +167,7 @@
             this.groupBox4.Location = new System.Drawing.Point(11, 122);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(582, 49);
-            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Источник получения";
             // 
@@ -199,7 +199,7 @@
             this.groupBox5.Location = new System.Drawing.Point(11, 177);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(288, 49);
-            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Тип собственности";
             // 
@@ -224,7 +224,7 @@
             this.groupBox7.Location = new System.Drawing.Point(11, 232);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(288, 104);
-            this.groupBox7.TabIndex = 5;
+            this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Автор";
             // 
@@ -269,7 +269,7 @@
             this.groupBox8.Location = new System.Drawing.Point(305, 287);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(288, 49);
-            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabIndex = 8;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Целевая аудитория";
             // 
@@ -289,7 +289,7 @@
             this.groupBox9.Location = new System.Drawing.Point(11, 452);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(583, 173);
-            this.groupBox9.TabIndex = 6;
+            this.groupBox9.TabIndex = 12;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Описание экспоната";
             // 
@@ -307,7 +307,7 @@
             this.groupBox10.Location = new System.Drawing.Point(11, 397);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(582, 49);
-            this.groupBox10.TabIndex = 7;
+            this.groupBox10.TabIndex = 11;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Место хранения";
             // 
@@ -330,7 +330,7 @@
             this.groupBox11.Location = new System.Drawing.Point(305, 177);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(289, 49);
-            this.groupBox11.TabIndex = 4;
+            this.groupBox11.TabIndex = 5;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Дата получения";
             // 
@@ -347,7 +347,7 @@
             this.groupBox12.Location = new System.Drawing.Point(305, 232);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(288, 49);
-            this.groupBox12.TabIndex = 5;
+            this.groupBox12.TabIndex = 7;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Категория экспоната";
             // 
@@ -367,7 +367,7 @@
             this.groupBox13.Location = new System.Drawing.Point(11, 342);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(288, 49);
-            this.groupBox13.TabIndex = 10;
+            this.groupBox13.TabIndex = 9;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Состояние экспоната";
             // 
@@ -391,7 +391,7 @@
             this.groupBox6.Location = new System.Drawing.Point(305, 342);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(287, 49);
-            this.groupBox6.TabIndex = 9;
+            this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Тип экспоната";
             // 
@@ -409,7 +409,7 @@
             this.acceptButton.Location = new System.Drawing.Point(437, 634);
             this.acceptButton.Name = "acceptButton";
             this.acceptButton.Size = new System.Drawing.Size(75, 23);
-            this.acceptButton.TabIndex = 11;
+            this.acceptButton.TabIndex = 14;
             this.acceptButton.Text = "Сохранить";
             this.acceptButton.UseVisualStyleBackColor = true;
             this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
@@ -420,7 +420,7 @@
             this.cancelButton.Location = new System.Drawing.Point(518, 634);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 12;
+            this.cancelButton.TabIndex = 15;
             this.cancelButton.Text = "Отмена";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
