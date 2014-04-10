@@ -9,6 +9,7 @@ namespace iMuseum
     /// <summary>
     /// Класс,отвечающий  за источник получения экспоната
     /// </summary>
+
     class Sauce
     {
         /// <summary>
@@ -17,8 +18,8 @@ namespace iMuseum
         public Sauce()
         {
             pk_source = 0;
-            addressValue = "";
-            nameValue = "";
+            address = "";
+            name = "";
         }
 
         /*
@@ -33,19 +34,7 @@ namespace iMuseum
             get { return pk_sourceValue; }
             set { pk_sourceValue = value; }
         }
-        
-        public string name
-        {
-            get { return nameValue; }
-            set { nameValue = value; }
-        }
-         
-        public string address
-        {
-            get { return addressValue; }
-            set { addressValue = value; }
-        }
-         */
+        */
 
         /// <summary>
         /// Первичный ключ источника получения
@@ -65,38 +54,31 @@ namespace iMuseum
         public int getPkSource() { return this.pk_source; }
 
         /// <summary>
-        /// Наименование Источника
+        /// Наименование источника получения (переменная)
         /// </summary>
         private string nameValue;
 
         /// <summary>
-        /// Установить наименование источника получения
+        /// Наименование источника получения
         /// </summary>
-        /// <param name="nameVal">Наименование источника получения</param>
-        public void setName(string nameVal) { this.nameValue = nameVal; }
+        public string name
+        {
+            get { return nameValue; }
+            set { nameValue = value; }
+        }
 
         /// <summary>
-        /// Вернуть наименование источника получения
-        /// </summary>
-        /// <returns>Наименование источника получения</returns>
-        public string getName() { return this.nameValue; }
-        
-
-        /// <summary>
-        /// Адрес источника получения
+        /// Адрес источника получения (переменная)
         /// </summary>
         private string addressValue;
 
         /// <summary>
-        /// Установить адрес источника получения
+        /// Адрес источника получения
         /// </summary>
-        /// <param name="addrVal">Адрес источника получения</param>
-        public void setAddress(string addrVal) { this.addressValue = addrVal; }
-
-        /// <summary>
-        /// Вернуть адрес источника получения
-        /// </summary>
-        /// <returns>Адрес источника получения</returns>
-        public string getAddress() { return this.addressValue; }
+        public string address
+        {
+            get { return addressValue; }
+            set { addressValue = value; }
+        }
     }
 }
