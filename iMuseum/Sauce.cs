@@ -60,9 +60,5 @@ namespace iMuseum
             get { return addressValue; }
             set { addressValue = value; }
         }
-
-     
-
-
     }
 }

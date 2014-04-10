@@ -46,7 +46,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 13);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(361, 51);
-            this.groupBox2.TabIndex = 24;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Наименование источника";
             // 
@@ -65,7 +65,7 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 70);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(361, 51);
-            this.groupBox3.TabIndex = 25;
+            this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Адрес";
             // 
@@ -84,7 +84,7 @@
             this.button1.Location = new System.Drawing.Point(298, 135);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 26;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Отмена";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -95,7 +95,7 @@
             this.button2.Location = new System.Drawing.Point(217, 135);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 27;
+            this.button2.TabIndex = 2;
             this.button2.Text = "ОК";
             this.button2.UseVisualStyleBackColor = true;
             // 
