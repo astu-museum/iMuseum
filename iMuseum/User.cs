@@ -170,6 +170,8 @@ namespace iMuseum
                 //Проверка соответствия типа
                 bool flag = false;
 
+               
+
                 if (exhibitions[0].getTypes().Count == 0)
                 {
                     flag = true;
@@ -197,15 +199,15 @@ namespace iMuseum
                 }
 
                 //Проверка категории экспоната
-                if (categoryExponatFilter.Count == 0)
+                if (exhibitions[0].getCategories().Count == 0)
                 {
                     flag = true;
                 }
                 else
                 {
-                    for (int j = 0; (j < categoryExponatFilter.Count) && !flag; j++)
+                    for (int j = 0; (j < exhibitions[0].getCategories().Count) && !flag; j++)
                     {
-                        if (exponats[i].getPkCategoryExp() == categoryExponatFilter[j])
+                        if (exponats[i].getPkCategoryExp() == exhibitions[0].getCategories()[j])
                         {
                             flag = true;
                         }
@@ -215,15 +217,15 @@ namespace iMuseum
                
 
                 //Проверка категории Автора
-                if (categoryAuthorFilter.Count == 0)
+                if (exhibitions[0].getCategories().Count == 0)
                 {
                     flag = true;
                 }
                 else
                 {
-                    for (int j = 0; (j < categoryAuthorFilter.Count) && !flag; j++)
+                    for (int j = 0; (j < exhibitions[0].getCategories().Count) && !flag; j++)
                     {
-                        if (exponats[i].getPkCategoryAut() == categoryAuthorFilter[j])
+                        if (exponats[i].getPkCategoryAut() == exhibitions[0].getCategories()[j])
                         {
                             flag = true;
                         }
@@ -234,15 +236,15 @@ namespace iMuseum
 
 
                 //Проверка категории Аудитории
-                if (categoryAuditoryFilter.Count == 0)
+                if (exhibitions[0].getCategories().Count == 0)
                 {
                     flag = true;
                 }
                 else
                 {
-                    for (int j = 0; (j < categoryAuditoryFilter.Count) && !flag; j++)
+                    for (int j = 0; (j < exhibitions[0].getCategories().Count) && !flag; j++)
                     {
-                        if (exponats[i].getPkCategoryAud() == categoryAuditoryFilter[j])
+                        if (exponats[i].getPkCategoryAud() == exhibitions[0].getCategories()[j])
                         {
                             flag = true;
                         }

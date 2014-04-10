@@ -131,7 +131,9 @@ namespace iMuseum
             }
 
             //ЗАБАБАХАЕМ ГЕНЕРАЦИЮ
+            User.exhibitions.Add(exh);
             User.load_exponats();
+           // MessageBox.Show();
              User.filterExh();
             //GENERATE ЕЩЕ
 

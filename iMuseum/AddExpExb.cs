@@ -28,7 +28,7 @@ namespace iMuseum
 
         
 
-            List<Exponat> ls = User.exponats;
+           // List<Exponat> ls = User.exponats;
             title.DataPropertyName = "name";
             mesto.DataPropertyName = "placeStr";
             damage.DataPropertyName = "damageStr";
@@ -42,7 +42,7 @@ namespace iMuseum
 
 
 
-            dataGridView1.DataSource = ls;//User.exponats;
+            dataGridView1.DataSource = User.exponats;//User.exponats;
 
 
 
