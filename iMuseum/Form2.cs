@@ -12,7 +12,7 @@ namespace iMuseum
     public partial class Form2 : Form
     {
 
-        string fir, sec, tyr;//Куски Инвентарника
+        string fir=" ", sec=" ", tyr=" ";//Куски Инвентарника
 
         DataSet1.CATEGORYDataTable catexp;
         DataSet1.CATEGORYDataTable cataut;
@@ -263,11 +263,6 @@ namespace iMuseum
                 }
             }
 
-            if (textBox4.TextLength > 2)
-            {
-                MessageBox.Show("Копеек не больше 99");
-                return;
-            }
 
             for (int i = 0; i < textBox4.Text.Length; i++)
             {
@@ -276,11 +271,19 @@ namespace iMuseum
 
                 if ((textBox4.Text[i] < '0') || (textBox4.Text[i] > '9'))
                 {
-                    MessageBox.Show("Стоимость(руб) только цифры");
+                    MessageBox.Show("Стоимость(коп) только цифры");
                     return;
 
                 }
             }
+
+            if (textBox4.TextLength > 2)
+            {
+                MessageBox.Show("Копеек не больше 99");
+                return;
+            }
+
+        
 
 
 
@@ -419,8 +422,8 @@ namespace iMuseum
             int p =Convert.ToInt32(eta.CatAutQuery((Convert.ToInt32(cataut.Rows[comboBox2.SelectedIndex]["pk_category"].ToString()))));
 
 
-            int asdasd = comboBox2.SelectedValue.GetHashCode();
-            if (asdasd < 0) asdasd *= -1;
+           long asdasd = comboBox2.SelectedValue.GetHashCode();
+           if (asdasd < 0) asdasd *= -1;
 
             fir = asdasd.ToString() + (p + 1).ToString();
            // MessageBox.Show(fir);
@@ -436,8 +439,8 @@ namespace iMuseum
 
             int p = Convert.ToInt32(eta.CatExpQuery((Convert.ToInt32(catexp.Rows[comboBox3.SelectedIndex]["pk_category"].ToString()))));
 
-            int asdasd = comboBox3.SelectedValue.GetHashCode();
-            if (asdasd < 0) asdasd *= -1;
+            long asdasd = comboBox3.SelectedValue.GetHashCode();
+           if (asdasd < 0) asdasd *= -1;
 
 
             sec = asdasd.ToString() + (p + 1).ToString();
@@ -457,7 +460,7 @@ namespace iMuseum
             int p = Convert.ToInt32(eta.CatAudQuery((Convert.ToInt32(cataud.Rows[comboBox4.SelectedIndex]["pk_category"].ToString()))));
 
 
-            int asdasd = comboBox4.SelectedValue.GetHashCode();
+            long asdasd = comboBox4.SelectedValue.GetHashCode();
           if (asdasd < 0) asdasd *= -1;
 
             tyr = asdasd.ToString() + (p + 1).ToString();

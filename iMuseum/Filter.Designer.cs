@@ -60,12 +60,6 @@
             this.objectTypeCB.DisplayMemberSingleItem = "";
             this.objectTypeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.objectTypeCB.FormattingEnabled = true;
-            this.objectTypeCB.Items.AddRange(new object[] {
-            "Чучело",
-            "Репродукция",
-            "Гербарий",
-            "Предмет",
-            "Картина"});
             this.objectTypeCB.Location = new System.Drawing.Point(137, 12);
             this.objectTypeCB.Name = "objectTypeCB";
             this.objectTypeCB.Size = new System.Drawing.Size(272, 21);
@@ -87,12 +81,6 @@
             this.checkBoxComboBox1.DisplayMemberSingleItem = "";
             this.checkBoxComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox1.FormattingEnabled = true;
-            this.checkBoxComboBox1.Items.AddRange(new object[] {
-            "Птицы",
-            "Насекомые",
-            "Травы",
-            "Животные",
-            "Кустарники"});
             this.checkBoxComboBox1.Location = new System.Drawing.Point(137, 39);
             this.checkBoxComboBox1.Name = "checkBoxComboBox1";
             this.checkBoxComboBox1.Size = new System.Drawing.Size(272, 21);
@@ -114,10 +102,6 @@
             this.checkBoxComboBox2.DisplayMemberSingleItem = "";
             this.checkBoxComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox2.FormattingEnabled = true;
-            this.checkBoxComboBox2.Items.AddRange(new object[] {
-            "Художник",
-            "Народное творчество",
-            "Детское творчество"});
             this.checkBoxComboBox2.Location = new System.Drawing.Point(137, 66);
             this.checkBoxComboBox2.Name = "checkBoxComboBox2";
             this.checkBoxComboBox2.Size = new System.Drawing.Size(272, 21);
@@ -139,13 +123,6 @@
             this.checkBoxComboBox3.DisplayMemberSingleItem = "";
             this.checkBoxComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox3.FormattingEnabled = true;
-            this.checkBoxComboBox3.Items.AddRange(new object[] {
-            "0+",
-            "3+",
-            "6+",
-            "12+",
-            "16+",
-            "18+"});
             this.checkBoxComboBox3.Location = new System.Drawing.Point(137, 93);
             this.checkBoxComboBox3.Name = "checkBoxComboBox3";
             this.checkBoxComboBox3.Size = new System.Drawing.Size(272, 21);
@@ -159,6 +136,7 @@
             this.button1.TabIndex = 33;
             this.button1.Text = "Сброс";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -194,6 +172,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Фильтр";
+            this.Load += new System.EventHandler(this.Filter_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
