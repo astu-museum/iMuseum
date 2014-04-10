@@ -191,7 +191,6 @@ namespace iMuseum
         //СПЕЦИАЛЬНАЯ ПРОВЕРКА ДЛЯ ВЫСТАВОК
         //FILTER
 
-        //ЭКСПОНАТ НЕ ПОЗЖЕ ВЫСТАВКИ ПОЯВЛЯЕТСЯ
         //ЭКСПОНАТ НЕ ПРИНДЛЕЖИТ ВЫСТАВКЕ ПРОВЕРКА
         
         public static void filterExh()
@@ -302,10 +301,18 @@ namespace iMuseum
                     continue;
                 }
 
+                DataSet1TableAdapters.CATEGORYEXPONATTableAdapter eta = new DataSet1TableAdapters.CATEGORYEXPONATTableAdapter();
+                if (eta.WTF(exponats[i].getPkExponat(), exhibitions[0].datestart, exhibitions[0].datestart, exhibitions[0].dateend, exhibitions[0].dateend).ToString() != "0")
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                    
+                }
 
-                //Exhibition exc
+                
 
-
+              
 
 
             }
