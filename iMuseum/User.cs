@@ -8,6 +8,9 @@ namespace iMuseum
 {
     class User
     {
+
+    
+
         //Массивы для привязок к Датагридам
         public static List<Exponat> exponats;
         public static List<Category> categories;
@@ -32,6 +35,31 @@ namespace iMuseum
 
         //Создадим адаптер,шоб шифроваться
         public static DataSet1.SOURCEDataTable dtrip;
+
+
+        //Массив отметок,МУХАХАХА
+        public static List<int> Checks;
+
+
+        //Генерашки
+        public static void generate(int count)
+        {
+
+            Checks = new List<int>();
+
+            for (int j = 0; j < 3; j++)
+            {
+                for (int i = 0; (i < exponats.Count)&&(count>0); i++)
+                {
+                    if(exponats[i].getDamage()==j){
+                        Checks.Add(i);
+                        count--;
+                    }
+
+                }
+            }
+
+        }
 
         //FILTER
         public static void filter()

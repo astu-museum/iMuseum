@@ -44,7 +44,10 @@ namespace iMuseum
 
             dataGridView1.DataSource = User.exponats;//User.exponats;
 
-
+            for (int i = 0; i < User.Checks.Count; i++)
+            {
+                dataGridView1.Rows[User.Checks[i]].Cells[0].Value = true;
+            }
 
 
         }

@@ -133,15 +133,16 @@ namespace iMuseum
             //ЗАБАБАХАЕМ ГЕНЕРАЦИЮ
             User.exhibitions.Add(exh);
             User.load_exponats();
-           // MessageBox.Show();
-             User.filterExh();
-            //GENERATE ЕЩЕ
+            User.filterExh();
+            User.generate(Convert.ToInt32(numericUpDown1.Value));
 
             //ЗАБАБАХ КОНЧИЛСЯ
 
             AddExpExb aee = new AddExpExb();
 
            aee.ShowDialog();
+
+            //СДЕЛАТЬ ЗАКРЫТИЕ ЭТОГО ОКНА,ЕСЛИ ТАМ ПРИНЯЛИ ВЫСТАВКУ
 
             //А НЕЧЕГО ЭТОТ МУСОР ОСТАВЛЯТЬ
            User.exhibitions.Clear();
