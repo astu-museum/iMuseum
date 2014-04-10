@@ -190,6 +190,10 @@ namespace iMuseum
 
         //СПЕЦИАЛЬНАЯ ПРОВЕРКА ДЛЯ ВЫСТАВОК
         //FILTER
+
+        //ЭКСПОНАТ НЕ ПОЗЖЕ ВЫСТАВКИ ПОЯВЛЯЕТСЯ
+        //ЭКСПОНАТ НЕ ПРИНДЛЕЖИТ ВЫСТАВКЕ ПРОВЕРКА
+        
         public static void filterExh()
         {
             for (int i = 0; i < exponats.Count; i++)
@@ -290,6 +294,16 @@ namespace iMuseum
                     flag = false;
                 }
 
+
+                if (exponats[i].date > exhibitions[0].dateend)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+
+                //Exhibition exc
 
 
 
