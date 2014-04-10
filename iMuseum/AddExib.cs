@@ -48,6 +48,17 @@ namespace iMuseum
             }
 
 
+            //ПРоверка дублирования Инвентарника
+
+            DataSet1TableAdapters.EXHIBITIONTableAdapter eta = new DataSet1TableAdapters.EXHIBITIONTableAdapter();
+            if (eta.DoubleExhName(textBox1.Text).ToString() != "0")
+            {
+                MessageBox.Show("Уже есть такая выставка");
+                return;
+            }
+
+
+
             if (dateTimePicker2.Value < dateTimePicker1.Value)
             {
                 MessageBox.Show("Выставка не может кончаться раньше чем началась");
@@ -124,6 +135,9 @@ namespace iMuseum
             AddExpExb aee = new AddExpExb();
 
            aee.ShowDialog();
+
+            //А НЕЧЕГО ЭТОТ МУСОР ОСТАВЛЯТЬ
+           User.exhibitions.Clear();
         }
 
         void LoadSome()
