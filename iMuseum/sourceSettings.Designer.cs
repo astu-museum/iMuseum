@@ -109,6 +109,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(408, 90);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(50, 20);
@@ -125,6 +126,7 @@
             // 
             // textBox6
             // 
+            this.textBox6.Enabled = false;
             this.textBox6.Location = new System.Drawing.Point(333, 90);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(50, 20);
@@ -141,6 +143,7 @@
             // 
             // textBox5
             // 
+            this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(232, 90);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(50, 20);
@@ -166,6 +169,7 @@
             // 
             // textBox8
             // 
+            this.textBox8.Enabled = false;
             this.textBox8.Location = new System.Drawing.Point(157, 90);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(50, 20);
@@ -174,6 +178,7 @@
             // comboBox3
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Enabled = false;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(141, 67);
             this.comboBox3.Name = "comboBox3";
@@ -183,6 +188,7 @@
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Enabled = false;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(141, 44);
             this.comboBox2.Name = "comboBox2";
@@ -191,6 +197,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(141, 21);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(317, 20);
@@ -205,6 +212,7 @@
             this.checkBox4.TabIndex = 6;
             this.checkBox4.Text = "Стоимость";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.lockPrice);
             // 
             // checkBox3
             // 
@@ -215,6 +223,7 @@
             this.checkBox3.TabIndex = 4;
             this.checkBox3.Text = "Состояние";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.lockDamage);
             // 
             // checkBox2
             // 
@@ -225,6 +234,7 @@
             this.checkBox2.TabIndex = 2;
             this.checkBox2.Text = "Место хранения";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.lock_place);
             // 
             // checkBox1
             // 
@@ -235,6 +245,7 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Наименование";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.lockTitle);
             // 
             // button3
             // 
