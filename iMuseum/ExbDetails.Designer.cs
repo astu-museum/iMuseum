@@ -35,6 +35,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeexp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.autcat = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +60,6 @@
             this.bd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.be = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(551, 428);
+            this.button1.Location = new System.Drawing.Point(551, 413);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -85,18 +85,20 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(391, 9);
+            this.label2.Location = new System.Drawing.Point(488, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 16);
+            this.label2.Size = new System.Drawing.Size(142, 16);
             this.label2.TabIndex = 12;
-            this.label2.Text = "12.01.14 - 15.02.14";
+            this.label2.Text = "12.01.2014 - 15.02.2014";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 36);
+            this.label3.Location = new System.Drawing.Point(8, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(356, 13);
             this.label3.TabIndex = 13;
@@ -104,7 +106,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 428);
+            this.button2.Location = new System.Drawing.Point(12, 413);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 14;
@@ -114,7 +116,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(93, 428);
+            this.button3.Location = new System.Drawing.Point(93, 413);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 15;
@@ -152,13 +154,17 @@
             this.bd,
             this.be,
             this.bf});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 53);
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 53);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(605, 351);
+            this.dataGridView1.Size = new System.Drawing.Size(640, 351);
             this.dataGridView1.TabIndex = 16;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // title
             // 
@@ -175,8 +181,10 @@
             // autcat
             // 
             this.autcat.HeaderText = "Категория автора";
+            this.autcat.MinimumWidth = 120;
             this.autcat.Name = "autcat";
             this.autcat.ReadOnly = true;
+            this.autcat.Width = 120;
             // 
             // audcat
             // 
@@ -322,16 +330,12 @@
             this.bf.ReadOnly = true;
             this.bf.Visible = false;
             // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
             // ExbDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(638, 460);
+            this.ClientSize = new System.Drawing.Size(638, 445);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -363,6 +367,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeexp;
         private System.Windows.Forms.DataGridViewTextBoxColumn autcat;
@@ -387,6 +392,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bd;
         private System.Windows.Forms.DataGridViewTextBoxColumn be;
         private System.Windows.Forms.DataGridViewTextBoxColumn bf;
-        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
