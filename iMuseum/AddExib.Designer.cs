@@ -31,15 +31,12 @@
             PresentationControls.CheckBoxProperties checkBoxProperties1 = new PresentationControls.CheckBoxProperties();
             PresentationControls.CheckBoxProperties checkBoxProperties2 = new PresentationControls.CheckBoxProperties();
             PresentationControls.CheckBoxProperties checkBoxProperties3 = new PresentationControls.CheckBoxProperties();
-            PresentationControls.CheckBoxProperties checkBoxProperties4 = new PresentationControls.CheckBoxProperties();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.objectTypeCB = new PresentationControls.CheckBoxComboBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.checkBoxComboBox1 = new PresentationControls.CheckBoxComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -53,7 +50,6 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -112,28 +108,6 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(124, 20);
             this.dateTimePicker2.TabIndex = 1;
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.objectTypeCB);
-            this.groupBox6.Location = new System.Drawing.Point(12, 124);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(271, 49);
-            this.groupBox6.TabIndex = 4;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Тип экспоната";
-            // 
-            // objectTypeCB
-            // 
-            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.objectTypeCB.CheckBoxProperties = checkBoxProperties1;
-            this.objectTypeCB.DisplayMemberSingleItem = "";
-            this.objectTypeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.objectTypeCB.FormattingEnabled = true;
-            this.objectTypeCB.Location = new System.Drawing.Point(6, 19);
-            this.objectTypeCB.Name = "objectTypeCB";
-            this.objectTypeCB.Size = new System.Drawing.Size(259, 21);
-            this.objectTypeCB.TabIndex = 26;
-            // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.checkBoxComboBox1);
@@ -146,8 +120,8 @@
             // 
             // checkBoxComboBox1
             // 
-            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties2;
+            checkBoxProperties1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox1.CheckBoxProperties = checkBoxProperties1;
             this.checkBoxComboBox1.DisplayMemberSingleItem = "";
             this.checkBoxComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox1.FormattingEnabled = true;
@@ -168,8 +142,8 @@
             // 
             // checkBoxComboBox3
             // 
-            checkBoxProperties3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox3.CheckBoxProperties = checkBoxProperties3;
+            checkBoxProperties2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox3.CheckBoxProperties = checkBoxProperties2;
             this.checkBoxComboBox3.DisplayMemberSingleItem = "";
             this.checkBoxComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox3.FormattingEnabled = true;
@@ -190,8 +164,8 @@
             // 
             // checkBoxComboBox2
             // 
-            checkBoxProperties4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxComboBox2.CheckBoxProperties = checkBoxProperties4;
+            checkBoxProperties3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxComboBox2.CheckBoxProperties = checkBoxProperties3;
             this.checkBoxComboBox2.DisplayMemberSingleItem = "";
             this.checkBoxComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.checkBoxComboBox2.FormattingEnabled = true;
@@ -252,7 +226,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox12);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox3);
@@ -271,7 +244,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -289,10 +261,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.GroupBox groupBox8;
-        private PresentationControls.CheckBoxComboBox objectTypeCB;
         private PresentationControls.CheckBoxComboBox checkBoxComboBox1;
         private PresentationControls.CheckBoxComboBox checkBoxComboBox3;
         private System.Windows.Forms.GroupBox groupBox4;

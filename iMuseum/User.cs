@@ -202,7 +202,7 @@ namespace iMuseum
                 bool flag = false;
 
                
-
+                /*
                 if (exhibitions[0].getTypes().Count == 0)
                 {
                     flag = true;
@@ -228,14 +228,15 @@ namespace iMuseum
                 {
                     flag = false;
                 }
+                 * */
 
                 //Проверка категории экспоната
-                if (exhibitions[0].getCategories().Count == 0)
-                {
-                    flag = true;
-                }
-                else
-                {
+             //  if (exhibitions[0].getCategories().Count == 0)
+           //     {
+            //        flag = true;
+            //    }
+            //    else
+           //     {
                     for (int j = 0; (j < exhibitions[0].getCategories().Count) && !flag; j++)
                     {
                         if (exponats[i].getPkCategoryExp() == exhibitions[0].getCategories()[j])
@@ -243,17 +244,17 @@ namespace iMuseum
                             flag = true;
                         }
                     }
-                }
+             //   }
 
                
 
                 //Проверка категории Автора
-                if (exhibitions[0].getCategories().Count == 0)
-                {
-                    flag = true;
-                }
-                else
-                {
+           //     if (exhibitions[0].getCategories().Count == 0)
+          //      {
+          //          flag = true;
+          //      }
+            //    else
+          //      {
                     for (int j = 0; (j < exhibitions[0].getCategories().Count) && !flag; j++)
                     {
                         if (exponats[i].getPkCategoryAut() == exhibitions[0].getCategories()[j])
@@ -261,18 +262,18 @@ namespace iMuseum
                             flag = true;
                         }
                     }
-                }
+           //     }
 
             
 
 
                 //Проверка категории Аудитории
-                if (exhibitions[0].getCategories().Count == 0)
-                {
-                    flag = true;
-                }
-                else
-                {
+         //       if (exhibitions[0].getCategories().Count == 0)
+         //       {
+          //          flag = true;
+          //      }
+        //        else
+        //        {
                     for (int j = 0; (j < exhibitions[0].getCategories().Count) && !flag; j++)
                     {
                         if (exponats[i].getPkCategoryAud() == exhibitions[0].getCategories()[j])
@@ -280,7 +281,7 @@ namespace iMuseum
                             flag = true;
                         }
                     }
-                }
+            //    }
 
                 if (!flag)
                 {
@@ -411,7 +412,7 @@ namespace iMuseum
                 currentCustomer.damageStr = User.damageString[currentCustomer.getDamage()];
 
                 //currentCustomer.sourceValue ="";
-                //ОПАСНОЕ ВПЛЕТЕНИЕ ИСТОЧНИКА
+                //ВПЛЕТЕНИЕ ИСТОЧНИКА
                 DataSet1TableAdapters.SOURCETableAdapter ta = new DataSet1TableAdapters.SOURCETableAdapter();
 
 

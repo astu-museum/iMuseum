@@ -116,7 +116,13 @@ namespace iMuseum
 
             }
 
+            if (exh.getCategories().Count == 0)
+            {
+                MessageBox.Show("ВЫберите хотя бы одну категорию");
+                return;
+            }
 
+            /*
             for (int i = 1; i < objectTypeCB.Items.Count; i++)
             {
                 if (objectTypeCB.CheckBoxItems[i].Checked)
@@ -129,6 +135,7 @@ namespace iMuseum
 
 
             }
+             * */
 
             //ЗАБАБАХАЕМ ГЕНЕРАЦИЮ
             User.exhibitions.Add(exh);
@@ -140,7 +147,12 @@ namespace iMuseum
 
             AddExpExb aee = new AddExpExb();
 
-           aee.ShowDialog();
+          
+
+           if(aee.ShowDialog()==DialogResult.Yes){
+                User.exhibitions.Clear();
+               this.Close();
+           }
 
             //СДЕЛАТЬ ЗАКРЫТИЕ ЭТОГО ОКНА,ЕСЛИ ТАМ ПРИНЯЛИ ВЫСТАВКУ
 
@@ -247,6 +259,7 @@ namespace iMuseum
 
             //TYPE
 
+            /*
             DataSet1TableAdapters.TYPEEXPONATTableAdapter tta = new DataSet1TableAdapters.TYPEEXPONATTableAdapter();
 
 
@@ -267,11 +280,11 @@ namespace iMuseum
                     {
                         objectTypeCB.CheckBoxItems[objectTypeCB.CheckBoxItems.Count - 1].Checked = true;
                     }
-                }*/
+                }
 
                 ty.Add(p);
             }
-
+        */
        
 
 

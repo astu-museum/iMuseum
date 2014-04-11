@@ -57,5 +57,23 @@ namespace iMuseum
         {
             Load_some();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count;i++ )
+            {
+
+                if (dataGridView1.Rows[i].Cells[0].Value != null && (bool)dataGridView1.Rows[i].Cells[0].Value)
+                {
+                  //  MessageBox.Show(i.ToString());
+
+                    User.exhibitions[0].addExponat(User.exponats[i].getPkExponat());
+                  //  MessageBox.Show(User.exponats[i].name);
+                }
+            }
+
+            User.exhibitions[0].save();
+            this.Close();
+        }
     }
 }

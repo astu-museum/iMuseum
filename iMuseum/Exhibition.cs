@@ -15,6 +15,7 @@ namespace iMuseum
         /// </summary>
         public Exhibition()
         {
+            pk_exhibition = 0;
             exponats = new List<int>();
             categories = new List<int>();
              cnames = new List<string>();
@@ -186,6 +187,60 @@ namespace iMuseum
         {
             get { return dateendValue; }
             set { dateendValue = value; }
+        }
+
+
+        //СОХРАНЕНИЕ В БАЗУ
+        public void save()
+        {
+         // INSERT INTO "KOMRAZR"."EXHIBITION" ("NAME_", "DATESTART", "DATEEND") VALUES ( ?, ?, ?)
+
+
+     
+
+
+           //Если новенький,то занести
+            if (pk_exhibition == 0)
+            {
+
+                DataSet1TableAdapters.EXHIBITIONTableAdapter regionTableAdapter =
+                new DataSet1TableAdapters.EXHIBITIONTableAdapter();
+
+
+                regionTableAdapter.InsertExp(name,datestart,dateend);
+
+
+                //Получим ПК,чтоб цеплять категории
+                DataSet1.EXHIBITIONDataTable dt = regionTableAdapter.GetPkExhibition(name);
+
+                foreach (DataSet1.EXHIBITIONRow sRow in dt)
+                {
+                   pk_exhibition = Convert.ToInt32(sRow.PK_EXHIBITION);
+                }
+
+                DataSet1TableAdapters.CATEGORYEXHIBITIONTableAdapter cta =
+               new DataSet1TableAdapters.CATEGORYEXHIBITIONTableAdapter();
+
+
+                //ПОЦЕПЛЯЕМ КАТЕГОРИЙ,ИБО НОВАЯ ВЫСТАВКА
+                for(int i = 0;i < categories.Count;i++){
+                    //INSERT INTO "KOMRAZR"."CATEGORYEXHIBITION" ("PK_CATEGORY", "PK_EXHIBITION",") VALUES (?, ?)
+                    cta.InsertExp(categories[i],pk_exhibition);
+                }
+
+
+            }
+
+
+            DataSet1TableAdapters.CATEGORYEXPONATTableAdapter ctex =
+               new DataSet1TableAdapters.CATEGORYEXPONATTableAdapter();
+
+            for (int i = 0; i < exponats.Count; i++)
+            {
+                //INSERT INTO "KOMRAZR"."CATEGORYEXPONAT" ("PK_EXHIBITION", "PK_EXPONAT") VALUES (?, ?)
+                ctex.InsertExp(pk_exhibition,exponats[i]);
+            }
+
         }
  
 
