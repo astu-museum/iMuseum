@@ -24,12 +24,21 @@ namespace iMuseum
         private void button2_Click(object sender, EventArgs e)
         {
             Int32 cnt = 0, cnt1 = 0;
+
+            if (textBox3.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Заполните все поля");
+                return;
+            }
+
+            //Проверка поля Наименование источника получения
             for (int i = 0; i < textBox2.Text.Length; i++)
             {
 
-                if (((textBox2.Text[i] < 'а') || (textBox2.Text[i] > 'я')) && ((textBox2.Text[i] < 'А') || (textBox2.Text[i] > 'Я')) && (textBox2.Text[i] != ' ') && (textBox2.Text[i] != '-'))
+                if (((textBox2.Text[i] < 'а') || (textBox2.Text[i] > 'я')) && ((textBox2.Text[i] < 'А') || (textBox2.Text[i] > 'Я')) && ((textBox2.Text[i] < '0') || (textBox2.Text[i] > '9')) &&
+                    (textBox2.Text[i] != ' ') && (textBox2.Text[i] != '-') && (textBox2.Text[i] != '.') && (textBox2.Text[i] != ','))
                 {
-                    MessageBox.Show("Наименование источника может содержать только русские буквы и пробелы");
+                    MessageBox.Show("Наименование источника может содержать только русские буквы, цифры и символы: пробел - . ,");
                     return;
                 }
 
@@ -38,13 +47,64 @@ namespace iMuseum
                     cnt++;
                 }
 
+                if (textBox2.Text[i] == '.')
+                {
+                    cnt++;
+                }
+
+                if (textBox2.Text[i] == ',')
+                {
+                    cnt++;
+                }
+
                 if (textBox2.Text[i] == '-')
                 {
                     cnt++;
                 }
-                if (cnt1 + cnt >= textBox2.Text.Length)
+                if (cnt1 + cnt >= textBox2.Text.Length || textBox2.Text == "")
                 {
                     MessageBox.Show("Введите наименование источника получения");
+                    return;
+                }
+
+            }
+
+            cnt = 0;
+            cnt1 = 0;
+
+            //Проверка поля Адрес
+            for (int i = 0; i < textBox3.Text.Length; i++)
+            {
+
+                if (((textBox3.Text[i] < 'а') || (textBox3.Text[i] > 'я')) && ((textBox3.Text[i] < 'А') || (textBox3.Text[i] > 'Я')) && ((textBox3.Text[i] < '0') || (textBox3.Text[i] > '9')) &&
+                    (textBox3.Text[i] != ' ') && (textBox3.Text[i] != '-') && (textBox3.Text[i] != '.') && (textBox3.Text[i] != ','))
+                {
+                    MessageBox.Show("Адрес может содержать только русские буквы, цифры и символы: пробел - . ,");
+                    return;
+                }
+
+                if (textBox3.Text[i] == ' ')
+                {
+                    cnt++;
+                }
+
+                if (textBox3.Text[i] == '.')
+                {
+                    cnt++;
+                }
+
+                if (textBox3.Text[i] == ',')
+                {
+                    cnt++;
+                }
+
+                if (textBox3.Text[i] == '-')
+                {
+                    cnt++;
+                }
+                if (cnt1 + cnt >= textBox3.Text.Length || textBox3.Text == "")
+                {
+                    MessageBox.Show("Введите адрес");
                     return;
                 }
 
