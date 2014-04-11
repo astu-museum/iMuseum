@@ -39,8 +39,20 @@ namespace iMuseum
 
             label1.Text = User.exhibitions[0].name;
             this.Text = label1.Text;
-            label2.Text = User.exhibitions[0].datestart.Day + "." + User.exhibitions[0].datestart.Month + "." + User.exhibitions[0].datestart.Year +
-                        " - " + User.exhibitions[0].dateend.Day + "." + User.exhibitions[0].dateend.Month + "." + User.exhibitions[0].dateend.Year;
+
+            string startday, endday, startmonth, endmonth;
+
+            //Вычисляем номер дня месяца
+            if (User.exhibitions[0].datestart.Day < 10)
+                startday = "0" + User.exhibitions[0].datestart.Day;
+            else startday = User.exhibitions[0].datestart.Day.ToString();
+
+            if (User.exhibitions[0].dateend.Day < 10)
+                endday = "0" + User.exhibitions[0].dateend.Day;
+            else endday = User.exhibitions[0].dateend.Day.ToString();
+
+            label2.Text = startday + "." + User.exhibitions[0].datestart.Month + "." + User.exhibitions[0].datestart.Year +
+                        " - " + endday + "." + User.exhibitions[0].dateend.Month + "." + User.exhibitions[0].dateend.Year;
             label3.Text = "Категории выставки:";
 
             for (int i = 0; i < User.exhibitions[0].getCnames().Count; i++)
