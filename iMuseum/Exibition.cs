@@ -22,7 +22,13 @@ namespace iMuseum
 
         private void showDetails(object sender, EventArgs e)
         {
-            ExbDetails exbdt = new ExbDetails();
+            //Передадим первичник нужной выставки
+            int t = Convert.ToInt32(texh.Rows[listBox1.SelectedIndex]["pk_exhibition"].ToString());
+            ExbDetails exbdt = new ExbDetails(t);
+
+           
+           // MessageBox.Show(t.ToString());
+
             exbdt.ShowDialog();
             Load_Exh();
         }

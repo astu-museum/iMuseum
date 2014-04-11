@@ -320,6 +320,53 @@ namespace iMuseum
 
         }
 
+        //ВЫГРЗУКА ВЫСТАВКИ в ex0 ДЛЯ просмотра инфы о выставке 
+        public static void load_exhibitionsp(int pk)
+        {
+            DataSet1TableAdapters.EXHIBITIONTableAdapter ta = new DataSet1TableAdapters.EXHIBITIONTableAdapter();
+
+
+            DataSet1.EXHIBITIONDataTable dt = ta.GetDataByPk(pk);
+
+           exhibitions = new List<Exhibition>();
+
+            foreach (DataSet1.EXHIBITIONRow customerRow in dt)
+            {
+                Exhibition currentCustomer = new Exhibition();
+
+                //Ключи и неотражаемая в гриде ересь
+                currentCustomer.setPkExhibition(Convert.ToInt32(customerRow.PK_EXHIBITION));
+
+
+
+                //Просто отображаемые части
+                currentCustomer.datestart = customerRow.DATESTART;
+                currentCustomer.dateend = customerRow.DATEEND;
+                currentCustomer.name = customerRow.NAME_;
+
+
+                //СЮДА ВГРУЗИТЬ КАТЕГОРИИ
+
+                /*
+                    //ОПАСНОЕ ВПЛЕТЕНИЕ ИСТОЧНИКА
+                DataSet1TableAdapters.SOURCETableAdapter ta = new DataSet1TableAdapters.SOURCETableAdapter();
+
+
+                DataSet1.SOURCEDataTable dt = ta.HitlerSource(currentCustomer.getPkSource());
+
+                foreach (DataSet1.SOURCERow sRow in dt)
+                {
+                    currentCustomer.sourceValue = sRow.NAME_;
+                }
+
+
+   
+
+                */
+                User.exhibitions.Add(currentCustomer);
+            }
+        }
+
 
         //Загрузка всех выставок
         public static void load_exhibitions()

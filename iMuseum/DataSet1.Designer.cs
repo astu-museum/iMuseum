@@ -5141,7 +5141,7 @@ namespace iMuseum.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[5];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT \"PK_EXHIBITION\", \"NAME_\", \"DATESTART\", \"DATEEND\" FROM \"KOMRAZR\".\"EXHIBITIO" +
@@ -5160,12 +5160,18 @@ namespace iMuseum.DataSet1TableAdapters {
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NAME_", global::System.Data.OleDb.OleDbType.WChar, 400, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME_", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO \"KOMRAZR\".\"EXHIBITION\" (\"NAME_\", \"DATESTART\", \"DATEEND\") VALUES ( ?, " +
-                "?, ?)";
+            this._commandCollection[3].CommandText = "SELECT \"PK_EXHIBITION\", \"NAME_\", \"DATESTART\", \"DATEEND\" FROM \"KOMRAZR\".\"EXHIBITIO" +
+                "N\" where pk_exhibition=(?)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NAME_", global::System.Data.OleDb.OleDbType.WChar, 400, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME_", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DATESTART", global::System.Data.OleDb.OleDbType.DBTimeStamp, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DATESTART", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DATEEND", global::System.Data.OleDb.OleDbType.DBTimeStamp, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DATEEND", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_EXHIBITION", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_EXHIBITION", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "INSERT INTO \"KOMRAZR\".\"EXHIBITION\" (\"NAME_\", \"DATESTART\", \"DATEEND\") VALUES ( ?, " +
+                "?, ?)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NAME_", global::System.Data.OleDb.OleDbType.WChar, 400, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME_", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DATESTART", global::System.Data.OleDb.OleDbType.DBTimeStamp, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DATESTART", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DATEEND", global::System.Data.OleDb.OleDbType.DBTimeStamp, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DATEEND", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5223,6 +5229,32 @@ namespace iMuseum.DataSet1TableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(NAME_));
             }
+            DataSet1.EXHIBITIONDataTable dataTable = new DataSet1.EXHIBITIONDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(DataSet1.EXHIBITIONDataTable dataTable, decimal PK_EXHIBITION) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PK_EXHIBITION));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.EXHIBITIONDataTable GetDataByPk(decimal PK_EXHIBITION) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PK_EXHIBITION));
             DataSet1.EXHIBITIONDataTable dataTable = new DataSet1.EXHIBITIONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5326,7 +5358,7 @@ namespace iMuseum.DataSet1TableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertExp(string NAME_, System.DateTime DATESTART, System.DateTime DATEEND) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[4];
             if ((NAME_ == null)) {
                 throw new global::System.ArgumentNullException("NAME_");
             }
