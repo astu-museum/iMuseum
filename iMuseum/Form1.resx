@@ -144,31 +144,84 @@
   <metadata name="price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="number.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="title.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="source.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="typesob.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="mesto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="damage.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAA
+        AA0AAAAUAAAAFAAAAA0AAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAUAAAAQAAAAFgAAABYAAAAWAAAAFgAAABYAAAAWAAAAFgAAABYAAAAWAAAAFgAA
+        ABYAAAAdAAAAMAAAAD8AAAA/AAAAMAAAAB0AAAAWAAAAFgAAABYAAAAWAAAAFgAAABYAAAAWAAAAFgAA
+        ABYAAAAWAAAAFgAAABAAAAAFAAAAEAAAADEAAABCAAAAQwAAAEMAAABDAAAAQwAAAEMAAABDAAAAQwAA
+        AEMAAABDAAAAQwAAAEeibCvBpmQV/6ZkFf+ibCvBAAAARwAAAEMAAABDAAAAQwAAAEMAAABDAAAAQwAA
+        AEMAAABDAAAAQwAAAEMAAABCAAAAMQAAABAAAAAWuX0y8qZkFf+mZBX/pmQV/6ZkFf+mZBX/pmQV/6Zk
+        Ff+mZBX/pmQV/6ZkFf+mZBX/pmQV/6ZkFf+Gmab/lZOJ/6ZkFf+mZBX/pmQV/6ZkFf+mZBX/pmQV/6Zk
+        Ff+mZBX/pmQV/6ZkFf+mZBX/pmQV/6ZkFf+5fTLyAAAAFgAAABa/fS7/lJiY/5eWkf+XlpD/l5aQ/5eW
+        kP+XlpD/l5aQ/5eWkP+XlpD/l5aQ/5eWkf+XlpD/mJaP/4ihuf+Iobn/mJaP/5eWkP+XlpH/l5aQ/5eW
+        kP+XlpD/l5aQ/5eWkP+XlpD/l5aQ/5eWkP+XlpH/lJiY/759Lv8AAAAWAAAAFr97Kv+Np8D/jqGz/46g
+        sP+OoLD/j6Cw/4+gsf+QobH/kaKy/5Kjs/+TpLT/lKW1/5Sltf+UpbT/lKSz/5Sks/+TpLT/k6W1/5Kk
+        tf+Ro7P/jqGy/4ufsf+KnbD/iZ2v/4mdr/+Kna//i56v/4ygsv+MpsD/vnsq/wAAABYAAAAWvnoo/53B
+        4P/W8v//zer+/8fm+//C4/f/vN/1/7jc8v+r0Oj/mbzU/4urw/+Eo7v/g6O6/4SnwP+Tvdb/j73Y/4qp
+        wf+Hpbr/iqa7/5+4y/+6ztv/5O71/////////////v////b////u/f//6v7//6DD4P+9eij/AAAAFgAA
+        ABa9eSf/nb/e/9Tv///J5fj/w+H1/77e8v+52vD/tdft/7DV7P+s0ur/p8/o/6LM5v+dyeT/lcPf/7HP
+        4f+Rv9v/pczj/7TV6f/E3u3/0ufy/+Dt9v/t9vr/+/7///7////2/P//7/n//+f2///m+f//nsHe/715
+        J/8AAAAWAAAAFr15J/+dwN7/1O///8fj9//C4PT/vd3x/7jZ7/+01uz/r9Pq/6rQ6P+lzeb/n8nj/5nE
+        3/+Zu9D/1ufz/4682f+iyeD/stLm/8Da6v/O4+7/3Orz/+vz+P/6/P3//f////T6/v/t9/7/5fX+/+b4
+        //+fwt7/vHgn/wAAABYAAAAWvXkn/6DB3v/W7///x+P3/8Lg9P+93fH/uNnw/7TX7f+v1Ov/qdDo/6LK
+        4v+cvtb/n7zP/9fn8v/r+v//i7rY/6HI3/+x0eX/v9np/83i7v/c6vP/6vP4//r8/f/9////9Pr+/+33
+        /v/l9f7/5/j//6HD3/+8eCf/AAAAFgAAABa9eCf/ocLg/9fw///H4/b/wuD0/73e8v+y0ub/qsvg/6HB
+        1v+cus7/psDR/9bi6//0+v7/7vr//+j4//+Lutf/ocjf/7HR5f+/2en/zeLu/9zq8//q8/j/+vz9//3/
+        ///0+v7/7ff+/+X0/f/o+f//osPf/7x4J/8AAAAWAAAAFrx4J/+ixOH/2vH//8fj9v/C4PT/vd7z/63G
+        2P+40OD/ytzp/+72+/////////////P7///r9///5/f//4q61/+hyN//sdHl/7/Z6f/N4u7/3Orz/+rz
+        +P/6/P3//f////T6/v/t9/7/5fT9/+n5//+jxOD/vHgn/wAAABYAAAAWvHgn/6PF4f/b8f//x+P2/8Lg
+        9P+93vP/rcHR/+X3///s+P//9fz///7////8/v//8fn+/+r3///n9///irrX/6HI3/+x0eX/v9np/83i
+        7v/c6vP/6vP4//r8/f/9////9Pr+/+33/v/l9P3/6fr//6TF4f+8eCf/AAAAFgAAABa8eCf/pMbi/93y
+        ///H4/b/wuD0/73e8/+swND/4/X//+n2///z+v7//f////v9///x+f7/6vf//+f3//+Kutf/ocjf/7HR
+        5f+/2en/zeLu/9zq8//q8/j/+vz9//3////0+v7/7ff+/+X0/f/q+v//p8bh/7t4J/8AAAAWAAAAFrx4
+        J/+mx+L/3vP//8fj9v/C4PT/vd7z/6zA0P/i9P//6PX///L6/v/9////+/3///H5/v/q9///5/f//4q6
+        1/+hyN//sdHl/7/Z6f/N4u7/3Orz/+rz+P/6/P3//f////T6/v/t9/7/5fT9/+z6//+ox+P/u3gn/wAA
+        ABYAAAAWvHgn/6fH4//f8///xuP2/8Lg9P+93vP/rMDQ/+L0///o9f//8vr+//3////7/f//8fn+/+r3
+        ///n9///irrX/6HI3/+x0eX/v9np/83i7v/c6vP/6vP4//r8/f/9////9Pr+/+33/v/l9P3/7fv//6nI
+        4/+7eCf/AAAAFgAAABa8eCf/qMjj/+L1///G4/b/wuD0/73e8/+swND/4vT//+j1///y+v7//f////v9
+        ///x+f7/6vf//+f3//+Kutf/ocjf/7HR5f+/2en/zeLu/9zq8//q8/j/+vz9//3////0+v7/7ff+/+X0
+        /f/u+///qsrk/7t4J/8AAAAWAAAAFrt4J/+pyeT/4/b//8bj9v/C4PT/vd7z/6zA0P/i9P//6PX///L6
+        /v/9////+/3///H5/v/q9///5/f//4q61/+hyN//sdHl/7/Z6f/N4u7/3Orz/+rz+P/6/P3//f////T6
+        /v/t9/7/5fT9/+/7//+ry+T/u3gn/wAAABYAAAAWu3gn/6zK5f/l9v//xuP2/8Lg9P+93vP/rMDQ/+L0
+        ///o9f//8vr+//3////7/f//8fn+/+r3///n9///irrX/6HI3/+x0eX/v9np/83i7v/c6vP/6vP4//r8
+        /f/9////9Pr+/+33/v/k9P3/8Pz//67M5f+7eCf/AAAAFgAAABa7eCf/rcvl/+b3///G4/b/wuD0/73e
+        8/+swND/4vT//+j1///y+v7//f////v9///x+f7/6vf//+f3//+Kutf/ocjf/7HR5f+/2en/zeLu/9zq
+        8//q8/j/+vz9//3////0+v7/7ff+/+T0/f/x/P//r83m/7t4J/8AAAAWAAAAFrt4J/+uzeb/6fj//8Xj
+        9v/C4PT/vd7z/6zA0P/i9P//6PX///L6/v/9////+/3///H5/v/q9///5/f//4q61/+hyN//sdHl/7/Z
+        6f/N4u7/3Orz/+rz+P/6/P3//f////T6/v/t9/7/5PT9//L9//+wzub/u3cn/wAAABYAAAAWu3gn/6/O
+        5v/q+P//xeP2/8Lg9P+93vP/rMDQ/+L0///o9f//8vr+//3////7/f//8fn+/+r3///n9///irrX/6HI
+        3/+x0eX/v9np/83i7v/c6vP/6vP4//r8/f/9////9Pr+/+33/v/k9P3/8/3//7HO5/+7dyf/AAAAFgAA
+        ABW7eCf/sc/o/+v5///F4vb/weD0/73e8/+swND/4vT//+j1///y+v7//f////v9///x+f7/6vf//+f3
+        //+Kutf/ocjf/7HR5f+/2en/zeLu/9zq8//q8/j/+vz9//3////0+v7/7ff+/+T0/f/z/f//s8/n/7p3
+        J/8AAAAVAAAADrt4J/+yz+j/7vv//8Xi9v/A4PX/vN7z/6zA0P/i9P//6PX///L6/v/9////+/3///H5
+        /v/q9///5/f//4q61/+hyN//sdHl/7/Z6f/N4u7/3Orz/+rz+P/6/P7//f////X7///t9///5PX+//X/
+        //+10en/uncn/wAAAA4AAAAEtXQmxbXT6//k9///3/H+/9vv/P/Z7vz/rMHR/+L1///o9f//8vr+//3/
+        ///7/f//8fn+/+r3///n9///irrY/6HJ4P+x0eX/v9np/87j7//m8fj/9vv+//////////////////r/
+        ///1/f//8v7//7jU6/+1dCbFAAAABAAAAAAAAAAFqMHX6q3B0f+rv83/qr7M/6i8y/+twtP/4vX//+j1
+        ///y+v7//f////v9///x+f7/6/j//+Lz//+Tt87/ocri/7LT6P/C3Oz/0ufz/9Hg6v/I1d3/u8nS/7bE
+        z/+0w8//tMLP/7LCzf+xw9H/p8LX6gAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABaHJ5Oq7E
+        1P/j9f//6PX///L6/v/9/////P7///P6///u+///wNfl7pajrn+mtsL2qrzK/6m8yP+jtL//oLC90Jur
+        uIWXqLNJl6eyNputuTcAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAWrsTU/+P1///o9f//8/r+//3////+////9/7//9Hj7/+OqbthAAAAAgAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAABatw9T/4/X//+n2///1/P////////7////F1+X/kq7AYAAAAAIAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAEa3D0//k9v//7fn///T7///e6PD/oLvNq3SJlw8AAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGrsPU/9ns+vjC1+K/oLrKXwAAAAIAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A//gf/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA
+        AAH4AAAf/AB///wA///8A////A////////8=
+</value>
+  </data>
 </root>
