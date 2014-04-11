@@ -94,7 +94,6 @@
             this.price});
             this.dataGridView1.Location = new System.Drawing.Point(13, 29);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(726, 404);
             this.dataGridView1.TabIndex = 33;
@@ -103,35 +102,30 @@
             // 
             this.checkExp.HeaderText = "Отметка";
             this.checkExp.Name = "checkExp";
-            this.checkExp.ReadOnly = true;
             this.checkExp.Width = 60;
             // 
             // a
             // 
             this.a.HeaderText = "Column1";
             this.a.Name = "a";
-            this.a.ReadOnly = true;
             this.a.Visible = false;
             // 
             // b
             // 
             this.b.HeaderText = "Column1";
             this.b.Name = "b";
-            this.b.ReadOnly = true;
             this.b.Visible = false;
             // 
             // c
             // 
             this.c.HeaderText = "Column1";
             this.c.Name = "c";
-            this.c.ReadOnly = true;
             this.c.Visible = false;
             // 
             // d
             // 
             this.d.HeaderText = "Column1";
             this.d.Name = "d";
-            this.d.ReadOnly = true;
             this.d.Visible = false;
             // 
             // title

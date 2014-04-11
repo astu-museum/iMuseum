@@ -468,7 +468,7 @@ namespace iMuseum
                 currentCustomer.name = customerRow.NAME_;
 
 
-                //СЮДА ВГРУЗИТЬ КАТЕГОРИИ
+                
 
                 /*
                     //ОПАСНОЕ ВПЛЕТЕНИЕ ИСТОЧНИКА
@@ -485,6 +485,8 @@ namespace iMuseum
            
                 */
 
+
+                //СЮДА ВГРУЗИТЬ КАТЕГОРИИ
                 DataSet1TableAdapters.CATEGORYTableAdapter vict = new DataSet1TableAdapters.CATEGORYTableAdapter();
 
 

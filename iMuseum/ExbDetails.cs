@@ -27,9 +27,24 @@ namespace iMuseum
 
         private void addEE(object sender, EventArgs e)
         {
+
+         
+            //ОТСЕЧЬ ИМЕЮЩИЕСЯ
+
+            User.load_exponats();
+            User.filterExh();
+            //ОТСЕКАЕМ ИМЕЮЩКИ
+            User.exhibitions[0].getExponats().Clear();
+
+
             AddExpExb aee = new AddExpExb();
             aee.ShowDialog();
 
+
+            
+
+            Load_Some();
+            Anothre();
             
         }
 
@@ -70,6 +85,20 @@ namespace iMuseum
                 label3.Text+=User.exhibitions[0].getCnames()[i];
                  label3.Text+=", ";
 
+            }
+
+        }
+
+        //Закидываем все экспонато-ключи в выставку
+        void evil_Filler()
+        {
+
+            User.exhibitions[0].getExponats().Clear();
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                User.exhibitions[0].addExponat(Convert.ToInt32(dataGridView1.Rows[i].Cells["a"].Value));
+              //  MessageBox.Show(Convert.ToInt32(dataGridView1.Rows[i].Cells["a"].Value).ToString());
             }
 
         }
@@ -125,7 +154,8 @@ namespace iMuseum
                dataGridView1.Rows[i].Cells["damae"].Value = (User.damageString[Convert.ToInt32(dataGridView1.Rows[i].Cells["bf"].Value.ToString())]).ToString();
             }
 
-            
+            evil_Filler();
+
 
             /*
             foreach (DataSet1.EXPONATRow aRow in dt)
@@ -163,6 +193,14 @@ namespace iMuseum
         private void button1_Click(object sender, EventArgs e)
         {
             printDocument1.Print();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+
+            Load_Some();
+            Anothre();
         }
 
 
