@@ -563,11 +563,22 @@ namespace iMuseum
         {
             //Обнуляем
             User.sources = new List<Sauce>();
-
             DataSet1TableAdapters.SOURCETableAdapter sourceTableAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
-            
 
-            //вытаскиваем
+            DataSet1.SOURCEDataTable sourceData = sourceTableAdapter.GetData();
+
+            foreach (DataSet1.SOURCERow srcRow in sourceData)
+            {
+                //Создаем новый источник
+                Sauce currentSRC = new Sauce();
+
+                //Первичный ключ
+                currentSRC.setPkSource(Convert.ToInt32(srcRow.PK_SOURCE));
+
+                //Данные
+                currentSRC.address = srcRow.ADDRESSS;
+                currentSRC.name = srcRow.NAME_;
+            }
         }
 
         /// <summary>
@@ -576,13 +587,8 @@ namespace iMuseum
         public static void load_exponats(){
             //Обнулили
             User.exponats = new List<Exponat>();
-
             DataSet1TableAdapters.EXPONATTableAdapter exponatTableAdapter = new DataSet1TableAdapters.EXPONATTableAdapter();
-
-            
             DataSet1.EXPONATDataTable customerData = exponatTableAdapter.GetData();
-
-
             foreach (DataSet1.EXPONATRow customerRow in customerData)
             {
                 Exponat currentCustomer = new Exponat();
