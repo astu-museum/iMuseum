@@ -230,6 +230,9 @@ namespace iMuseum
                 }
                  * */
 
+
+
+
                 //Проверка категории экспоната
              //  if (exhibitions[0].getCategories().Count == 0)
            //     {
@@ -246,7 +249,19 @@ namespace iMuseum
                     }
              //   }
 
-               
+                    if (!flag)
+                    {
+                        exponats.RemoveAt(i);
+                        i--;
+                        continue;
+                    }
+                    else
+                    {
+                        flag = false;
+                    }
+
+
+
 
                 //Проверка категории Автора
            //     if (exhibitions[0].getCategories().Count == 0)
@@ -264,7 +279,17 @@ namespace iMuseum
                     }
            //     }
 
-            
+
+                    if (!flag)
+                    {
+                        exponats.RemoveAt(i);
+                        i--;
+                        continue;
+                    }
+                    else
+                    {
+                        flag = false;
+                    }
 
 
                 //Проверка категории Аудитории
