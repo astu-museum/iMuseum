@@ -40,7 +40,12 @@ namespace iMuseum
         /// </summary>
         private void LoadSources()
         {
+            User.load_sources();
 
+            name.DataPropertyName = "name";
+            address.DataPropertyName = "address";
+
+            dataGridView1.DataSource = User.sources;
         }
 
         /// <summary>
