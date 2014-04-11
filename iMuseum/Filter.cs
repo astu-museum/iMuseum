@@ -60,6 +60,7 @@ namespace iMuseum
                 if (checkBoxComboBox3.CheckBoxItems[i].Checked)
                 {
                     User.categoryAuditoryFilter.Add(ad[i-1]);
+                  //  MessageBox.Show(checkBoxComboBox3.Items[i].ToString().Substring(0,checkBoxComboBox3.Items[i].ToString().Length-1));
                 }
 
 

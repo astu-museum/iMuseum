@@ -159,14 +159,62 @@ namespace iMuseum
                 }
                 else
                 {
+
+                    //Возможно дуткие объявления
+                    int  mini =  20000000;
+                    DataSet1.CATEGORYDataTable dtt;
+                    DataSet1TableAdapters.CATEGORYTableAdapter cta;
+
                     for (int j = 0; (j < categoryAuditoryFilter.Count) && !flag; j++)
                     {
+
+                        //ОСОБЫЕ НОВОВВЕДЕНИЯ....ПРОВЕРЯЕМ,ЧТО ЭКПОНАТ НЕ НИЖЕ НИЖНЕЙ ПЛАНКИ
+
+                        //ВПЛЕТЕНИЕ ИСТОЧНИКА
+                     cta = new DataSet1TableAdapters.CATEGORYTableAdapter();
+
+
+                     dtt = cta.GetCategByPK(categoryAuditoryFilter[j]);
+
+                        foreach (DataSet1.CATEGORYRow secRow in dtt)
+                        {
+                            string s =secRow.NAME_ ;
+
+                            string s1 = s.Substring(0, s.Length - 1);
+                            int p = Convert.ToInt32(s1);
+
+                            if (p < mini) mini = p;
+                        }
+
+
+                        /*
                         if (exponats[i].getPkCategoryAud() == categoryAuditoryFilter[j])
                         {
                             flag = true;
                         }
+                         * */
                     }
+
+
+                    //ПРОВЕРКА ЭКСПОНАТА НА НЕПРЫВЫШЕНИЕ ЦЕНЗА
+                     cta = new DataSet1TableAdapters.CATEGORYTableAdapter();
+
+
+                       dtt = cta.GetCategByPK(exponats[i].getPkCategoryAud());
+
+                       foreach (DataSet1.CATEGORYRow secRow in dtt)
+                       {
+                           string s = secRow.NAME_;
+
+                           string s1 = s.Substring(0, s.Length - 1);
+                           int p = Convert.ToInt32(s1);
+
+                           if (p >= mini) flag = true;
+                       }
+
                 }
+
+                   
 
                 if (!flag)
                 {
@@ -191,7 +239,6 @@ namespace iMuseum
         //СПЕЦИАЛЬНАЯ ПРОВЕРКА ДЛЯ ВЫСТАВОК
         //FILTER
 
-        //ЭКСПОНАТ НЕ ПРИНДЛЕЖИТ ВЫСТАВКЕ ПРОВЕРКА
         
         public static void filterExh()
         {
@@ -299,14 +346,65 @@ namespace iMuseum
           //      }
         //        else
         //        {
+                    
+             
+            //    }
+                    //Возможно дуткие объявления
+                    int mini = 20000000;
+                    DataSet1.CATEGORYDataTable dtt;
+                    DataSet1TableAdapters.CATEGORYTableAdapter cta;
+
                     for (int j = 0; (j < exhibitions[0].getCategories().Count) && !flag; j++)
                     {
-                        if (exponats[i].getPkCategoryAud() == exhibitions[0].getCategories()[j])
+
+                        //ОСОБЫЕ НОВОВВЕДЕНИЯ....ПРОВЕРЯЕМ,ЧТО ЭКПОНАТ НЕ НИЖЕ НИЖНЕЙ ПЛАНКИ
+
+                        //ВПЛЕТЕНИЕ ИСТОЧНИКА
+                        cta = new DataSet1TableAdapters.CATEGORYTableAdapter();
+
+
+                        dtt = cta.GetCategByPK(exhibitions[0].getCategories()[j]);
+
+                        foreach (DataSet1.CATEGORYRow secRow in dtt)
+                        {
+                            if (secRow.NUMBER_ == 3)
+                            {
+                                string s = secRow.NAME_;
+
+                                string s1 = s.Substring(0, s.Length - 1);
+                                int p = Convert.ToInt32(s1);
+
+                                if (p < mini) mini = p;
+                            }
+                        }
+
+
+                        /*
+                        if (exponats[i].getPkCategoryAud() == categoryAuditoryFilter[j])
                         {
                             flag = true;
                         }
+                         * */
                     }
-            //    }
+
+
+                    //ПРОВЕРКА ЭКСПОНАТА НА НЕПРЫВЫШЕНИЕ ЦЕНЗА
+                    cta = new DataSet1TableAdapters.CATEGORYTableAdapter();
+
+
+                    dtt = cta.GetCategByPK(exponats[i].getPkCategoryAud());
+
+                    foreach (DataSet1.CATEGORYRow secRow in dtt)
+                    {
+                        string s = secRow.NAME_;
+
+                        string s1 = s.Substring(0, s.Length - 1);
+                        int p = Convert.ToInt32(s1);
+
+                        if (p >= mini) flag = true;
+                    }
+
+
 
                 if (!flag)
                 {
