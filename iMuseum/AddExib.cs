@@ -89,6 +89,15 @@ namespace iMuseum
 
             }
 
+            if (exh.getCategories().Count == 0)
+            {
+                MessageBox.Show("ВЫберите хотя бы одну категорию экспоната");
+                return;
+            }
+
+            int pp = exh.getCategories().Count;
+
+
 
             for (int i = 1; i < checkBoxComboBox2.Items.Count; i++)
             {
@@ -104,6 +113,15 @@ namespace iMuseum
 
             }
 
+            if (exh.getCategories().Count == pp)
+            {
+                MessageBox.Show("ВЫберите хотя бы одну категорию автора");
+                return;
+            }
+
+            pp = exh.getCategories().Count;
+
+
 
             for (int i = 1; i < checkBoxComboBox3.Items.Count; i++)
             {
@@ -115,6 +133,13 @@ namespace iMuseum
 
 
             }
+
+            if (exh.getCategories().Count == pp)
+            {
+                MessageBox.Show("ВЫберите хотя бы одну целевую аудиторию");
+                return;
+            }
+
 
             if (exh.getCategories().Count == 0)
             {
