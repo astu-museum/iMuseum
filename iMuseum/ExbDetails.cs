@@ -198,6 +198,23 @@ namespace iMuseum
         private void button3_Click(object sender, EventArgs e)
         {
 
+            if (MessageBox.Show("УДАЛИТЬ ЗАПИСЬ", "УДАЛЕНИЕ", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+
+            DataSet1TableAdapters.CATEGORYEXPONATTableAdapter regionTableAdapter =
+            new DataSet1TableAdapters.CATEGORYEXPONATTableAdapter();
+
+
+
+
+          regionTableAdapter.DeleteCatExp(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells["a"].Value,User.exhibitions[0].getPkExhibition());
+
+
+           // User.exponats[dataGridView1.SelectedCells[0].RowIndex].delete_();
+
 
             Load_Some();
             Anothre();
