@@ -109,6 +109,18 @@ namespace iMuseum
                 }
 
             }
+
+            //Здесь вроде как должна быть проверка дублирования, но пока обойдемся
+
+
+            //Вносим новый источник
+
+            Sauce newSRC = new Sauce();
+
+            newSRC.name = textBox2.Text;
+            newSRC.address = textBox3.Text;
+
+            newSRC.save();
         }
     }
 }

@@ -80,5 +80,15 @@ namespace iMuseum
             get { return addressValue; }
             set { addressValue = value; }
         }
+
+        /// <summary>
+        /// Сохранение в базу Источника получения
+        /// </summary>
+        public void save()
+        {
+            DataSet1TableAdapters.SOURCETableAdapter srcAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
+
+            ///Надо сделать INSERT
+        }
     }
 }
