@@ -22,21 +22,6 @@ namespace iMuseum
             numberInt = 0;
         }
 
-
-        /*
-        private int pk_categoryValue;
-
-
-        /// <summary>
-        ///  ПК ,который однзачно определяет Категорию
-        /// </summary>
-        public int pk_category
-        {
-            get { return pk_categoryValue; }
-            set { pk_categoryValue = value; }
-        }
-         */
-
         private int pk_category;
         public void setPkCategory(int id) { this.pk_category = id; }
         public int getPkCategory() { return this.pk_category; }
