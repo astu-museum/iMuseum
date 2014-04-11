@@ -117,6 +117,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Удалить";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.delete_Source);
             // 
             // button5
             // 

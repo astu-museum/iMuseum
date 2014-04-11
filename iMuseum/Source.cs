@@ -20,6 +20,10 @@ namespace iMuseum
         {
             AddSource asrc = new AddSource();
             asrc.ShowDialog();
+         
+            User.sources = new List<Sauce>();
+            LoadSources();
+            
         }
 
         private void editSource(object sender, EventArgs e)
@@ -56,6 +60,16 @@ namespace iMuseum
         private void Load_SourceForm(object sender, EventArgs e)
         {
             User.sources = new List<Sauce>();
+
+            LoadSources();
+        }
+
+        private void delete_Source(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Удалить источник?", "Удаление источника получения", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            User.sources[dataGridView1.SelectedCells[0].RowIndex].delete();
 
             LoadSources();
         }

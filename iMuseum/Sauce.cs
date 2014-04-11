@@ -96,7 +96,9 @@ namespace iMuseum
         /// </summary>
         public void delete()
         {
+            DataSet1TableAdapters.SOURCETableAdapter srcAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
 
+            srcAdapter.DeleteSRC(pk_source);
         }
     }
 }
