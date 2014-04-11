@@ -593,6 +593,9 @@ namespace iMuseum
                 //Данные
                 currentSRC.address = srcRow.ADDRESSS;
                 currentSRC.name = srcRow.NAME_;
+                
+                //Добавлеяем в список Источник
+                User.sources.Add(currentSRC);
             }
         }
 
