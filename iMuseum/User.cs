@@ -359,10 +359,21 @@ namespace iMuseum
                     currentCustomer.sourceValue = sRow.NAME_;
                 }
 
-
-   
-
+           
                 */
+
+                DataSet1TableAdapters.CATEGORYTableAdapter vict = new DataSet1TableAdapters.CATEGORYTableAdapter();
+
+
+                DataSet1.CATEGORYDataTable cdt = vict.GetCateg(pk);
+
+                foreach (DataSet1.CATEGORYRow sam in cdt)
+                {
+                    currentCustomer.addCategory(Convert.ToInt32(sam.PK_CATEGORY));
+                    currentCustomer.addCname(sam.NAME_);
+                }
+
+
                 User.exhibitions.Add(currentCustomer);
             }
         }
@@ -407,10 +418,10 @@ namespace iMuseum
                     currentCustomer.sourceValue = sRow.NAME_;
                 }
 
-
-   
-
                 */
+
+               
+
                     User.exhibitions.Add(currentCustomer);
                 
 

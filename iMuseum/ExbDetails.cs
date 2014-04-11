@@ -37,7 +37,15 @@ namespace iMuseum
 
             label1.Text = User.exhibitions[0].name;
             label2.Text = User.exhibitions[0].datestart + "-" + User.exhibitions[0].dateend;
-            //label3.Text = User.exhibtions[0].
+            label3.Text = "Категории выставки:";
+
+            for (int i = 0; i < User.exhibitions[0].getCnames().Count; i++)
+            {
+                label3.Text+=User.exhibitions[0].getCnames()[i];
+                 label3.Text+=", ";
+
+            }
+
         }
 
         private void ExbDetails_Load(object sender, EventArgs e)

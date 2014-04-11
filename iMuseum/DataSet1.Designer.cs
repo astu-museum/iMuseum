@@ -4213,7 +4213,7 @@ namespace iMuseum.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[5];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[6];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT \"PK_CATEGORY\", \"NAME_\", \"NUMBER_\" FROM \"KOMRAZR\".\"CATEGORY\"";
@@ -4237,6 +4237,12 @@ namespace iMuseum.DataSet1TableAdapters {
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT \"NAME_\"  FROM \"KOMRAZR\".\"CATEGORY\" WHERE \"NUMBER_\"=2";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT c.PK_CATEGORY,c.NAME_, c.NUMBER_ FROM \"KOMRAZR\".\"CATEGORY\" c ,categoryexhi" +
+                "bition ct where  c.pk_category=ct.pk_category and ct.pk_exhibition = (?)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Param1", global::System.Data.OleDb.OleDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4354,6 +4360,42 @@ namespace iMuseum.DataSet1TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSet1.CATEGORYDataTable VATA() {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            DataSet1.CATEGORYDataTable dataTable = new DataSet1.CATEGORYDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy4(DataSet1.CATEGORYDataTable dataTable, object Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((Param1 == null)) {
+                throw new global::System.ArgumentNullException("Param1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((object)(Param1));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.CATEGORYDataTable GetCateg(object Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((Param1 == null)) {
+                throw new global::System.ArgumentNullException("Param1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((object)(Param1));
+            }
             DataSet1.CATEGORYDataTable dataTable = new DataSet1.CATEGORYDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
