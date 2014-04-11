@@ -116,6 +116,7 @@ namespace iMuseum
             User.categoryAuthorFilter = new List<int>();
             User.categoryAuditoryFilter = new List<int>();
             User.categoryExponatFilter = new List<int>();
+            User.Checks = new List<int>();
 
             Load_Exponats();
 

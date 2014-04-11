@@ -238,7 +238,9 @@ namespace iMuseum
         //СПЕЦИАЛЬНАЯ ПРОВЕРКА ДЛЯ ВЫСТАВОК
         //FILTER
 
-        
+        /// <summary>
+        /// Выборка экспонатов для выставки
+        /// </summary>
         public static void filterExh()
         {
             for (int i = 0; i < exponats.Count; i++)
@@ -442,7 +444,11 @@ namespace iMuseum
 
         }
 
-        //ВЫГРЗУКА ВЫСТАВКИ в ex0 ДЛЯ просмотра инфы о выставке 
+        /// <summary>
+        /// Выгрузка выставки с ключом pk
+        /// </summary>
+        /// <param name="pk">ключ</param>
+ 
         public static void load_exhibitionsp(int pk)
         {
             DataSet1TableAdapters.EXHIBITIONTableAdapter ta = new DataSet1TableAdapters.EXHIBITIONTableAdapter();
@@ -467,7 +473,7 @@ namespace iMuseum
                 currentCustomer.name = customerRow.NAME_;
 
 
-                //СЮДА ВГРУЗИТЬ КАТЕГОРИИ
+                
 
                 /*
                     //ОПАСНОЕ ВПЛЕТЕНИЕ ИСТОЧНИКА
@@ -484,6 +490,8 @@ namespace iMuseum
            
                 */
 
+
+                //СЮДА ВГРУЗИТЬ КАТЕГОРИИ
                 DataSet1TableAdapters.CATEGORYTableAdapter vict = new DataSet1TableAdapters.CATEGORYTableAdapter();
 
 
@@ -501,7 +509,9 @@ namespace iMuseum
         }
 
 
-        //Загрузка всех выставок
+       /// <summary>
+       /// Загрузка всех выставок
+       /// </summary>
         public static void load_exhibitions()
         {
 
