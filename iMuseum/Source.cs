@@ -33,5 +33,26 @@ namespace iMuseum
             sourceSettings srcs = new sourceSettings();
             srcs.ShowDialog();
         }
+
+
+        /// <summary>
+        /// Загрузка Источников получения
+        /// </summary>
+        private void LoadSources()
+        {
+
+        }
+
+        /// <summary>
+        /// Загрузка формы Источники получения
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Load_SourceForm(object sender, EventArgs e)
+        {
+            User.sources = new List<Sauce>();
+
+            LoadSources();
+        }
     }
 }
