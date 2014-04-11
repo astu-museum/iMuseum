@@ -11,6 +11,10 @@ namespace iMuseum
 {
     public partial class Exibition : Form
     {
+
+
+        DataSet1.EXHIBITIONDataTable texh;
+
         public Exibition()
         {
             InitializeComponent();
@@ -18,14 +22,46 @@ namespace iMuseum
 
         private void showDetails(object sender, EventArgs e)
         {
-            ExbDetails exbdt = new ExbDetails();
+            //Передадим первичник нужной выставки
+            int t = Convert.ToInt32(texh.Rows[listBox1.SelectedIndex]["pk_exhibition"].ToString());
+            ExbDetails exbdt = new ExbDetails(t);
+
+           
+           // MessageBox.Show(t.ToString());
+
             exbdt.ShowDialog();
+            Load_Exh();
         }
 
         private void addExb(object sender, EventArgs e)
         {
             AddExib addex = new AddExib();
             addex.ShowDialog();
+            Load_Exh();
+        }
+
+        //начальная загрузка
+        void Load_Exh()
+        {
+            
+
+            DataSet1TableAdapters.EXHIBITIONTableAdapter exhTableAdapter = new DataSet1TableAdapters.EXHIBITIONTableAdapter();
+
+            texh = exhTableAdapter.GetData();
+
+
+
+            listBox1.DataSource = texh;
+            listBox1.ValueMember = "NAME_";
+            listBox1.BindingContext = this.BindingContext;
+
+
+        }
+
+        private void Exibition_Load(object sender, EventArgs e)
+        {
+
+            Load_Exh();
         }
     }
 }

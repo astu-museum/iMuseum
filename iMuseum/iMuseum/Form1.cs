@@ -24,8 +24,16 @@ namespace iMuseum
         /// <param name="e"></param>
         private void addNewExp(object sender, EventArgs e)
         {
+
+         
+
             Form2 f2 = new Form2();
             f2.ShowDialog();
+
+
+            //Вдруг доабвили что-то подходящее под фильтр?Надо вывести
+            Load_Exponats();
+
         }
         /// <summary>
         /// Подробнее об экспонате
@@ -42,6 +50,11 @@ namespace iMuseum
         {
             Filter fltr = new Filter();
             fltr.ShowDialog();
+
+            //Вновь пофильтруем
+            Load_Exponats();
+           
+
         }
 
         private void showExib(object sender, EventArgs e)
@@ -54,12 +67,62 @@ namespace iMuseum
         {
             Source src = new Source();
             src.ShowDialog();
+
+            Load_Exponats();
         }
 
         private void searchSett(object sender, EventArgs e)
         {
             mainSettings mst = new mainSettings();
             mst.ShowDialog();
+
+            Load_Exponats();
+        }
+
+        /// <summary>
+        /// Производит загружку всех экспонатов и фильтрует по заданному фильтру
+        /// </summary>
+        private void Load_Exponats()
+        {
+            User.load_exponats();
+            User.filter();
+
+            //ТУТ ДЕЛАЕМ ФИЛЬТРЕЦ
+
+           // dataGridView1.DataSource = null;
+
+            number.DataPropertyName = "inumber";
+            title.DataPropertyName = "name";
+            source.DataPropertyName = "sourceValue";
+            date.DataPropertyName = "date";
+            typesob.DataPropertyName = "typeSobStr";
+            mesto.DataPropertyName = "placeStr";
+            damage.DataPropertyName = "damageStr";
+            price.DataPropertyName = "price";
+
+
+
+            dataGridView1.DataSource = User.exponats;
+
+         
+
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            User.typeFilter = new List<int>();
+            User.categoryAuthorFilter = new List<int>();
+            User.categoryAuditoryFilter = new List<int>();
+            User.categoryExponatFilter = new List<int>();
+
+            Load_Exponats();
+
+         
+          
+
+           
         }
     }
 }

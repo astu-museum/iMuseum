@@ -57,7 +57,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(609, 311);
-            this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -82,7 +82,7 @@
             this.groupBox1.Location = new System.Drawing.Point(8, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(590, 51);
-            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Поиск";
             // 
@@ -116,7 +116,7 @@
             this.button3.Location = new System.Drawing.Point(8, 385);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 23;
+            this.button3.TabIndex = 2;
             this.button3.Text = "Добавить";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.addNewSource);
@@ -126,7 +126,7 @@
             this.button4.Location = new System.Drawing.Point(523, 385);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 24;
+            this.button4.TabIndex = 4;
             this.button4.Text = "Удалить";
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -135,7 +135,7 @@
             this.button5.Location = new System.Drawing.Point(89, 385);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 25;
+            this.button5.TabIndex = 3;
             this.button5.Text = "Изменить";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.editSource);

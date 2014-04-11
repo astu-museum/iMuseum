@@ -36,6 +36,7 @@
             this.вЫСТАВКИToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.нАСТРОЙКИПОИСКАToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.иСТОЧНИКИToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пОИСКToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -48,8 +49,6 @@
             this.damage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.пОИСКToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +117,14 @@
             this.иСТОЧНИКИToolStripMenuItem.Text = "ИСТОЧНИКИ";
             this.иСТОЧНИКИToolStripMenuItem.Click += new System.EventHandler(this.showSources);
             // 
+            // пОИСКToolStripMenuItem
+            // 
+            this.пОИСКToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.пОИСКToolStripMenuItem.Name = "пОИСКToolStripMenuItem";
+            this.пОИСКToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.пОИСКToolStripMenuItem.Text = "ПОИСК";
+            this.пОИСКToolStripMenuItem.Click += new System.EventHandler(this.searchSett);
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -158,6 +165,7 @@
             this.price});
             this.dataGridView1.Location = new System.Drawing.Point(-1, 27);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1010, 558);
             this.dataGridView1.TabIndex = 10;
@@ -167,12 +175,14 @@
             this.number.Frozen = true;
             this.number.HeaderText = "Инв. номер";
             this.number.Name = "number";
+            this.number.ReadOnly = true;
             // 
             // title
             // 
             this.title.Frozen = true;
             this.title.HeaderText = "Наименование";
             this.title.Name = "title";
+            this.title.ReadOnly = true;
             this.title.Width = 150;
             // 
             // source
@@ -180,6 +190,7 @@
             this.source.Frozen = true;
             this.source.HeaderText = "Источник получения";
             this.source.Name = "source";
+            this.source.ReadOnly = true;
             this.source.Width = 150;
             // 
             // date
@@ -188,6 +199,7 @@
             this.date.HeaderText = "Дата получения";
             this.date.MinimumWidth = 125;
             this.date.Name = "date";
+            this.date.ReadOnly = true;
             this.date.Width = 125;
             // 
             // typesob
@@ -196,6 +208,7 @@
             this.typesob.HeaderText = "Тип собственности";
             this.typesob.MinimumWidth = 125;
             this.typesob.Name = "typesob";
+            this.typesob.ReadOnly = true;
             this.typesob.Width = 125;
             // 
             // mesto
@@ -204,6 +217,7 @@
             this.mesto.HeaderText = "Место хранения";
             this.mesto.MinimumWidth = 150;
             this.mesto.Name = "mesto";
+            this.mesto.ReadOnly = true;
             this.mesto.Width = 150;
             // 
             // damage
@@ -211,12 +225,14 @@
             this.damage.Frozen = true;
             this.damage.HeaderText = "Состояние";
             this.damage.Name = "damage";
+            this.damage.ReadOnly = true;
             // 
             // price
             // 
             this.price.Frozen = true;
             this.price.HeaderText = "Стоимость";
             this.price.Name = "price";
+            this.price.ReadOnly = true;
             // 
             // button3
             // 
@@ -228,14 +244,6 @@
             this.button3.Text = "Подробнее";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.infoExp);
-            // 
-            // пОИСКToolStripMenuItem
-            // 
-            this.пОИСКToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.пОИСКToolStripMenuItem.Name = "пОИСКToolStripMenuItem";
-            this.пОИСКToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.пОИСКToolStripMenuItem.Text = "ПОИСК";
-            this.пОИСКToolStripMenuItem.Click += new System.EventHandler(this.searchSett);
             // 
             // Form1
             // 
@@ -255,6 +263,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "iMuseum";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -272,7 +281,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button3;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.DataGridViewTextBoxColumn source;
