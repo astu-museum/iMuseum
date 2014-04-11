@@ -8,9 +8,6 @@ namespace iMuseum
 {
     class User
     {
-
-    
-
         //Массивы для привязок к Датагридам
         public static List<Exponat> exponats;
         public static List<Category> categories;
@@ -61,7 +58,9 @@ namespace iMuseum
 
         }
 
-        //FILTER
+        /// <summary>
+        /// Фильтр
+        /// </summary>
         public static void filter()
         {
             for (int i = 0; i < exponats.Count; i++)
@@ -555,7 +554,23 @@ namespace iMuseum
         }
 
 
-        //Загузка всех экснатв
+        /// <summary>
+        /// Загрузка всех источников
+        /// </summary>
+        public static void load_sources()
+        {
+            //Обнуляем
+            User.sources = new List<Sauce>();
+
+            DataSet1TableAdapters.SOURCETableAdapter sourceTableAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
+            
+
+            //вытаскиваем
+        }
+
+        /// <summary>
+        /// Загрузка всех экспонатов
+        /// </summary>
         public static void load_exponats(){
             //Обнулили
             User.exponats = new List<Exponat>();
