@@ -88,7 +88,15 @@ namespace iMuseum
         {
             DataSet1TableAdapters.SOURCETableAdapter srcAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
 
-            ///Надо сделать INSERT
+            srcAdapter.InsertSRC(nameValue, addressValue);
+        }
+
+        /// <summary>
+        /// Удаление источника из БД
+        /// </summary>
+        public void delete()
+        {
+
         }
     }
 }

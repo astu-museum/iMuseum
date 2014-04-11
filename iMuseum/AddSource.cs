@@ -11,7 +11,20 @@ namespace iMuseum
 {
     public partial class AddSource : Form
     {
+        /// <summary>
+        /// Добавление источника
+        /// </summary>
         public AddSource()
+        {
+            InitializeComponent();
+        }
+
+
+        /// <summary>
+        /// Редактирование источника
+        /// </summary>
+        /// <param name="editID">ID</param>
+        public AddSource(Int32 editID)
         {
             InitializeComponent();
         }
