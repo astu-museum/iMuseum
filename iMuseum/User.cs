@@ -59,6 +59,13 @@ namespace iMuseum
         }
 
         /// <summary>
+        /// Отсечь из списка уже имеющиеся на выставке экспонаты
+        /// </summary>
+        public void cutoff()
+        {
+        }
+
+        /// <summary>
         /// Фильтр
         /// </summary>
         public static void filter()
