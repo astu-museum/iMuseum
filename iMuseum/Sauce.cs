@@ -22,20 +22,6 @@ namespace iMuseum
             name = "";
         }
 
-        /*
-        private int pk_sourceValue;
-
-
-        /// <summary>
-        ///  ПК ,который однзачно определяет Источник Получения
-        /// </summary>
-        public int pk_source
-        {
-            get { return pk_sourceValue; }
-            set { pk_sourceValue = value; }
-        }
-        */
-
         /// <summary>
         /// Первичный ключ источника получения
         /// </summary>
@@ -96,7 +82,9 @@ namespace iMuseum
         /// </summary>
         public void delete()
         {
+            DataSet1TableAdapters.SOURCETableAdapter srcAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
 
+            srcAdapter.DeleteSRC(pk_source);
         }
     }
 }

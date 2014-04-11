@@ -134,6 +134,8 @@ namespace iMuseum
             newSRC.address = textBox3.Text;
 
             newSRC.save();
+
+            this.Close();
         }
     }
 }

@@ -16,12 +16,25 @@ namespace iMuseum
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Добавление нового источника получения
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addNewSource(object sender, EventArgs e)
         {
             AddSource asrc = new AddSource();
             asrc.ShowDialog();
+         
+            User.sources = new List<Sauce>();
+            LoadSources();
         }
 
+        /// <summary>
+        /// Изменить источник
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void editSource(object sender, EventArgs e)
         {
             AddSource asrc = new AddSource();
@@ -56,6 +69,21 @@ namespace iMuseum
         private void Load_SourceForm(object sender, EventArgs e)
         {
             User.sources = new List<Sauce>();
+
+            LoadSources();
+        }
+
+        /// <summary>
+        /// Удаление источника получения
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void delete_Source(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Удалить источник?", "Удаление источника получения", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            User.sources[dataGridView1.SelectedCells[0].RowIndex].delete();
 
             LoadSources();
         }
