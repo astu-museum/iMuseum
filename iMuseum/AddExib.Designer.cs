@@ -188,7 +188,6 @@
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(6, 19);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.ReadOnly = true;
             this.numericUpDown1.Size = new System.Drawing.Size(259, 20);
             this.numericUpDown1.TabIndex = 0;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

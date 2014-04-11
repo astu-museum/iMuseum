@@ -15,7 +15,7 @@ namespace iMuseum
         {
             InitializeComponent();
         }
-        ///
+
         private void search(object sender, EventArgs e)
         {
             sourceSettings srccc = new sourceSettings();
@@ -26,7 +26,7 @@ namespace iMuseum
         private void Load_some()
         {
 
-        //СЕМЕН СКУШАЛ КАШКУ
+        
 
            // List<Exponat> ls = User.exponats;
             title.DataPropertyName = "name";

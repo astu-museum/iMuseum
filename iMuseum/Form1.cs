@@ -124,5 +124,19 @@ namespace iMuseum
 
            
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("УДАЛИТЬ ЗАПИСЬ", "УДАЛЕНИЕ", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+
+            User.exponats[dataGridView1.SelectedCells[0].RowIndex].delete_();
+
+            Load_Exponats();
+
+        }
     }
 }

@@ -282,6 +282,18 @@ namespace iMuseum
 
         }
 
+        public void delete_()
+        {
+            DataSet1TableAdapters.EXPONATTableAdapter regionTableAdapter =
+              new DataSet1TableAdapters.EXPONATTableAdapter();
+
+
+
+
+            regionTableAdapter.DeleteQuery(pk_exponat);
+
+        }
+
 
     }
 }
