@@ -100,8 +100,15 @@ namespace iMuseum
             }
 
 
+            try
+            {
                 User.sources[dataGridView1.SelectedCells[0].RowIndex].delete();
-
+            }
+            catch(Exception ee)
+            {
+                MessageBox.Show("Нельзя удалить Источник,так как существуют Экспонаты,им переданные ");
+                return;
+            }
 
          //   }
        //     catch (OracleException ee)
