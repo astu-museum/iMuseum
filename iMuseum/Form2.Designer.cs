@@ -65,6 +65,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -387,6 +388,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.button3);
             this.groupBox6.Controls.Add(this.comboBox6);
             this.groupBox6.Location = new System.Drawing.Point(305, 342);
             this.groupBox6.Name = "groupBox6";
@@ -401,7 +403,7 @@
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(6, 19);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(276, 21);
+            this.comboBox6.Size = new System.Drawing.Size(249, 21);
             this.comboBox6.TabIndex = 4;
             // 
             // acceptButton
@@ -437,6 +439,16 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(258, 18);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(23, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "+";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.addType);
             // 
             // Form2
             // 
@@ -531,5 +543,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

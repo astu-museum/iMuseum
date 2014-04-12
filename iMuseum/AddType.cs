@@ -34,7 +34,21 @@ namespace iMuseum
         /// <param name="e"></param>
         private void okCLK(object sender, EventArgs e)
         {
+            for(Int32 i = 0; i < textBox_title.Text.Length; i++)
+                if (((textBox_title.Text[i] < 'а') || (textBox_title.Text[i] > 'я')) && ((textBox_title.Text[i] < 'А') || (textBox_title.Text[i] > 'Я'))
+                    && (textBox_title.Text[i] != ' ') && (textBox_title.Text[i] != '-'))
+                {
+                    MessageBox.Show("Допускаются только русские буквы и символы: пробел и -");
+                    return;
+                }
 
+            String checkstr = textBox_title.Text;
+            checkstr = checkstr.TrimEnd(new Char[] { ' ', '-' });
+            if (checkstr.Length == 0)
+            {
+                MessageBox.Show("Введите наименование типа экспоната");
+                return;
+            }
         }
     }
 }

@@ -470,5 +470,16 @@ namespace iMuseum
 
 
         }
+
+        /// <summary>
+        /// Добавить новый тип экспоната
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void addType(object sender, EventArgs e)
+        {
+            AddType AType = new AddType();
+            AType.ShowDialog();
+        }
     }
 }
