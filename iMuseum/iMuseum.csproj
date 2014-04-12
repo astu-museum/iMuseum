@@ -73,6 +73,12 @@
     <Compile Include="AddSource.Designer.cs">
       <DependentUpon>AddSource.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddType.Designer.cs">
+      <DependentUpon>AddType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs" />
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddSource.resx">
       <DependentUpon>AddSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddType.resx">
+      <DependentUpon>AddType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExbDetails.resx">
       <DependentUpon>ExbDetails.cs</DependentUpon>

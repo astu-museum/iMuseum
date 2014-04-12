@@ -141,7 +141,7 @@ namespace iMuseum
                 return;
             }
 
-            if (MessageBox.Show("УДАЛИТЬ ЗАПИСЬ", "УДАЛЕНИЕ", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
             }
