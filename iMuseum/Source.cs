@@ -110,13 +110,7 @@ namespace iMuseum
                 return;
             }
 
-         //   }
-       //     catch (OracleException ee)
-        //    {
-
-         //   }
-
-                 LoadSources();
+            LoadSources();
         }
     }
 }
