@@ -90,9 +90,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(488, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 16);
+            this.label2.Size = new System.Drawing.Size(113, 16);
             this.label2.TabIndex = 12;
-            this.label2.Text = "12.01.2014 - 15.02.2014";
+            this.label2.Text = "Сроки выставки";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label3
@@ -100,9 +100,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(8, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(356, 13);
+            this.label3.Size = new System.Drawing.Size(112, 13);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Категории выставки: птицы, насекомые, чучела, репродукции, 12+...";
+            this.label3.Text = "Категории выставки";
             // 
             // button2
             // 
