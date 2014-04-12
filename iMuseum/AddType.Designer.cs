@@ -45,7 +45,7 @@
             this.groupBox2.Size = new System.Drawing.Size(361, 51);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Наименование источника";
+            this.groupBox2.Text = "Наименование типа";
             // 
             // textBox_title
             // 
