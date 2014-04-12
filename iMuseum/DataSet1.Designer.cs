@@ -38,23 +38,23 @@ namespace iMuseum {
         
         private TYPEEXPONATDataTable tableTYPEEXPONAT;
         
-        private global::System.Data.DataRelation relationFK_CATEGORY_CATEGORYEXHIBITION;
-        
         private global::System.Data.DataRelation relationFK_EXHIBITION_CATEGORYEXHIBITION;
         
-        private global::System.Data.DataRelation relationFK_EXPONAT_CATEGORYEXPONAT;
+        private global::System.Data.DataRelation relationFK_CATEGORY_CATEGORYEXHIBITION;
         
         private global::System.Data.DataRelation relationFK_EXHIBITION_CATEGORYEXPONAT;
         
-        private global::System.Data.DataRelation relationFK_TYPEEXPONAT_EXPONAT;
+        private global::System.Data.DataRelation relationFK_EXPONAT_CATEGORYEXPONAT;
         
-        private global::System.Data.DataRelation relationFK_SOURCE_EXPONAT;
-        
-        private global::System.Data.DataRelation relationFK_CATEGORY_EXPONAT;
+        private global::System.Data.DataRelation relationFK_CATEGORY_EXPONAT2;
         
         private global::System.Data.DataRelation relationFK_CATEGORY_EXPONAT1;
         
-        private global::System.Data.DataRelation relationFK_CATEGORY_EXPONAT2;
+        private global::System.Data.DataRelation relationFK_CATEGORY_EXPONAT;
+        
+        private global::System.Data.DataRelation relationFK_SOURCE_EXPONAT;
+        
+        private global::System.Data.DataRelation relationFK_TYPEEXPONAT_EXPONAT;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -356,15 +356,15 @@ namespace iMuseum {
                     this.tableTYPEEXPONAT.InitVars();
                 }
             }
-            this.relationFK_CATEGORY_CATEGORYEXHIBITION = this.Relations["FK_CATEGORY_CATEGORYEXHIBITION"];
             this.relationFK_EXHIBITION_CATEGORYEXHIBITION = this.Relations["FK_EXHIBITION_CATEGORYEXHIBITION"];
-            this.relationFK_EXPONAT_CATEGORYEXPONAT = this.Relations["FK_EXPONAT_CATEGORYEXPONAT"];
+            this.relationFK_CATEGORY_CATEGORYEXHIBITION = this.Relations["FK_CATEGORY_CATEGORYEXHIBITION"];
             this.relationFK_EXHIBITION_CATEGORYEXPONAT = this.Relations["FK_EXHIBITION_CATEGORYEXPONAT"];
-            this.relationFK_TYPEEXPONAT_EXPONAT = this.Relations["FK_TYPEEXPONAT_EXPONAT"];
-            this.relationFK_SOURCE_EXPONAT = this.Relations["FK_SOURCE_EXPONAT"];
-            this.relationFK_CATEGORY_EXPONAT = this.Relations["FK_CATEGORY_EXPONAT"];
-            this.relationFK_CATEGORY_EXPONAT1 = this.Relations["FK_CATEGORY_EXPONAT1"];
+            this.relationFK_EXPONAT_CATEGORYEXPONAT = this.Relations["FK_EXPONAT_CATEGORYEXPONAT"];
             this.relationFK_CATEGORY_EXPONAT2 = this.Relations["FK_CATEGORY_EXPONAT2"];
+            this.relationFK_CATEGORY_EXPONAT1 = this.Relations["FK_CATEGORY_EXPONAT1"];
+            this.relationFK_CATEGORY_EXPONAT = this.Relations["FK_CATEGORY_EXPONAT"];
+            this.relationFK_SOURCE_EXPONAT = this.Relations["FK_SOURCE_EXPONAT"];
+            this.relationFK_TYPEEXPONAT_EXPONAT = this.Relations["FK_TYPEEXPONAT_EXPONAT"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -390,13 +390,6 @@ namespace iMuseum {
             this.tableTYPEEXPONAT = new TYPEEXPONATDataTable();
             base.Tables.Add(this.tableTYPEEXPONAT);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_CATEGORY_CATEGORYEXHIBITION", new global::System.Data.DataColumn[] {
-                        this.tableCATEGORY.PK_CATEGORYColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCATEGORYEXHIBITION.PK_CATEGORYColumn});
-            this.tableCATEGORYEXHIBITION.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.None;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_EXHIBITION_CATEGORYEXHIBITION", new global::System.Data.DataColumn[] {
                         this.tableEXHIBITION.PK_EXHIBITIONColumn}, new global::System.Data.DataColumn[] {
                         this.tableCATEGORYEXHIBITION.PK_EXHIBITIONColumn});
@@ -404,10 +397,10 @@ namespace iMuseum {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_EXPONAT_CATEGORYEXPONAT", new global::System.Data.DataColumn[] {
-                        this.tableEXPONAT.PK_EXPONATColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCATEGORYEXPONAT.PK_EXPONATColumn});
-            this.tableCATEGORYEXPONAT.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_CATEGORY_CATEGORYEXHIBITION", new global::System.Data.DataColumn[] {
+                        this.tableCATEGORY.PK_CATEGORYColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCATEGORYEXHIBITION.PK_CATEGORYColumn});
+            this.tableCATEGORYEXHIBITION.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
@@ -418,23 +411,16 @@ namespace iMuseum {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_TYPEEXPONAT_EXPONAT", new global::System.Data.DataColumn[] {
-                        this.tableTYPEEXPONAT.PK_TYPEColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEXPONAT.PK_TYPEColumn});
-            this.tableEXPONAT.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_EXPONAT_CATEGORYEXPONAT", new global::System.Data.DataColumn[] {
+                        this.tableEXPONAT.PK_EXPONATColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCATEGORYEXPONAT.PK_EXPONATColumn});
+            this.tableCATEGORYEXPONAT.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_SOURCE_EXPONAT", new global::System.Data.DataColumn[] {
-                        this.tableSOURCE.PK_SOURCEColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEXPONAT.PK_SOURCEColumn});
-            this.tableEXPONAT.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_CATEGORY_EXPONAT", new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_CATEGORY_EXPONAT2", new global::System.Data.DataColumn[] {
                         this.tableCATEGORY.PK_CATEGORYColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEXPONAT.PK_CATEGORYEXPONATColumn});
+                        this.tableEXPONAT.PK_CATEGORYAUDITORYColumn});
             this.tableEXPONAT.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -446,49 +432,63 @@ namespace iMuseum {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_CATEGORY_EXPONAT2", new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_CATEGORY_EXPONAT", new global::System.Data.DataColumn[] {
                         this.tableCATEGORY.PK_CATEGORYColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEXPONAT.PK_CATEGORYAUDITORYColumn});
+                        this.tableEXPONAT.PK_CATEGORYEXPONATColumn});
             this.tableEXPONAT.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            this.relationFK_CATEGORY_CATEGORYEXHIBITION = new global::System.Data.DataRelation("FK_CATEGORY_CATEGORYEXHIBITION", new global::System.Data.DataColumn[] {
-                        this.tableCATEGORY.PK_CATEGORYColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCATEGORYEXHIBITION.PK_CATEGORYColumn}, false);
-            this.Relations.Add(this.relationFK_CATEGORY_CATEGORYEXHIBITION);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_SOURCE_EXPONAT", new global::System.Data.DataColumn[] {
+                        this.tableSOURCE.PK_SOURCEColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEXPONAT.PK_SOURCEColumn});
+            this.tableEXPONAT.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_TYPEEXPONAT_EXPONAT", new global::System.Data.DataColumn[] {
+                        this.tableTYPEEXPONAT.PK_TYPEColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEXPONAT.PK_TYPEColumn});
+            this.tableEXPONAT.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
             this.relationFK_EXHIBITION_CATEGORYEXHIBITION = new global::System.Data.DataRelation("FK_EXHIBITION_CATEGORYEXHIBITION", new global::System.Data.DataColumn[] {
                         this.tableEXHIBITION.PK_EXHIBITIONColumn}, new global::System.Data.DataColumn[] {
                         this.tableCATEGORYEXHIBITION.PK_EXHIBITIONColumn}, false);
             this.Relations.Add(this.relationFK_EXHIBITION_CATEGORYEXHIBITION);
-            this.relationFK_EXPONAT_CATEGORYEXPONAT = new global::System.Data.DataRelation("FK_EXPONAT_CATEGORYEXPONAT", new global::System.Data.DataColumn[] {
-                        this.tableEXPONAT.PK_EXPONATColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCATEGORYEXPONAT.PK_EXPONATColumn}, false);
-            this.Relations.Add(this.relationFK_EXPONAT_CATEGORYEXPONAT);
+            this.relationFK_CATEGORY_CATEGORYEXHIBITION = new global::System.Data.DataRelation("FK_CATEGORY_CATEGORYEXHIBITION", new global::System.Data.DataColumn[] {
+                        this.tableCATEGORY.PK_CATEGORYColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCATEGORYEXHIBITION.PK_CATEGORYColumn}, false);
+            this.Relations.Add(this.relationFK_CATEGORY_CATEGORYEXHIBITION);
             this.relationFK_EXHIBITION_CATEGORYEXPONAT = new global::System.Data.DataRelation("FK_EXHIBITION_CATEGORYEXPONAT", new global::System.Data.DataColumn[] {
                         this.tableEXHIBITION.PK_EXHIBITIONColumn}, new global::System.Data.DataColumn[] {
                         this.tableCATEGORYEXPONAT.PK_EXHIBITIONColumn}, false);
             this.Relations.Add(this.relationFK_EXHIBITION_CATEGORYEXPONAT);
-            this.relationFK_TYPEEXPONAT_EXPONAT = new global::System.Data.DataRelation("FK_TYPEEXPONAT_EXPONAT", new global::System.Data.DataColumn[] {
-                        this.tableTYPEEXPONAT.PK_TYPEColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEXPONAT.PK_TYPEColumn}, false);
-            this.Relations.Add(this.relationFK_TYPEEXPONAT_EXPONAT);
-            this.relationFK_SOURCE_EXPONAT = new global::System.Data.DataRelation("FK_SOURCE_EXPONAT", new global::System.Data.DataColumn[] {
-                        this.tableSOURCE.PK_SOURCEColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEXPONAT.PK_SOURCEColumn}, false);
-            this.Relations.Add(this.relationFK_SOURCE_EXPONAT);
-            this.relationFK_CATEGORY_EXPONAT = new global::System.Data.DataRelation("FK_CATEGORY_EXPONAT", new global::System.Data.DataColumn[] {
-                        this.tableCATEGORY.PK_CATEGORYColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEXPONAT.PK_CATEGORYEXPONATColumn}, false);
-            this.Relations.Add(this.relationFK_CATEGORY_EXPONAT);
-            this.relationFK_CATEGORY_EXPONAT1 = new global::System.Data.DataRelation("FK_CATEGORY_EXPONAT1", new global::System.Data.DataColumn[] {
-                        this.tableCATEGORY.PK_CATEGORYColumn}, new global::System.Data.DataColumn[] {
-                        this.tableEXPONAT.PK_CATEGORYAUTHORColumn}, false);
-            this.Relations.Add(this.relationFK_CATEGORY_EXPONAT1);
+            this.relationFK_EXPONAT_CATEGORYEXPONAT = new global::System.Data.DataRelation("FK_EXPONAT_CATEGORYEXPONAT", new global::System.Data.DataColumn[] {
+                        this.tableEXPONAT.PK_EXPONATColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCATEGORYEXPONAT.PK_EXPONATColumn}, false);
+            this.Relations.Add(this.relationFK_EXPONAT_CATEGORYEXPONAT);
             this.relationFK_CATEGORY_EXPONAT2 = new global::System.Data.DataRelation("FK_CATEGORY_EXPONAT2", new global::System.Data.DataColumn[] {
                         this.tableCATEGORY.PK_CATEGORYColumn}, new global::System.Data.DataColumn[] {
                         this.tableEXPONAT.PK_CATEGORYAUDITORYColumn}, false);
             this.Relations.Add(this.relationFK_CATEGORY_EXPONAT2);
+            this.relationFK_CATEGORY_EXPONAT1 = new global::System.Data.DataRelation("FK_CATEGORY_EXPONAT1", new global::System.Data.DataColumn[] {
+                        this.tableCATEGORY.PK_CATEGORYColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEXPONAT.PK_CATEGORYAUTHORColumn}, false);
+            this.Relations.Add(this.relationFK_CATEGORY_EXPONAT1);
+            this.relationFK_CATEGORY_EXPONAT = new global::System.Data.DataRelation("FK_CATEGORY_EXPONAT", new global::System.Data.DataColumn[] {
+                        this.tableCATEGORY.PK_CATEGORYColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEXPONAT.PK_CATEGORYEXPONATColumn}, false);
+            this.Relations.Add(this.relationFK_CATEGORY_EXPONAT);
+            this.relationFK_SOURCE_EXPONAT = new global::System.Data.DataRelation("FK_SOURCE_EXPONAT", new global::System.Data.DataColumn[] {
+                        this.tableSOURCE.PK_SOURCEColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEXPONAT.PK_SOURCEColumn}, false);
+            this.Relations.Add(this.relationFK_SOURCE_EXPONAT);
+            this.relationFK_TYPEEXPONAT_EXPONAT = new global::System.Data.DataRelation("FK_TYPEEXPONAT_EXPONAT", new global::System.Data.DataColumn[] {
+                        this.tableTYPEEXPONAT.PK_TYPEColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEXPONAT.PK_TYPEColumn}, false);
+            this.Relations.Add(this.relationFK_TYPEEXPONAT_EXPONAT);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2898,12 +2898,12 @@ namespace iMuseum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EXPONATRow[] GetEXPONATRowsByFK_CATEGORY_EXPONAT() {
-                if ((this.Table.ChildRelations["FK_CATEGORY_EXPONAT"] == null)) {
+            public EXPONATRow[] GetEXPONATRowsByFK_CATEGORY_EXPONAT2() {
+                if ((this.Table.ChildRelations["FK_CATEGORY_EXPONAT2"] == null)) {
                     return new EXPONATRow[0];
                 }
                 else {
-                    return ((EXPONATRow[])(base.GetChildRows(this.Table.ChildRelations["FK_CATEGORY_EXPONAT"])));
+                    return ((EXPONATRow[])(base.GetChildRows(this.Table.ChildRelations["FK_CATEGORY_EXPONAT2"])));
                 }
             }
             
@@ -2920,12 +2920,12 @@ namespace iMuseum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EXPONATRow[] GetEXPONATRowsByFK_CATEGORY_EXPONAT2() {
-                if ((this.Table.ChildRelations["FK_CATEGORY_EXPONAT2"] == null)) {
+            public EXPONATRow[] GetEXPONATRowsByFK_CATEGORY_EXPONAT() {
+                if ((this.Table.ChildRelations["FK_CATEGORY_EXPONAT"] == null)) {
                     return new EXPONATRow[0];
                 }
                 else {
-                    return ((EXPONATRow[])(base.GetChildRows(this.Table.ChildRelations["FK_CATEGORY_EXPONAT2"])));
+                    return ((EXPONATRow[])(base.GetChildRows(this.Table.ChildRelations["FK_CATEGORY_EXPONAT"])));
                 }
             }
             
@@ -2990,23 +2990,23 @@ namespace iMuseum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CATEGORYRow CATEGORYRow {
-                get {
-                    return ((CATEGORYRow)(this.GetParentRow(this.Table.ParentRelations["FK_CATEGORY_CATEGORYEXHIBITION"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CATEGORY_CATEGORYEXHIBITION"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EXHIBITIONRow EXHIBITIONRow {
                 get {
                     return ((EXHIBITIONRow)(this.GetParentRow(this.Table.ParentRelations["FK_EXHIBITION_CATEGORYEXHIBITION"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_EXHIBITION_CATEGORYEXHIBITION"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CATEGORYRow CATEGORYRow {
+                get {
+                    return ((CATEGORYRow)(this.GetParentRow(this.Table.ParentRelations["FK_CATEGORY_CATEGORYEXHIBITION"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_CATEGORY_CATEGORYEXHIBITION"]);
                 }
             }
         }
@@ -3060,23 +3060,23 @@ namespace iMuseum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EXPONATRow EXPONATRow {
-                get {
-                    return ((EXPONATRow)(this.GetParentRow(this.Table.ParentRelations["FK_EXPONAT_CATEGORYEXPONAT"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_EXPONAT_CATEGORYEXPONAT"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EXHIBITIONRow EXHIBITIONRow {
                 get {
                     return ((EXHIBITIONRow)(this.GetParentRow(this.Table.ParentRelations["FK_EXHIBITION_CATEGORYEXPONAT"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_EXHIBITION_CATEGORYEXPONAT"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public EXPONATRow EXPONATRow {
+                get {
+                    return ((EXPONATRow)(this.GetParentRow(this.Table.ParentRelations["FK_EXPONAT_CATEGORYEXPONAT"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_EXPONAT_CATEGORYEXPONAT"]);
                 }
             }
         }
@@ -3471,34 +3471,12 @@ namespace iMuseum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TYPEEXPONATRow TYPEEXPONATRow {
+            public CATEGORYRow CATEGORYRowByFK_CATEGORY_EXPONAT2 {
                 get {
-                    return ((TYPEEXPONATRow)(this.GetParentRow(this.Table.ParentRelations["FK_TYPEEXPONAT_EXPONAT"])));
+                    return ((CATEGORYRow)(this.GetParentRow(this.Table.ParentRelations["FK_CATEGORY_EXPONAT2"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_TYPEEXPONAT_EXPONAT"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SOURCERow SOURCERow {
-                get {
-                    return ((SOURCERow)(this.GetParentRow(this.Table.ParentRelations["FK_SOURCE_EXPONAT"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_SOURCE_EXPONAT"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CATEGORYRow CATEGORYRowByFK_CATEGORY_EXPONAT {
-                get {
-                    return ((CATEGORYRow)(this.GetParentRow(this.Table.ParentRelations["FK_CATEGORY_EXPONAT"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CATEGORY_EXPONAT"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_CATEGORY_EXPONAT2"]);
                 }
             }
             
@@ -3515,12 +3493,34 @@ namespace iMuseum {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CATEGORYRow CATEGORYRowByFK_CATEGORY_EXPONAT2 {
+            public CATEGORYRow CATEGORYRowByFK_CATEGORY_EXPONAT {
                 get {
-                    return ((CATEGORYRow)(this.GetParentRow(this.Table.ParentRelations["FK_CATEGORY_EXPONAT2"])));
+                    return ((CATEGORYRow)(this.GetParentRow(this.Table.ParentRelations["FK_CATEGORY_EXPONAT"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CATEGORY_EXPONAT2"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_CATEGORY_EXPONAT"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SOURCERow SOURCERow {
+                get {
+                    return ((SOURCERow)(this.GetParentRow(this.Table.ParentRelations["FK_SOURCE_EXPONAT"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_SOURCE_EXPONAT"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TYPEEXPONATRow TYPEEXPONATRow {
+                get {
+                    return ((TYPEEXPONATRow)(this.GetParentRow(this.Table.ParentRelations["FK_TYPEEXPONAT_EXPONAT"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_TYPEEXPONAT_EXPONAT"]);
                 }
             }
             
@@ -6664,11 +6664,16 @@ WHERE        (e.PK_EXPONAT = cx.pk_exponat) AND (e.PK_CATEGORYEXPONAT = ce.pk_ca
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT \"PK_TYPE\", \"NAME_\" FROM \"KOMRAZR\".\"TYPEEXPONAT\"";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO \"KOMRAZR\".\"TYPEEXPONAT\" (\"NAME_\") VALUES (?)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NAME_", global::System.Data.OleDb.OleDbType.WChar, 400, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME_", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6750,6 +6755,35 @@ WHERE        (e.PK_EXPONAT = cx.pk_exponat) AND (e.PK_CATEGORYEXPONAT = ce.pk_ca
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertTYPE(string NAME_) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            if ((NAME_ == null)) {
+                throw new global::System.ArgumentNullException("NAME_");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(NAME_));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
