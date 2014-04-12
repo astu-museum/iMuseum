@@ -42,6 +42,8 @@ namespace iMuseum
                     return;
                 }
 
+
+            //Проверка криворукости
             String checkstr = textBox_title.Text;
             checkstr = checkstr.TrimEnd(new Char[] { ' ', '-' });
             if (checkstr.Length == 0)
@@ -49,6 +51,20 @@ namespace iMuseum
                 MessageBox.Show("Введите наименование типа экспоната");
                 return;
             }
+
+            DataSet1TableAdapters.TYPEEXPONATTableAdapter typeAdapter = new DataSet1TableAdapters.TYPEEXPONATTableAdapter();
+
+            //Проверка на дублирование
+            if (typeAdapter.DoubleTYPE(textBox_title.Text) != 0)
+            {
+                MessageBox.Show("Тип " + textBox_title.Text + " уже существует");
+                return;
+            }
+            
+            //Добавляем в базу
+            typeAdapter.InsertTYPE(textBox_title.Text);
+
+            this.Close();
         }
     }
 }
