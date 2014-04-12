@@ -133,6 +133,14 @@ namespace iMuseum
             newSRC.name = textBox2.Text;
             newSRC.address = textBox3.Text;
 
+            DataSet1TableAdapters.SOURCETableAdapter srcAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
+
+            if (srcAdapter.DoubleSRC(textBox2.Text) != 0)
+            {
+                MessageBox.Show("В списке источников уже присутствует " + textBox2.Text);
+                return;
+            }
+
             newSRC.save();
 
             this.Close();
