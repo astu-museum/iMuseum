@@ -109,20 +109,13 @@ namespace iMuseum
         {
             DataSet1TableAdapters.EXPONATTableAdapter ta = new DataSet1TableAdapters.EXPONATTableAdapter();
 
-       
-
-         //  a.DataPropertyName = "tt";
-
             DataTable dt = ta.FC(pk);
-
-
 
             title.DataPropertyName = "name";
             categoryexp.DataPropertyName = "aa";
             autcat.DataPropertyName = "aut";
             audcat.DataPropertyName = "q";
             typeexp.DataPropertyName = "aaa";
-            //damae.DataPropertyName = "ee";
             a.DataPropertyName = "pk_exponat";
             b.DataPropertyName = "pk_categoryexponat";
             c.DataPropertyName = "pk_categoryauthor";
@@ -144,9 +137,6 @@ namespace iMuseum
 
             dataGridView1.DataSource = dt;
 
-           // string asdasdas="";
-         //  damae.ValueType = typeof(System.String);
-
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
 
@@ -157,51 +147,27 @@ namespace iMuseum
             }
 
             evil_Filler();
-
-
-            /*
-            foreach (DataSet1.EXPONATRow aRow in dt)
-            {
-                currentCustomer.sourceValue = aRow.NAME_;
-            }*/
         }
 
+        /// <summary>
+        /// Загрузка окна
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExbDetails_Load(object sender, EventArgs e)
         {
-           
-
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.CATEGORY". При необходимости она может быть перемещена или удалена.
-            //this.cATEGORYTableAdapter.Fill(this.dataSet1.CATEGORY.);
             Load_Some();
             Anothre();
         }
 
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            Bitmap bmp = new Bitmap(dataGridView1.Size.Width + 100, dataGridView1.Size.Height + 100);
-          //  bmp = new Bitmap(
 
-            Rectangle cs = new Rectangle(100,200,dataGridView1.Width+500,dataGridView1.Height+500);
-
-            cs = new Rectangle(new Point(0, 0), new Size(dataGridView1.Width + 500, dataGridView1.Height + 500));
-            this.DrawToBitmap(bmp,cs);
-
-         //   dataGridView1.DrawToBitmap(bmp, dataGridView1.Bounds);
-             
-            e.Graphics.DrawImage(bmp,0,0);
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            printDocument1.Print();
-        }
-
+        /// <summary>
+        /// Удалить
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-
-
-      
                 try
                 {
                     int p = dataGridView1.SelectedCells[0].RowIndex;
@@ -222,18 +188,21 @@ namespace iMuseum
                 DataSet1TableAdapters.CATEGORYEXPONATTableAdapter regionTableAdapter =
                 new DataSet1TableAdapters.CATEGORYEXPONATTableAdapter();
 
-
-
-
                 regionTableAdapter.DeleteCatExp(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells["a"].Value, User.exhibitions[0].getPkExhibition());
-
-
-                // User.exponats[dataGridView1.SelectedCells[0].RowIndex].delete_();
-
 
                 Load_Some();
                 Anothre();
        
+        }
+
+        /// <summary>
+        /// Вызов печати
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void printExb(object sender, EventArgs e)
+        {
+
         }
 
 
