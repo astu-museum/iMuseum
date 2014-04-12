@@ -66,5 +66,10 @@ namespace iMuseum
 
             this.Close();
         }
+
+        private void AddType_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
