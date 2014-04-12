@@ -80,12 +80,36 @@ namespace iMuseum
         /// <param name="e"></param>
         private void delete_Source(object sender, EventArgs e)
         {
+
             if (MessageBox.Show("Удалить источник?", "Удаление источника получения", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            User.sources[dataGridView1.SelectedCells[0].RowIndex].delete();
+         //   try
+          //  {
 
-            LoadSources();
+            try
+            {
+                int p = dataGridView1.SelectedCells[0].RowIndex;
+
+            }
+            catch (Exception ff)
+            {
+
+                MessageBox.Show("Не выбрана строка для удаления");
+                return;
+            }
+
+
+                User.sources[dataGridView1.SelectedCells[0].RowIndex].delete();
+
+
+         //   }
+       //     catch (OracleException ee)
+        //    {
+
+         //   }
+
+                 LoadSources();
         }
     }
 }

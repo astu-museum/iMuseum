@@ -128,6 +128,19 @@ namespace iMuseum
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+            try
+            {
+                int p = dataGridView1.SelectedCells[0].RowIndex;
+
+            }
+            catch (Exception ff)
+            {
+
+                MessageBox.Show("Не выбрана строка для удаления");
+                return;
+            }
+
             if (MessageBox.Show("УДАЛИТЬ ЗАПИСЬ", "УДАЛЕНИЕ", MessageBoxButtons.YesNo) == DialogResult.No)
             {
                 return;
