@@ -5,7 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace iMuseum
 {
@@ -202,9 +206,119 @@ namespace iMuseum
         /// <param name="e"></param>
         private void printExb(object sender, EventArgs e)
         {
-
+            if (printDialog.ShowDialog() == DialogResult.OK)
+                printMethod(); 
         }
 
+        /// <summary>
+        /// Печать
+        /// </summary>
+        private void printMethod()
+        {
+            Excel.Application xlApp;
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
 
+            xlApp = new Excel.Application();
+            xlWorkBook = xlApp.Workbooks.Add(misValue);
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            xlWorkSheet = (Excel.Worksheet)xlApp.Worksheets[1];
+            xlWorkSheet.Cells.ColumnWidth = 13;
+            xlWorkSheet.Cells.Font.Size = 8;
+            int i = 0;
+
+            xlWorkSheet.Cells[1, 1] = "Выставка:";
+            xlWorkSheet.Cells[1, 2] = this.Text;
+            xlWorkSheet.Cells[2, 1] = "Дата начала:";
+            xlWorkSheet.Cells[2, 2] = label2.Text.Substring(0, 10);
+            xlWorkSheet.Cells[3, 1] = "Дата окончания:";
+            xlWorkSheet.Cells[3, 2] = label2.Text.Substring(13);
+
+            xlWorkSheet.Cells[5, 1] = "Наименование";
+            xlWorkSheet.Cells[5, 2] = "Тип экспоната";
+            xlWorkSheet.Cells[5, 3] = "Категория автора";
+            xlWorkSheet.Cells[5, 4] = "Целевая аудитория";
+            xlWorkSheet.Cells[5, 5] = "Состояние";
+            xlWorkSheet.Cells[5, 6] = "Категория экспоната";
+            
+            for (i = 0; i < dataGridView1.RowCount; i++)
+            {
+                DataGridViewCell cell1 = dataGridView1["title", i];
+                xlWorkSheet.Cells[i + 6, 1] = cell1.Value;
+                xlWorkSheet.Cells[i + 6, 1].Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous; // верхняя внешняя
+                xlWorkSheet.Cells[i + 6, 1].Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle = Excel.XlLineStyle.xlContinuous; // правая внешняя
+                xlWorkSheet.Cells[i + 6, 1].Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle = Excel.XlLineStyle.xlContinuous; // левая внешняя
+                xlWorkSheet.Cells[i + 6, 1].Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous; // нижняя внешняя
+
+                DataGridViewCell cell2 = dataGridView1["typeexp", i];
+                xlWorkSheet.Cells[i + 6, 2] = cell2.Value;
+                xlWorkSheet.Cells[i + 6, 2].Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous; // верхняя внешняя
+                xlWorkSheet.Cells[i + 6, 2].Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle = Excel.XlLineStyle.xlContinuous; // правая внешняя
+                xlWorkSheet.Cells[i + 6, 2].Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle = Excel.XlLineStyle.xlContinuous; // левая внешняя
+                xlWorkSheet.Cells[i + 6, 2].Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous; // нижняя внешняя
+                
+                DataGridViewCell cell3 = dataGridView1["autcat", i];
+                xlWorkSheet.Cells[i + 6, 3] = cell3.Value;
+                xlWorkSheet.Cells[i + 6, 3].Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous; // верхняя внешняя
+                xlWorkSheet.Cells[i + 6, 3].Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle = Excel.XlLineStyle.xlContinuous; // правая внешняя
+                xlWorkSheet.Cells[i + 6, 3].Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle = Excel.XlLineStyle.xlContinuous; // левая внешняя
+                xlWorkSheet.Cells[i + 6, 3].Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous; // нижняя внешняя
+                
+                DataGridViewCell cell4 = dataGridView1["audcat", i];
+                xlWorkSheet.Cells[i + 6, 4] = cell4.Value;
+                xlWorkSheet.Cells[i + 6, 4].Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous; // верхняя внешняя
+                xlWorkSheet.Cells[i + 6, 4].Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle = Excel.XlLineStyle.xlContinuous; // правая внешняя
+                xlWorkSheet.Cells[i + 6, 4].Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle = Excel.XlLineStyle.xlContinuous; // левая внешняя
+                xlWorkSheet.Cells[i + 6, 4].Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous; // нижняя внешняя
+                
+                DataGridViewCell cell5 = dataGridView1["damae", i];
+                xlWorkSheet.Cells[i + 6, 5] = cell5.Value;
+                xlWorkSheet.Cells[i + 6, 5].Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous; // верхняя внешняя
+                xlWorkSheet.Cells[i + 6, 5].Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle = Excel.XlLineStyle.xlContinuous; // правая внешняя
+                xlWorkSheet.Cells[i + 6, 5].Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle = Excel.XlLineStyle.xlContinuous; // левая внешняя
+                xlWorkSheet.Cells[i + 6, 5].Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous; // нижняя внешняя
+                
+                DataGridViewCell cell6 = dataGridView1["categoryexp", i];
+                xlWorkSheet.Cells[i + 6, 6] = cell6.Value;
+                xlWorkSheet.Cells[i + 6, 6].Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous; // верхняя внешняя
+                xlWorkSheet.Cells[i + 6, 6].Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle = Excel.XlLineStyle.xlContinuous; // правая внешняя
+                xlWorkSheet.Cells[i + 6, 6].Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle = Excel.XlLineStyle.xlContinuous; // левая внешняя
+                xlWorkSheet.Cells[i + 6, 6].Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous; // нижняя внешняя
+            }
+            
+            xlApp.DisplayAlerts = false;
+            xlWorkBook.SaveAs(this.Text + "(" + label2.Text + ")", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
+            xlWorkSheet.PrintOutEx(1, System.Type.Missing, 1, false, printDialog.PrinterSettings.PrinterName);
+
+            xlWorkBook.Close(true, misValue, misValue);
+            xlApp.Quit();
+
+            releaseObject(xlWorkSheet);
+            releaseObject(xlWorkBook);
+            releaseObject(xlApp);
+        }
+
+        /// <summary>
+        /// Очистка памяти
+        /// </summary>
+        /// <param name="obj"></param>
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Exception Occured while releasing object " + ex.ToString());
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
     }
 }

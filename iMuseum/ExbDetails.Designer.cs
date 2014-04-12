@@ -59,7 +59,7 @@
             this.bd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.be = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog = new System.Windows.Forms.PrintDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -328,9 +328,9 @@
             this.bf.ReadOnly = true;
             this.bf.Visible = false;
             // 
-            // printDocument1
+            // printDialog
             // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            this.printDialog.UseEXDialog = true;
             // 
             // ExbDetails
             // 
@@ -369,7 +369,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeexp;
         private System.Windows.Forms.DataGridViewTextBoxColumn autcat;
@@ -394,5 +393,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bd;
         private System.Windows.Forms.DataGridViewTextBoxColumn be;
         private System.Windows.Forms.DataGridViewTextBoxColumn bf;
+        private System.Windows.Forms.PrintDialog printDialog;
     }
 }
