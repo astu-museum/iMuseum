@@ -45,16 +45,7 @@ namespace iMuseum
             comboBox5.SelectedIndex=0;
             comboBox7.SelectedIndex = 0;
 
-            DataSet1TableAdapters.SOURCETableAdapter sauceTableAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
-
-
-          User.dtrip = sauceTableAdapter.GetData();
-
-         
-
-            comboBox8.DataSource = User.dtrip;
-            comboBox8.ValueMember = "NAME_";
-            comboBox8.BindingContext = this.BindingContext;
+            MiniLoad();
 
             //АВТОРОКАТЕГОРИЯ
             DataSet1TableAdapters.CATEGORYTableAdapter cta = new DataSet1TableAdapters.CATEGORYTableAdapter();
@@ -93,20 +84,22 @@ namespace iMuseum
 
 
             //ТИПЫ
+            LoadTypes();
+        }
 
+
+        /// <summary>
+        /// Загрузка типов в комбобокс
+        /// </summary>
+        void LoadTypes()
+        {
             DataSet1TableAdapters.TYPEEXPONATTableAdapter tta = new DataSet1TableAdapters.TYPEEXPONATTableAdapter();
 
             texp = tta.GetData();
 
-
-
             comboBox6.DataSource = texp;
             comboBox6.ValueMember = "NAME_";
             comboBox6.BindingContext = this.BindingContext;
-        
-
-          
-
         }
 
         public Form2()
@@ -126,7 +119,6 @@ namespace iMuseum
             asrc.ShowDialog();
 
             MiniLoad();
-
         }
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
@@ -480,6 +472,8 @@ namespace iMuseum
         {
             AddType AType = new AddType();
             AType.ShowDialog();
+
+            LoadTypes();
         }
     }
 }
