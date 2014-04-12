@@ -36,6 +36,8 @@ namespace iMuseum
             //ОТСЕКАЕМ ИМЕЮЩКИ
             User.exhibitions[0].getExponats().Clear();
 
+            User.Checks.Clear();
+
 
             AddExpExb aee = new AddExpExb();
             aee.ShowDialog();

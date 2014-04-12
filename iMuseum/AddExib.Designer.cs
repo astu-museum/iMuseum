@@ -79,7 +79,7 @@
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Location = new System.Drawing.Point(12, 68);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(129, 50);
+            this.groupBox2.Size = new System.Drawing.Size(271, 50);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Дата начала";
@@ -88,15 +88,15 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(6, 19);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(117, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(259, 20);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Location = new System.Drawing.Point(147, 68);
+            this.groupBox3.Location = new System.Drawing.Point(12, 124);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(136, 50);
+            this.groupBox3.Size = new System.Drawing.Size(271, 50);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Дата окончания";
@@ -105,7 +105,7 @@
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(6, 19);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(124, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(259, 20);
             this.dateTimePicker2.TabIndex = 1;
             // 
             // groupBox12
