@@ -135,6 +135,7 @@ namespace iMuseum
             asrc.ShowDialog();
 
             MiniLoad();
+            Edit_Load();
         }
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
@@ -510,13 +511,14 @@ namespace iMuseum
             AType.ShowDialog();
 
             LoadTypes();
+            Edit_Load();
         }
 
         /// <summary>
         /// Заполнение полей при редактировании
         /// </summary>
         void Edit_Load(){
-            User.load_exponatsp(exponatId);
+          
             textBox1.Text = User.exponats[0].name;
             textBox2.Text = User.exponats[0].inumber;
             textBox3.Text = (Convert.ToInt32(User.exponats[0].price)).ToString();
@@ -528,9 +530,19 @@ namespace iMuseum
 
             
             comboBox1.SelectedIndex = User.exponats[0].getTypeSob();
+            comboBox8.SelectedValue = User.exponats[0].sourceValue;
+            dateTimePicker1.Value=User.exponats[0].date;
+          
 
+            textBox7.Text = User.exponats[0].getFio();
+            comboBox5.SelectedIndex = User.exponats[0].getDamage();
+            comboBox7.SelectedIndex=User.exponats[0].getPlace();
+
+            textBox6.Text = User.exponats[0].getDescr();
 
             openFileDialog1.FileName = User.exponats[0].getPic();
+
+            //МЕСТО ДЛЯ ЗАГРУЗКИ КАТЕГОРИЙ И ТИПА(И ВОЗМОЖНОГО БЛОКИРОВАНИЯ ИХ ИЗМЕНЕНИЙ)
 
         }
 
@@ -539,6 +551,7 @@ namespace iMuseum
             LoadSome();
             if (exponatId != 0)
             {
+                User.load_exponatsp(exponatId);
                 Edit_Load();
             }
         }
