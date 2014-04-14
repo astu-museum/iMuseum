@@ -450,7 +450,7 @@ namespace iMuseum
         /// Выгрузка выставки с ключом pk
         /// </summary>
         /// <param name="pk">ключ</param>
- 
+        /// 
         public static void load_exhibitionsp(int pk)
         {
             DataSet1TableAdapters.EXHIBITIONTableAdapter ta = new DataSet1TableAdapters.EXHIBITIONTableAdapter();
@@ -518,7 +518,7 @@ namespace iMuseum
         /// Выгрузка выставки с ключом pk
         /// </summary>
         /// <param name="pk">ключ</param>
-
+        /// 
         public static void load_sourcesp(int pk)
         {
             sources = new List<Sauce>();         

@@ -54,7 +54,7 @@ namespace iMuseum
 
              if (User.exponats[0].getPic() != " ")
              {
-                 MessageBox.Show(User.exponats[0].getPic());
+                 //MessageBox.Show(User.exponats[0].getPic());
                  pictureBox1.ImageLocation = User.exponats[0].getPic();
              }
         }
