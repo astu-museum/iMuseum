@@ -264,6 +264,9 @@ namespace iMuseum
 
 
         //СОХРАНЕНИЕ В БАЗУ
+        /// <summary>
+        ///  Сохранение экспоната в базу
+        /// </summary>
         public void save()
         {
             //INSERT INTO "KOMRAZR"."EXPONAT" ( "PK_CATEGORYEXPONAT", "PK_CATEGORYAUTHOR", 
@@ -282,11 +285,25 @@ namespace iMuseum
 
         }
 
+        /// <summary>
+        /// Изменеие экспоната в БД
+        /// </summary>
         public void update()
         {
+ //          UPDATE       KOMRAZR.EXPONAT
+//SET                PK_CATEGORYEXPONAT = ?, PK_CATEGORYAUTHOR = ?, PK_CATEGORYAUDITORY = ?, PK_SOURCE = ?, INUMBER = ?, NAME_ = ?, PRICE_ = ?, DATE_GET = ?, 
+                      //   TYPESOB = ?, DESCR = ?, PLACE_ = ?, DAMAGE = ?, FLAG = ?, FIO = ?, PICREFERENCE = ?, PK_TYPE = ?
+//WHERE        (PK_EXPONAT = ?)
+
+            DataSet1TableAdapters.EXPONATTableAdapter expAdapter = new DataSet1TableAdapters.EXPONATTableAdapter();
+            expAdapter.UpdateExp(Convert.ToDecimal(pk_categoryExp), Convert.ToDecimal(pk_categoryAut), Convert.ToDecimal(pk_categoryAud), Convert.ToDecimal(pk_source), inumber, name, Convert.ToDecimal(price), date, typeSob, description, place, damage, flag, fio, pic, pk_type,Convert.ToDecimal(pk_exponat));
+
+
         }
 
-
+        /// <summary>
+        /// Удаление экспоната из базы
+        /// </summary>
         public void delete_()
         {
             DataSet1TableAdapters.EXPONATTableAdapter regionTableAdapter =

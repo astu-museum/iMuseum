@@ -5833,7 +5833,7 @@ namespace iMuseum.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[10];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[11];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT \"PK_EXPONAT\", \"PK_CATEGORYEXPONAT\", \"PK_CATEGORYAUTHOR\", \"PK_CATEGORYAUDIT" +
@@ -5863,49 +5863,32 @@ namespace iMuseum.DataSet1TableAdapters {
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Param1", global::System.Data.OleDb.OleDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT COUNT(*) FROM EXPONAT WHERE inumber=?";
+            this._commandCollection[5].CommandText = "SELECT COUNT(*) FROM EXPONAT WHERE inumber=? and inumber!=?";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("INUMBER", global::System.Data.OleDb.OleDbType.WChar, 200, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INUMBER", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("INUMBER1", global::System.Data.OleDb.OleDbType.WChar, 200, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INUMBER", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT        ce.Name_ AS aa, ca.Name_ AS aut, cd.Name_ AS q, e.NAME_ AS name, e.DAMAGE AS ee, te.NAME_ AS aaa, e.PK_EXPONAT , e.PK_CATEGORYAUTHOR, 
+            this._commandCollection[6].CommandText = "SELECT COUNT(*) FROM EXPONAT WHERE inumber=?";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("INUMBER", global::System.Data.OleDb.OleDbType.WChar, 200, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INUMBER", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"SELECT        ce.Name_ AS aa, ca.Name_ AS aut, cd.Name_ AS q, e.NAME_ AS name, e.DAMAGE AS ee, te.NAME_ AS aaa, e.PK_EXPONAT , e.PK_CATEGORYAUTHOR, 
                          e.PK_CATEGORYAUDITORY, e.PK_SOURCE, e.PK_TYPE, e.PK_CATEGORYEXPONAT
 FROM            KOMRAZR.EXPONAT e, Category ce, Category ca, Category cd, categoryexponat cx, Typeexponat te
 WHERE        (e.PK_EXPONAT = cx.pk_exponat) AND (e.PK_CATEGORYEXPONAT = ce.pk_category) AND (e.PK_CATEGORYAUTHOR = ca.pk_category) AND 
                          (e.PK_CATEGORYAUDITORY = cd.pk_category) AND (te.pk_type = e.PK_TYPE) AND (cx.pk_exhibition = ?)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Param1", global::System.Data.OleDb.OleDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[7] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"SELECT ""PK_EXPONAT"", ""PK_CATEGORYEXPONAT"", ""PK_CATEGORYAUTHOR"", ""PK_CATEGORYAUDITORY"", ""PK_SOURCE"", ""INUMBER"", ""NAME_"", ""PRICE_"", ""DATE_GET"", ""TYPESOB"", ""DESCR"", ""PLACE_"", ""DAMAGE"", ""FLAG"", ""FIO"", ""PICREFERENCE"", ""PK_TYPE"" FROM ""KOMRAZR"".""EXPONAT"" Where pk_exponat=?";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_EXPONAT", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_EXPONAT", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Param1", global::System.Data.OleDb.OleDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[8] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = @"INSERT INTO ""KOMRAZR"".""EXPONAT"" ( ""PK_CATEGORYEXPONAT"", ""PK_CATEGORYAUTHOR"", ""PK_CATEGORYAUDITORY"", ""PK_SOURCE"", ""INUMBER"", ""NAME_"", ""PRICE_"", ""DATE_GET"", ""TYPESOB"", ""DESCR"", ""PLACE_"", ""DAMAGE"", ""FLAG"", ""FIO"", ""PICREFERENCE"", ""PK_TYPE"") VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._commandCollection[8].CommandText = @"SELECT ""PK_EXPONAT"", ""PK_CATEGORYEXPONAT"", ""PK_CATEGORYAUTHOR"", ""PK_CATEGORYAUDITORY"", ""PK_SOURCE"", ""INUMBER"", ""NAME_"", ""PRICE_"", ""DATE_GET"", ""TYPESOB"", ""DESCR"", ""PLACE_"", ""DAMAGE"", ""FLAG"", ""FIO"", ""PICREFERENCE"", ""PK_TYPE"" FROM ""KOMRAZR"".""EXPONAT"" Where pk_exponat=?";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_CATEGORYEXPONAT", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_CATEGORYEXPONAT", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_CATEGORYAUTHOR", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_CATEGORYAUTHOR", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_CATEGORYAUDITORY", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_CATEGORYAUDITORY", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_SOURCE", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_SOURCE", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("INUMBER", global::System.Data.OleDb.OleDbType.WChar, 200, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INUMBER", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NAME_", global::System.Data.OleDb.OleDbType.WChar, 500, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME_", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PRICE_", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(8)), ((byte)(2)), "PRICE_", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DATE_GET", global::System.Data.OleDb.OleDbType.DBTimeStamp, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DATE_GET", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TYPESOB", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "TYPESOB", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DESCR", global::System.Data.OleDb.OleDbType.WChar, 2147483647, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DESCR", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PLACE_", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PLACE_", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DAMAGE", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "DAMAGE", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FLAG", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "FLAG", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FIO", global::System.Data.OleDb.OleDbType.WChar, 400, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FIO", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICREFERENCE", global::System.Data.OleDb.OleDbType.WChar, 500, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICREFERENCE", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_TYPE", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_TYPE", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_EXPONAT", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_EXPONAT", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[9] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = @"UPDATE       KOMRAZR.EXPONAT
-SET                PK_CATEGORYEXPONAT = ?, PK_CATEGORYAUTHOR = ?, PK_CATEGORYAUDITORY = ?, PK_SOURCE = ?, INUMBER = ?, NAME_ = ?, PRICE_ = ?, DATE_GET = ?, 
-                         TYPESOB = ?, DESCR = ?, PLACE_ = ?, DAMAGE = ?, FLAG = ?, FIO = ?, PICREFERENCE = ?, PK_TYPE = ?
-WHERE        (PK_EXPONAT = ?)";
+            this._commandCollection[9].CommandText = @"INSERT INTO ""KOMRAZR"".""EXPONAT"" ( ""PK_CATEGORYEXPONAT"", ""PK_CATEGORYAUTHOR"", ""PK_CATEGORYAUDITORY"", ""PK_SOURCE"", ""INUMBER"", ""NAME_"", ""PRICE_"", ""DATE_GET"", ""TYPESOB"", ""DESCR"", ""PLACE_"", ""DAMAGE"", ""FLAG"", ""FIO"", ""PICREFERENCE"", ""PK_TYPE"") VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[9].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_CATEGORYEXPONAT", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_CATEGORYEXPONAT", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[9].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_CATEGORYAUTHOR", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_CATEGORYAUTHOR", global::System.Data.DataRowVersion.Current, false, null));
@@ -5923,7 +5906,30 @@ WHERE        (PK_EXPONAT = ?)";
             this._commandCollection[9].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FIO", global::System.Data.OleDb.OleDbType.WChar, 400, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FIO", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[9].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICREFERENCE", global::System.Data.OleDb.OleDbType.WChar, 500, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICREFERENCE", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[9].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_TYPE", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_TYPE", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PK_EXPONAT", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_EXPONAT", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[10] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = @"UPDATE       KOMRAZR.EXPONAT
+SET                PK_CATEGORYEXPONAT = ?, PK_CATEGORYAUTHOR = ?, PK_CATEGORYAUDITORY = ?, PK_SOURCE = ?, INUMBER = ?, NAME_ = ?, PRICE_ = ?, DATE_GET = ?, 
+                         TYPESOB = ?, DESCR = ?, PLACE_ = ?, DAMAGE = ?, FLAG = ?, FIO = ?, PICREFERENCE = ?, PK_TYPE = ?
+WHERE        (PK_EXPONAT = ?)";
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_CATEGORYEXPONAT", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_CATEGORYEXPONAT", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_CATEGORYAUTHOR", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_CATEGORYAUTHOR", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_CATEGORYAUDITORY", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_CATEGORYAUDITORY", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_SOURCE", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_SOURCE", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("INUMBER", global::System.Data.OleDb.OleDbType.WChar, 200, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "INUMBER", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NAME_", global::System.Data.OleDb.OleDbType.WChar, 500, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME_", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PRICE_", global::System.Data.OleDb.OleDbType.Numeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(8)), ((byte)(2)), "PRICE_", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DATE_GET", global::System.Data.OleDb.OleDbType.DBTimeStamp, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DATE_GET", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TYPESOB", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "TYPESOB", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DESCR", global::System.Data.OleDb.OleDbType.WChar, 2147483647, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DESCR", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PLACE_", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PLACE_", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DAMAGE", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "DAMAGE", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FLAG", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "FLAG", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("FIO", global::System.Data.OleDb.OleDbType.WChar, 400, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "FIO", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PICREFERENCE", global::System.Data.OleDb.OleDbType.WChar, 500, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "PICREFERENCE", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("PK_TYPE", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_TYPE", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_PK_EXPONAT", global::System.Data.OleDb.OleDbType.VarNumeric, 0, global::System.Data.ParameterDirection.Input, ((byte)(38)), ((byte)(0)), "PK_EXPONAT", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5955,7 +5961,7 @@ WHERE        (PK_EXPONAT = ?)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByME(DataSet1.EXPONATDataTable dataTable, object Param1) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((Param1 == null)) {
                 throw new global::System.ArgumentNullException("Param1");
             }
@@ -5974,7 +5980,7 @@ WHERE        (PK_EXPONAT = ?)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSet1.EXPONATDataTable FC(object Param1) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((Param1 == null)) {
                 throw new global::System.ArgumentNullException("Param1");
             }
@@ -5991,7 +5997,7 @@ WHERE        (PK_EXPONAT = ?)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByYAP(DataSet1.EXPONATDataTable dataTable, decimal PK_EXPONAT) {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PK_EXPONAT));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6005,7 +6011,7 @@ WHERE        (PK_EXPONAT = ?)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSet1.EXPONATDataTable GetExponatByPk(decimal PK_EXPONAT) {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PK_EXPONAT));
             DataSet1.EXPONATDataTable dataTable = new DataSet1.EXPONATDataTable();
             this.Adapter.Fill(dataTable);
@@ -6240,8 +6246,48 @@ WHERE        (PK_EXPONAT = ?)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object DoubleNumberQuery(string INUMBER) {
+        public virtual object DoubleInumberEdit(string INUMBER, string INUMBER1) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[5];
+            if ((INUMBER == null)) {
+                throw new global::System.ArgumentNullException("INUMBER");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(INUMBER));
+            }
+            if ((INUMBER1 == null)) {
+                throw new global::System.ArgumentNullException("INUMBER1");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(INUMBER1));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object DoubleNumberQuery(string INUMBER) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[6];
             if ((INUMBER == null)) {
                 throw new global::System.ArgumentNullException("INUMBER");
             }
@@ -6292,7 +6338,7 @@ WHERE        (PK_EXPONAT = ?)";
                     string FIO, 
                     string PICREFERENCE, 
                     decimal PK_TYPE) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[8];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[9];
             command.Parameters[0].Value = ((decimal)(PK_CATEGORYEXPONAT));
             command.Parameters[1].Value = ((decimal)(PK_CATEGORYAUTHOR));
             command.Parameters[2].Value = ((decimal)(PK_CATEGORYAUDITORY));
@@ -6373,7 +6419,7 @@ WHERE        (PK_EXPONAT = ?)";
                     string PICREFERENCE, 
                     decimal PK_TYPE, 
                     decimal Original_PK_EXPONAT) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[9];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[10];
             command.Parameters[0].Value = ((decimal)(PK_CATEGORYEXPONAT));
             command.Parameters[1].Value = ((decimal)(PK_CATEGORYAUTHOR));
             command.Parameters[2].Value = ((decimal)(PK_CATEGORYAUDITORY));
