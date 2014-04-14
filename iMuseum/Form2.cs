@@ -430,11 +430,18 @@ namespace iMuseum
             int p =Convert.ToInt32(eta.CatAutQuery((Convert.ToInt32(cataut.Rows[comboBox2.SelectedIndex]["pk_category"].ToString()))));
 
 
-           long asdasd = comboBox2.SelectedValue.GetHashCode();
-           if (asdasd < 0) asdasd *= -1;
+           
+           //long asdasd = comboBox2.SelectedValue.GetHashCode();
+       //    if (asdasd < 0) asdasd *= -1;
 
-            fir = asdasd.ToString() + (p + 1).ToString();
+        //    long asdasd = Convert.ToInt32(cataut.Rows[comboBox2.SelectedIndex]["pk_category"].ToString());
+        //    fir = asdasd.ToString() + (p + 1).ToString();
            // MessageBox.Show(fir);
+
+
+            long asdasd = (comboBox2.SelectedIndex + 1) * 100 + p;
+            fir = asdasd.ToString();
+
 
             textBox2.Text = fir + sec + tyr;
 
@@ -447,12 +454,19 @@ namespace iMuseum
 
             int p = Convert.ToInt32(eta.CatExpQuery((Convert.ToInt32(catexp.Rows[comboBox3.SelectedIndex]["pk_category"].ToString()))));
 
-            long asdasd = comboBox3.SelectedValue.GetHashCode();
-           if (asdasd < 0) asdasd *= -1;
+            //long asdasd = comboBox3.SelectedValue.GetHashCode();
+            //    if (asdasd < 0) asdasd *= -1;
 
 
-            sec = asdasd.ToString() + (p + 1).ToString();
+          //  long asdasd = Convert.ToInt32(catexp.Rows[comboBox3.SelectedIndex]["pk_category"].ToString());
+        //    sec = asdasd.ToString() + (p + 1).ToString();
+
             // MessageBox.Show(fir);
+
+            long asdasd = (comboBox3.SelectedIndex + 1) * 100 + p;
+            sec = asdasd.ToString();
+
+
 
             textBox2.Text = fir + sec + tyr;
 
@@ -468,11 +482,17 @@ namespace iMuseum
             int p = Convert.ToInt32(eta.CatAudQuery((Convert.ToInt32(cataud.Rows[comboBox4.SelectedIndex]["pk_category"].ToString()))));
 
 
-            long asdasd = comboBox4.SelectedValue.GetHashCode();
-          if (asdasd < 0) asdasd *= -1;
+           // long asdasd = comboBox4.SelectedValue.GetHashCode();
+           //   if (asdasd < 0) asdasd *= -1;
 
-            tyr = asdasd.ToString() + (p + 1).ToString();
+          //  long asdasd = Convert.ToInt32(cataud.Rows[comboBox4.SelectedIndex]["pk_category"].ToString());
+          //  tyr = asdasd.ToString() + (p + 1).ToString();
             //MessageBox.Show(fir);
+
+
+            long asdasd = (comboBox4.SelectedIndex + 1) * 100 + p;
+            tyr = asdasd.ToString();
+
 
             textBox2.Text = fir + sec + tyr;
 
@@ -496,12 +516,25 @@ namespace iMuseum
         /// Заполнение полей при редактировании
         /// </summary>
         void Edit_Load(){
+            User.load_exponatsp(exponatId);
+            textBox1.Text = User.exponats[0].name;
+            textBox2.Text = User.exponats[0].inumber;
+            textBox3.Text = (Convert.ToInt32(User.exponats[0].price)).ToString();
+            textBox4.Text = (Convert.ToInt32(User.exponats[0].price * 100) % 100).ToString();
+
+
+            
+            comboBox1.SelectedIndex = User.exponats[0].getTypeSob();
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             LoadSome();
-            Edit_Load();
+            if (exponatId != 0)
+            {
+                Edit_Load();
+            }
         }
     }
 }
