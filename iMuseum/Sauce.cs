@@ -86,5 +86,14 @@ namespace iMuseum
 
             srcAdapter.DeleteSRC(pk_source);
         }
+
+         public void update()
+        {
+            DataSet1TableAdapters.SOURCETableAdapter srcAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
+
+            srcAdapter.UpdateSource(name,address,pk_source);
+        }
     }
+
+    
 }

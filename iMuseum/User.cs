@@ -511,6 +511,40 @@ namespace iMuseum
         }
 
 
+
+       
+
+        /// <summary>
+        /// Выгрузка выставки с ключом pk
+        /// </summary>
+        /// <param name="pk">ключ</param>
+
+        public static void load_sourcesp(int pk)
+        {
+            sources = new List<Sauce>();         
+   
+                    //ОПАСНОЕ ВПЛЕТЕНИЕ ИСТОЧНИКА
+                DataSet1TableAdapters.SOURCETableAdapter ta = new DataSet1TableAdapters.SOURCETableAdapter();
+
+
+                DataSet1.SOURCEDataTable dt = ta.HitlerSource(pk);
+
+                foreach (DataSet1.SOURCERow sRow in dt)
+                {
+                    Sauce currentCustomer = new Sauce();
+
+                    currentCustomer.setPkSource(Convert.ToInt32(sRow.PK_SOURCE));
+                    currentCustomer.name = sRow.NAME_;
+                    currentCustomer.address = sRow.ADDRESSS;
+
+                    User.sources.Add(currentCustomer);
+                }
+
+
+        }
+
+
+
        /// <summary>
        /// Загрузка всех выставок
        /// </summary>

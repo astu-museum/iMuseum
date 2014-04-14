@@ -37,14 +37,30 @@ namespace iMuseum
         /// <param name="e"></param>
         private void editSource(object sender, EventArgs e)
         {
-            AddSource asrc = new AddSource();
+            try
+            {
+                int p = dataGridView1.SelectedCells[0].RowIndex;
+
+            }
+            catch (Exception ff)
+            {
+
+                MessageBox.Show("Не выбрана строка для удаления");
+                return;
+            }
+
+
+
+            AddSource asrc = new AddSource( User.sources[dataGridView1.SelectedCells[0].RowIndex].getPkSource());
             asrc.ShowDialog();
+            LoadSources();
         }
 
         private void srcSet(object sender, EventArgs e)
         {
             sourceSettings srcs = new sourceSettings();
             srcs.ShowDialog();
+            LoadSources();
         }
 
 

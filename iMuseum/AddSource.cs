@@ -11,11 +11,16 @@ namespace iMuseum
 {
     public partial class AddSource : Form
     {
+
+        DataSet1TableAdapters.SOURCETableAdapter srcAdapter;//Адаптер для работы с источником
+        private int sourceId;//Передаваемый параметр для редактированя
+
         /// <summary>
         /// Добавление источника
         /// </summary>
         public AddSource()
         {
+            sourceId = 0;
             InitializeComponent();
         }
 
@@ -27,6 +32,7 @@ namespace iMuseum
         public AddSource(Int32 editID)
         {
             InitializeComponent();
+            sourceId = editID;
         }
 
         /// <summary>
@@ -123,25 +129,44 @@ namespace iMuseum
 
             }
 
-            //Здесь вроде как должна быть проверка дублирования, но пока обойдемся
-
-
-            //Вносим новый источник
-
-            Sauce newSRC = new Sauce();
-
-            newSRC.name = textBox2.Text;
-            newSRC.address = textBox3.Text;
-
-            DataSet1TableAdapters.SOURCETableAdapter srcAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
-
-            if (srcAdapter.DoubleSRC(textBox2.Text) != 0)
+            if (sourceId==0)//Добавление
             {
-                MessageBox.Show("В списке источников уже присутствует " + textBox2.Text);
-                return;
-            }
+                // проверка дублирования
+                if (srcAdapter.DoubleSRC(textBox2.Text) != 0)
+                {
+                    MessageBox.Show("В списке источников уже присутствует " + textBox2.Text);
+                    return;
+                }
 
-            newSRC.save();
+                //Вносим новый источник
+
+                Sauce newSRC = new Sauce();
+
+                newSRC.name = textBox2.Text;
+                newSRC.address = textBox3.Text;
+
+                newSRC.save();
+            }
+            else//Редактирование
+            {
+                // проверка дублирования
+                if (srcAdapter.DoubleEditSRC(textBox2.Text,User.sources[0].name) != 0)
+                {
+                    MessageBox.Show("В списке источников уже присутствует " + textBox2.Text);
+                    return;
+                }
+
+                //Вносим новый источник
+
+                Sauce newSRC = new Sauce();
+
+                newSRC.setPkSource(User.sources[0].getPkSource());
+                newSRC.name = textBox2.Text;
+                newSRC.address = textBox3.Text;
+
+                newSRC.update();
+
+            }
 
             this.Close();
         }
@@ -151,9 +176,25 @@ namespace iMuseum
             this.Close();
         }
 
+        /// <summary>
+        /// Заполнение полей при редактировании
+        /// </summary>
+        void FillFileds()
+        {
+            User.load_sourcesp(sourceId);
+
+            textBox2.Text = User.sources[0].name;
+            textBox3.Text = User.sources[0].address;
+        }
+
         private void AddSource_Load(object sender, EventArgs e)
         {
 
+             srcAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
+            if (sourceId != 0)
+            {
+                FillFileds();
+            }
         }
     }
 }
