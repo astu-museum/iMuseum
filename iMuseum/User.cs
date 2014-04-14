@@ -694,6 +694,74 @@ namespace iMuseum
         }
 
 
+        /// <summary>
+        /// Загрузка Экспоната по ПК
+        /// </summary>
+        public static void load_exponatsp(int pk)
+        {
+            //Обнулили
+            User.exponats = new List<Exponat>();
+            DataSet1TableAdapters.EXPONATTableAdapter exponatTableAdapter = new DataSet1TableAdapters.EXPONATTableAdapter();
+            DataSet1.EXPONATDataTable customerData = exponatTableAdapter.GetExponatByPk(pk);
+            foreach (DataSet1.EXPONATRow customerRow in customerData)
+            {
+                Exponat currentCustomer = new Exponat();
+
+                //Ключи и неотражаемая в гриде ересь
+                currentCustomer.setPkExponat(Convert.ToInt32(customerRow.PK_EXPONAT));
+                currentCustomer.setPkSource(Convert.ToInt32(customerRow.PK_SOURCE));
+                currentCustomer.setPkCategoryExp(Convert.ToInt32(customerRow.PK_CATEGORYEXPONAT));
+                currentCustomer.setPkCategoryAut(Convert.ToInt32(customerRow.PK_CATEGORYAUTHOR));
+                currentCustomer.setPkCategoryAud(Convert.ToInt32(customerRow.PK_CATEGORYAUDITORY));
+                currentCustomer.setPkType(Convert.ToInt32(customerRow.PK_TYPE));
+
+                currentCustomer.setFlag(Convert.ToInt32(customerRow.FLAG));
+                currentCustomer.setDescr(customerRow.DESCR);
+                currentCustomer.setFio(customerRow.FIO);
+                currentCustomer.setPic(customerRow.PICREFERENCE);
+
+
+                //Нужен перевод в строковую форму
+                currentCustomer.setTypeSob(Convert.ToInt32(customerRow.TYPESOB));
+                currentCustomer.typeSobStr = User.typeSobString[currentCustomer.getTypeSob()];
+                currentCustomer.setPlace(Convert.ToInt32(customerRow.PLACE_));
+                currentCustomer.placeStr = User.placeString[currentCustomer.getPlace()];
+                currentCustomer.setDamage(Convert.ToInt32(customerRow.DAMAGE));
+                currentCustomer.damageStr = User.damageString[currentCustomer.getDamage()];
+
+                //currentCustomer.sourceValue ="";
+                //ВПЛЕТЕНИЕ ИСТОЧНИКА
+                DataSet1TableAdapters.SOURCETableAdapter ta = new DataSet1TableAdapters.SOURCETableAdapter();
+
+
+                DataSet1.SOURCEDataTable dt = ta.HitlerSource(currentCustomer.getPkSource());
+
+                foreach (DataSet1.SOURCERow sRow in dt)
+                {
+                    currentCustomer.sourceValue = sRow.NAME_;
+                }
+
+
+                //Просто отображаемые части
+                currentCustomer.date = customerRow.DATE_GET;
+                currentCustomer.inumber = customerRow.INUMBER;
+                currentCustomer.name = customerRow.NAME_;
+                currentCustomer.price = Convert.ToDouble(customerRow.PRICE_);
+
+
+                //ПРОВЕРКА,ЧТО НЕ СПИСАН???А НАДО?
+                if (currentCustomer.getFlag() == 0)
+                {
+                    User.exponats.Add(currentCustomer);
+                }
+
+
+
+            }
+        }
+
+
+
 
 
     }

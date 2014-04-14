@@ -17,6 +17,10 @@
 }
 
 namespace iMuseum.DataSet1TableAdapters {
+    partial class CATEGORYEXPONATTableAdapter
+    {
+    }
+
     partial class CATEGORYEXHIBITIONTableAdapter
     {
     }

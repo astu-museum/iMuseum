@@ -152,5 +152,26 @@ namespace iMuseum
             Load_Exponats();
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int p = dataGridView1.SelectedCells[0].RowIndex;
+
+            }
+            catch (Exception ff)
+            {
+
+                MessageBox.Show("Не выбрана строка для редактирования");
+                return;
+            }
+
+            Form2 f2 = new Form2(User.exponats[dataGridView1.SelectedCells[0].RowIndex].getPkExponat());
+            f2.ShowDialog();
+            Load_Exponats();
+
+
+        }
     }
 }

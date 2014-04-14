@@ -12,6 +12,8 @@ namespace iMuseum
     public partial class Form2 : Form
     {
 
+        int exponatId;//Пк для редактирования
+
         string fir=" ", sec=" ", tyr=" ";//Куски Инвентарника
 
         DataSet1.CATEGORYDataTable catexp;
@@ -102,10 +104,24 @@ namespace iMuseum
             comboBox6.BindingContext = this.BindingContext;
         }
 
+        /// <summary>
+        /// Добавление Экспоната
+        /// </summary>
         public Form2()
         {
             InitializeComponent();
-            LoadSome();
+            exponatId = 0;
+        }
+
+        /// <summary>
+        /// Редактирование Экспоната
+        /// </summary>
+        /// <param name="ID"></param>
+        public Form2(Int32 ID)
+        {
+            InitializeComponent();
+            exponatId = ID;
+
         }
 
         private void openImage(object sender, EventArgs e)
@@ -476,9 +492,16 @@ namespace iMuseum
             LoadTypes();
         }
 
+        /// <summary>
+        /// Заполнение полей при редактировании
+        /// </summary>
+        void Edit_Load(){
+        }
+
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            LoadSome();
+            Edit_Load();
         }
     }
 }

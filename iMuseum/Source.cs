@@ -45,7 +45,7 @@ namespace iMuseum
             catch (Exception ff)
             {
 
-                MessageBox.Show("Не выбрана строка для удаления");
+                MessageBox.Show("Не выбрана строка для редактирования");
                 return;
             }
 
