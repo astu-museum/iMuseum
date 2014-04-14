@@ -282,6 +282,11 @@ namespace iMuseum
 
         }
 
+        public void update()
+        {
+        }
+
+
         public void delete_()
         {
             DataSet1TableAdapters.EXPONATTableAdapter regionTableAdapter =
@@ -293,6 +298,8 @@ namespace iMuseum
             regionTableAdapter.DeleteQuery(pk_exponat);
 
         }
+
+
 
 
     }

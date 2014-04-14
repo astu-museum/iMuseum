@@ -87,6 +87,9 @@ namespace iMuseum
             srcAdapter.DeleteSRC(pk_source);
         }
 
+        /// <summary>
+        /// Изменение информации об источнике в БД
+        /// </summary>
          public void update()
         {
             DataSet1TableAdapters.SOURCETableAdapter srcAdapter = new DataSet1TableAdapters.SOURCETableAdapter();
