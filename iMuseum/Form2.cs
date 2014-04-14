@@ -546,7 +546,7 @@ namespace iMuseum
 
             DataSet1TableAdapters.CATEGORYTableAdapter loady = new DataSet1TableAdapters.CATEGORYTableAdapter();
 
-
+            //Категория Экспоната
             DataSet1.CATEGORYDataTable catdt = loady.GetCatExpName(exponatId);
 
             foreach (DataSet1.CATEGORYRow categ in catdt)
@@ -554,6 +554,25 @@ namespace iMuseum
                 comboBox3.SelectedValue= categ.NAME_;
             }
 
+            //КАтегория автора
+            catdt = loady.GetCatAutName(exponatId);
+
+            foreach (DataSet1.CATEGORYRow categ in catdt)
+            {
+                comboBox2.SelectedValue = categ.NAME_;
+            }
+
+            //Целеад
+            catdt = loady.GetCatAudName(exponatId);
+
+
+            foreach (DataSet1.CATEGORYRow categ in catdt)
+            {
+                comboBox4.SelectedValue = categ.NAME_;
+            }
+
+
+            //Тип
 
             //Проверка нахождения на выставке
             DataSet1TableAdapters.CATEGORYEXPONATTableAdapter ceta = new DataSet1TableAdapters.CATEGORYEXPONATTableAdapter();
