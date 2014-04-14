@@ -544,6 +544,18 @@ namespace iMuseum
 
             //МЕСТО ДЛЯ ЗАГРУЗКИ КАТЕГОРИЙ И ТИПА(И ВОЗМОЖНОГО БЛОКИРОВАНИЯ ИХ ИЗМЕНЕНИЙ)
 
+            DataSet1TableAdapters.CATEGORYEXPONATTableAdapter ceta = new DataSet1TableAdapters.CATEGORYEXPONATTableAdapter();
+
+            //Проверка нахождения на выставке
+            if (ceta.onExhibition(exponatId) != 0)
+            {
+                MessageBox.Show("Экспонат \"" + textBox1.Text + "\" в данное время принадлежит одной или более выставок.Изменение его категорий,целевой аудитории и даты получения заблокировано");
+                comboBox2.Enabled = false;
+                comboBox3.Enabled = false;
+                comboBox4.Enabled = false;
+                dateTimePicker1.Enabled = false;
+            }
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
