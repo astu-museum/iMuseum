@@ -574,6 +574,16 @@ namespace iMuseum
 
             //Тип
 
+            DataSet1TableAdapters.TYPEEXPONATTableAdapter typie = new DataSet1TableAdapters.TYPEEXPONATTableAdapter();
+
+            DataSet1.TYPEEXPONATDataTable tdd = typie.GetTypeName(exponatId);
+
+            foreach (DataSet1.TYPEEXPONATRow categ in tdd)
+            {
+                comboBox6.SelectedValue = categ.NAME_;
+            }
+
+
             //Проверка нахождения на выставке
             DataSet1TableAdapters.CATEGORYEXPONATTableAdapter ceta = new DataSet1TableAdapters.CATEGORYEXPONATTableAdapter();
 

@@ -6945,7 +6945,7 @@ WHERE        (e.PK_EXPONAT = cx.pk_exponat) AND (e.PK_CATEGORYEXPONAT = ce.pk_ca
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT \"PK_TYPE\", \"NAME_\" FROM \"KOMRAZR\".\"TYPEEXPONAT\"";
@@ -6957,9 +6957,15 @@ WHERE        (e.PK_EXPONAT = cx.pk_exponat) AND (e.PK_CATEGORYEXPONAT = ce.pk_ca
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NAME_", global::System.Data.OleDb.OleDbType.WChar, 400, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME_", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO \"KOMRAZR\".\"TYPEEXPONAT\" (\"NAME_\") VALUES (?)";
+            this._commandCollection[2].CommandText = "SELECT t.PK_TYPE, t.NAME_ FROM TYPEEXPONAT t,exponat e where e.pk_exponat=? and e" +
+                ".pk_type=t.pk_type\r\n\r\n";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NAME_", global::System.Data.OleDb.OleDbType.WChar, 400, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME_", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Param1", global::System.Data.OleDb.OleDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "INSERT INTO \"KOMRAZR\".\"TYPEEXPONAT\" (\"NAME_\") VALUES (?)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("NAME_", global::System.Data.OleDb.OleDbType.WChar, 400, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NAME_", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6981,6 +6987,42 @@ WHERE        (e.PK_EXPONAT = cx.pk_exponat) AND (e.PK_CATEGORYEXPONAT = ce.pk_ca
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet1.TYPEEXPONATDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.TYPEEXPONATDataTable dataTable = new DataSet1.TYPEEXPONATDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DataSet1.TYPEEXPONATDataTable dataTable, object Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Param1 == null)) {
+                throw new global::System.ArgumentNullException("Param1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((object)(Param1));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TYPEEXPONATDataTable GetTypeName(object Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Param1 == null)) {
+                throw new global::System.ArgumentNullException("Param1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((object)(Param1));
+            }
             DataSet1.TYPEEXPONATDataTable dataTable = new DataSet1.TYPEEXPONATDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7082,7 +7124,7 @@ WHERE        (e.PK_EXPONAT = cx.pk_exponat) AND (e.PK_CATEGORYEXPONAT = ce.pk_ca
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertTYPE(string NAME_) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
             if ((NAME_ == null)) {
                 throw new global::System.ArgumentNullException("NAME_");
             }
