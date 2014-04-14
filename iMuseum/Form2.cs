@@ -542,11 +542,23 @@ namespace iMuseum
 
             openFileDialog1.FileName = User.exponats[0].getPic();
 
-            //МЕСТО ДЛЯ ЗАГРУЗКИ КАТЕГОРИЙ И ТИПА(И ВОЗМОЖНОГО БЛОКИРОВАНИЯ ИХ ИЗМЕНЕНИЙ)
+            //МЕСТО ДЛЯ ЗАГРУЗКИ КАТЕГОРИЙ И ТИПА
 
-            DataSet1TableAdapters.CATEGORYEXPONATTableAdapter ceta = new DataSet1TableAdapters.CATEGORYEXPONATTableAdapter();
+            DataSet1TableAdapters.CATEGORYTableAdapter loady = new DataSet1TableAdapters.CATEGORYTableAdapter();
+
+
+            DataSet1.CATEGORYDataTable catdt = loady.GetCatExpName(exponatId);
+
+            foreach (DataSet1.CATEGORYRow categ in catdt)
+            {
+                comboBox3.SelectedValue= categ.NAME_;
+            }
+
 
             //Проверка нахождения на выставке
+            DataSet1TableAdapters.CATEGORYEXPONATTableAdapter ceta = new DataSet1TableAdapters.CATEGORYEXPONATTableAdapter();
+
+          
             if (ceta.onExhibition(exponatId) != 0)
             {
                 MessageBox.Show("Экспонат \"" + textBox1.Text + "\" в данное время принадлежит одной или более выставок.Изменение его категорий,целевой аудитории и даты получения заблокировано");
