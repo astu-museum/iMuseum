@@ -225,7 +225,7 @@ namespace iMuseum
                     return;
                 }
 
-                if (cnt1 + cnt >= textBox7.Text.Length - 3)
+                if ((cnt1 + cnt >= textBox7.Text.Length - 3 )&&(textBox7.Text!=" "))
                 {
                     MessageBox.Show("Фио");
                     return;
@@ -298,15 +298,7 @@ namespace iMuseum
 
 
 
-            //ПРоверка дублирования Инвентарника
 
-            DataSet1TableAdapters.EXPONATTableAdapter eta = new DataSet1TableAdapters.EXPONATTableAdapter();
-            if (eta.DoubleNumberQuery(textBox2.Text).ToString() != "0")
-            {
-                MessageBox.Show("Уже есть такой Инвентарный Номер");
-                return;
-            }
-      
            //Проверим стоимость
 
         
@@ -345,6 +337,31 @@ namespace iMuseum
 
 
 
+            //ПРоверка дублирования Инвентарника
+
+            DataSet1TableAdapters.EXPONATTableAdapter eta = new DataSet1TableAdapters.EXPONATTableAdapter();
+
+            if (exponatId == 0)
+            {
+
+                if (eta.DoubleNumberQuery(textBox2.Text).ToString() != "0")
+                {
+                    MessageBox.Show("Уже есть такой Инвентарный Номер");
+                    return;
+                }
+
+            }
+            else
+            {
+                if (eta.DoubleInumberEdit(textBox2.Text,User.exponats[0].inumber).ToString() != "0")
+                {
+                    MessageBox.Show("Уже есть такой Инвентарный Номер");
+                    return;
+                }
+
+
+            }
+      
 
 
             
@@ -357,7 +374,7 @@ namespace iMuseum
 
            
             nExp.setPkCategoryAut(Convert.ToInt32(cataut.Rows[comboBox2.SelectedIndex]["pk_category"].ToString()));
-           // MessageBox.Show(nExp.getPkCategoryAut().ToString());
+      
             nExp.setPkCategoryAud(Convert.ToInt32(cataud.Rows[comboBox4.SelectedIndex]["pk_category"].ToString()));
 
             
@@ -415,7 +432,16 @@ namespace iMuseum
        
             nExp.setPkType(Convert.ToInt32(texp.Rows[comboBox6.SelectedIndex]["pk_type"].ToString()));
 
-            nExp.save();
+
+            //Изменить или создать
+            if(exponatId==0){
+             nExp.save();
+                
+            }
+            else{
+                nExp.setPkExponat(exponatId);
+                nExp.update();
+            }
 
             this.Close();
         }
