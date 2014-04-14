@@ -522,9 +522,15 @@ namespace iMuseum
             textBox3.Text = (Convert.ToInt32(User.exponats[0].price)).ToString();
             textBox4.Text = (Convert.ToInt32(User.exponats[0].price * 100) % 100).ToString();
 
+            
+       
+  
 
             
             comboBox1.SelectedIndex = User.exponats[0].getTypeSob();
+
+
+            openFileDialog1.FileName = User.exponats[0].getPic();
 
         }
 

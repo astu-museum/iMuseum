@@ -11,10 +11,20 @@ namespace iMuseum
 {
     public partial class Info : Form
     {
+        int exponatId;
+
         public Info()
         {
             InitializeComponent();
+            exponatId = 0;
         }
+
+        public Info(Int32 pk)
+        {
+            InitializeComponent();
+            exponatId = pk;
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -29,6 +39,24 @@ namespace iMuseum
         {
             Form2 f2 = new Form2();
             f2.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
+
+        private void Info_Load(object sender, EventArgs e)
+        {
+             User.load_exponatsp(exponatId);
+
+             if (User.exponats[0].getPic() != " ")
+             {
+                 MessageBox.Show(User.exponats[0].getPic());
+                 pictureBox1.ImageLocation = User.exponats[0].getPic();
+             }
         }
     }
 }

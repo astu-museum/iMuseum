@@ -42,8 +42,23 @@ namespace iMuseum
         /// <param name="e"></param>
         private void infoExp(object sender, EventArgs e)
         {
-            Info info = new Info();
+            try
+            {
+                int p = dataGridView1.SelectedCells[0].RowIndex;
+
+            }
+            catch (Exception ff)
+            {
+
+                MessageBox.Show("Не выбран экспонат для отобржаения информации");
+                return;
+            }
+
+
+            Info info = new Info(User.exponats[dataGridView1.SelectedCells[0].RowIndex].getPkExponat());
             info.ShowDialog();
+
+            Load_Exponats();
         }
 
         private void setFilter(object sender, EventArgs e)

@@ -67,6 +67,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(765, 299);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label10
             // 
@@ -242,6 +243,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Информация об экспонате";
+            this.Load += new System.EventHandler(this.Info_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
