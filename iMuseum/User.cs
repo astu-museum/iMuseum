@@ -77,7 +77,29 @@ namespace iMuseum
                     continue;
                 }
 
+                if (!exponats[i].inumber.ToUpper().Contains(inumber0.ToUpper()))
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (!exponats[i].sourceValue.ToUpper().Contains(source0.ToUpper()))
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+
                 if (exponats[i].getDamage() != damage0)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].getTypeSob() != typesob0)
                 {
                     exponats.RemoveAt(i);
                     i--;
@@ -92,6 +114,14 @@ namespace iMuseum
                 }
 
                 if (exponats[i].price < pricefrom || exponats[i].price > priceto)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+
+                if (exponats[i].date < datestart ||exponats[i].date > dateend)
                 {
                     exponats.RemoveAt(i);
                     i--;
@@ -114,6 +144,24 @@ namespace iMuseum
             {
                 if (!exponats[i].name.ToUpper().Contains(name0.ToUpper()))
                 {
+
+                    //Выкидываем метку и сдвигаем остальные
+                    for(int j = 0;j < Checks.Count;j++){
+                        if (Checks[j] == i)
+                        {
+                           Checks.RemoveAt(j);
+                            j--;
+                        }
+                        else
+                        {
+                            if (Checks[j] > i)
+                            {
+                                Checks[j]--;
+                            }
+
+                        }
+                    }
+
                     exponats.RemoveAt(i);
                     i--;
                     continue;

@@ -12,7 +12,11 @@ namespace iMuseum
     public partial class AddExpExb : Form
     {
 
-        //Параметры для передачи
+       
+
+        //Параметры для сохранения
+        List<Exponat> saveExp;
+        List<int> saveCheck;
 
         public AddExpExb()
         {
@@ -22,9 +26,15 @@ namespace iMuseum
         private void search(object sender, EventArgs e)
         {
   
+            User.exponats = saveExp;
+            User.Checks = saveCheck;
+
+
             sourceSettings srccc = new sourceSettings();
             srccc.ShowDialog();
 
+            User.find_exponats_exhibition();
+            Load_some();
         }
 
 
@@ -49,6 +59,11 @@ namespace iMuseum
 
             dataGridView1.DataSource = User.exponats;//User.exponats;
 
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1.Rows[i].Cells[0].Value = false;
+            }
+
             for (int i = 0; i < User.Checks.Count; i++)
             {
                 dataGridView1.Rows[User.Checks[i]].Cells[0].Value = true;
@@ -60,6 +75,9 @@ namespace iMuseum
 
         private void AddExpExb_Load(object sender, EventArgs e)
         {
+            saveExp = User.exponats;
+            saveCheck = User.Checks;
+
             Load_some();
         }
 
