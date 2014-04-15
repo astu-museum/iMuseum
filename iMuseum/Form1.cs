@@ -142,7 +142,7 @@ namespace iMuseum
 
             dataGridView1.DataSource = User.exponats;
 
-         
+       
 
 
         }
