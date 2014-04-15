@@ -40,7 +40,7 @@ namespace iMuseum
 
         private void Load_some()
         {
-
+            MessageBox.Show(User.exponats.Count.ToString());
         
 
            // List<Exponat> ls = User.exponats;
@@ -75,6 +75,12 @@ namespace iMuseum
 
         private void AddExpExb_Load(object sender, EventArgs e)
         {
+            User.name0 = "";
+            User.pricefrom = 0.0;
+            User.priceto = 0.0;
+            User.damage0 = -1;
+            User.place0 = -1;
+
             saveExp = User.exponats;
             saveCheck = User.Checks;
 

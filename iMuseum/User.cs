@@ -92,21 +92,21 @@ namespace iMuseum
                 }
 
 
-                if (exponats[i].getDamage() != damage0)
+                if (exponats[i].getDamage() != damage0&&damage0!=-1)
                 {
                     exponats.RemoveAt(i);
                     i--;
                     continue;
                 }
 
-                if (exponats[i].getTypeSob() != typesob0)
+                if (exponats[i].getTypeSob() != typesob0&&typesob0!=-1)
                 {
                     exponats.RemoveAt(i);
                     i--;
                     continue;
                 }
 
-                if (exponats[i].getPlace() != place0)
+                if (exponats[i].getPlace() != place0&&place0!=-1)
                 {
                     exponats.RemoveAt(i);
                     i--;
@@ -146,7 +146,7 @@ namespace iMuseum
                 {
 
                     //Выкидываем метку и сдвигаем остальные
-                    for(int j = 0;j < Checks.Count;j++){
+                   for(int j = 0;j < Checks.Count;j++){
                         if (Checks[j] == i)
                         {
                            Checks.RemoveAt(j);
@@ -167,14 +167,14 @@ namespace iMuseum
                     continue;
                 }
 
-                if (exponats[i].getDamage()!=damage0)
+                if (exponats[i].getDamage()!=damage0&&damage0!=-1)
                 {
                     exponats.RemoveAt(i);
                     i--;
                     continue;
                 }
 
-                if (exponats[i].getPlace() != place0)
+                if (exponats[i].getPlace() != place0&&place0!=-1)
                 {
                     exponats.RemoveAt(i);
                     i--;
