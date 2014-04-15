@@ -161,6 +161,9 @@ namespace iMuseum
             User.categoryExponatFilter = new List<int>();
             User.Checks = new List<int>();
 
+          //  User.datestart
+
+
             Load_Exponats();
         }
 

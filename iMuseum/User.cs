@@ -21,7 +21,11 @@ namespace iMuseum
         public static List<int> categoryAuthorFilter;
         public static List<int> categoryAuditoryFilter;
 
-        //Фил
+        //Поискостыль
+      public static string name0,source0,inumber0;
+      public static int place0, damage0, typesob0;
+      public static double pricefrom, priceto;
+      public static DateTime datestart, dateend;
 
 
         //Строковые представления того,что хранися в виде Интовых Чисел
@@ -55,6 +59,91 @@ namespace iMuseum
 
                 }
             }
+
+        }
+
+        /// <summary>
+        /// Поиск экспонатов
+        /// </summary>
+        public static void find_exponats()
+        {
+
+            for (int i = 0; i < exponats.Count; i++)
+            {
+                if (!exponats[i].name.ToUpper().Contains(name0.ToUpper()))
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].getDamage() != damage0)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].getPlace() != place0)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].price < pricefrom || exponats[i].price > priceto)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+
+            }
+
+
+        }
+
+        /// <summary>
+        /// Поиск экспонатов по выставке
+        /// </summary>
+        public static void find_exponats_exhibition()
+        {
+
+            for (int i = 0; i < exponats.Count; i++)
+            {
+                if (!exponats[i].name.ToUpper().Contains(name0.ToUpper()))
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].getDamage()!=damage0)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].getPlace() != place0)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].price < pricefrom || exponats[i].price > priceto)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+
+            }
+
+
 
         }
 

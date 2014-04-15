@@ -11,9 +11,17 @@ namespace iMuseum
 {
     public partial class sourceSettings : Form
     {
+        int a;
+
         public sourceSettings()
         {
             InitializeComponent();
+        }
+
+        public sourceSettings(ref int a1)
+        {
+            InitializeComponent();
+            a = a1;
         }
 
         /// <summary>
@@ -70,6 +78,28 @@ namespace iMuseum
                 textBox6.Enabled = false;
                 textBox8.Enabled = false;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void sourceSettings_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox8.Text = "";
+            comboBox2.SelectedIndex = -1;
+            comboBox3.SelectedIndex = -1;
+
         }
     }
 }

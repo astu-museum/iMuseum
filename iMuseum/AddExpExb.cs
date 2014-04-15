@@ -11,6 +11,9 @@ namespace iMuseum
 {
     public partial class AddExpExb : Form
     {
+
+        //Параметры для передачи
+
         public AddExpExb()
         {
             InitializeComponent();
@@ -18,8 +21,10 @@ namespace iMuseum
 
         private void search(object sender, EventArgs e)
         {
+  
             sourceSettings srccc = new sourceSettings();
             srccc.ShowDialog();
+
         }
 
 
