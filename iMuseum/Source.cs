@@ -11,6 +11,9 @@ namespace iMuseum
 {
     public partial class Source : Form
     {
+
+        String sear;
+
         public Source()
         {
             InitializeComponent();
@@ -63,6 +66,14 @@ namespace iMuseum
             LoadSources();
         }
 
+        /// <summary>
+        /// Производит поиск подстроки
+        /// </summary>
+        void ApplySearch()
+        {
+            User.sourceSearch(sear);
+        }
+
 
         /// <summary>
         /// Загрузка Источников получения
@@ -70,6 +81,8 @@ namespace iMuseum
         private void LoadSources()
         {
             User.load_sources();
+            ApplySearch();
+
 
             name.DataPropertyName = "name";
             address.DataPropertyName = "address";
@@ -84,6 +97,9 @@ namespace iMuseum
         /// <param name="e"></param>
         private void Load_SourceForm(object sender, EventArgs e)
         {
+
+            sear = "";
+
             User.sources = new List<Sauce>();
 
             LoadSources();
@@ -126,6 +142,20 @@ namespace iMuseum
                 return;
             }
 
+            LoadSources();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           sear = textBox1.Text;
+           LoadSources();
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            sear = "";
             LoadSources();
         }
     }

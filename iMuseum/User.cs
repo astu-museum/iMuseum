@@ -58,6 +58,21 @@ namespace iMuseum
 
         }
 
+        /// <summary>
+        /// Поиск источников получения
+        /// </summary>
+        public static void sourceSearch(string s)
+        {
+            for (int i = 0; i < sources.Count; i++)
+            {
+                if(!sources[i].name.ToUpper().Contains(s.ToUpper())){
+                    sources.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+            }
+        }
+
    
 
         /// <summary>
