@@ -129,8 +129,8 @@ namespace iMuseum
             User.name0 = "";
             User.place0 = -1;
             User.damage0 = -1;
-            User.pricefrom = 0.0;
-            User.priceto = 0.0;
+            User.pricefrom = -1;
+            User.priceto = -1;
             
 
             textBox1.Text = "";

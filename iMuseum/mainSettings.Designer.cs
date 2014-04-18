@@ -283,6 +283,7 @@
             this.checkBox8.TabIndex = 7;
             this.checkBox8.Text = "Стоимость";
             this.checkBox8.UseVisualStyleBackColor = true;
+            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
             // 
             // checkBox7
             // 
@@ -293,6 +294,7 @@
             this.checkBox7.TabIndex = 6;
             this.checkBox7.Text = "Состояние";
             this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
             // 
             // checkBox6
             // 
@@ -303,6 +305,7 @@
             this.checkBox6.TabIndex = 5;
             this.checkBox6.Text = "Место хранения";
             this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // checkBox5
             // 
@@ -313,6 +316,7 @@
             this.checkBox5.TabIndex = 4;
             this.checkBox5.Text = "Тип собственности";
             this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
             // checkBox4
             // 
@@ -323,6 +327,7 @@
             this.checkBox4.TabIndex = 3;
             this.checkBox4.Text = "Дата получения";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -333,6 +338,7 @@
             this.checkBox3.TabIndex = 2;
             this.checkBox3.Text = "Источник получения";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -343,6 +349,7 @@
             this.checkBox2.TabIndex = 1;
             this.checkBox2.Text = "Наименование";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox1
             // 
@@ -353,6 +360,7 @@
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Инвентарный номер";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // button1
             // 
@@ -362,6 +370,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -372,6 +381,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -381,6 +391,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Сброс";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // mainSettings
             // 
@@ -401,6 +412,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Поиск";
+            this.Load += new System.EventHandler(this.mainSettings_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

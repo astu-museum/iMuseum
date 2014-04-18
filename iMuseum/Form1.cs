@@ -154,6 +154,18 @@ namespace iMuseum
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
+            User.name0 = "";
+            User.source0 = "";
+            User.inumber0 = "";
+            User.place0 = -1;
+            User.damage0 = -1;
+            User.typesob0 = -1;
+            User.pricefrom = -1;
+            User.priceto = -1;
+            User.datestart = User.superdate;
+            User.dateend = User.superdate;
+
+
 
             User.typeFilter = new List<int>();
             User.categoryAuthorFilter = new List<int>();

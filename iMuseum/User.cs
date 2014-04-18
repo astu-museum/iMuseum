@@ -36,6 +36,7 @@ namespace iMuseum
 
         //Создадим адаптер,шоб шифроваться
         public static DataSet1.SOURCEDataTable dtrip;
+        public static DateTime superdate = new DateTime(999,1,1);
 
 
         //Массив отметок,МУХАХАХА
@@ -122,7 +123,7 @@ namespace iMuseum
 
 
                 //Вставить нормальную клвёю роверку на даты
-                if (exponats[i].date < datestart ||exponats[i].date > dateend)
+                if (exponats[i].date < datestart ||exponats[i].date > dateend && datestart!=superdate)
                 {
                     exponats.RemoveAt(i);
                     i--;
