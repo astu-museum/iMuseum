@@ -41,11 +41,21 @@ namespace iMuseum
         {
              User.load_exponatsp(exponatId);
 
-             if (User.exponats[0].getPic() != " ")
-             {
-                 //MessageBox.Show(User.exponats[0].getPic());
-                 pictureBox1.ImageLocation = User.exponats[0].getPic();
-             }
+             if (User.exponats[0].getPic() != " ") pictureBox1.ImageLocation = User.exponats[0].getPic();                         //Изображение
+             
+             label_number.Text = User.exponats[0].inumber.ToString();                       //Инвентарный номер
+             label_title.Text = User.exponats[0].name.ToString();                           //Наименование экспоната
+             label_damage.Text = "Состояние экспоната: " + User.exponats[0].damageStr;      //Состояние
+             label_date.Text = "Дата получения: " + User.exponats[0].date.ToString().Substring(0, 10);                  //Дата получения
+             label_mesto.Text = "Место хранения: " + User.exponats[0].placeStr;    //Место хранения
+             label_price.Text = "Цена: " + User.exponats[0].price + " рублей";      //Цена экспоната
+             label_source.Text = "Источник получения: " + User.exponats[0].sourceValue; //Источник получения
+
+             textBox_info.Text = User.exponats[0].getDescr(); //Описание
+
+             if(User.exponats[0].getFio() != " ") label_author.Text = "Автор: " + User.exponats[0].getFio(); //Автор
+             label_sypesob.Text = "Тип собственности: " + User.exponats[0].typeSobStr; //Тип собственности
+
         }
 
         /// <summary>

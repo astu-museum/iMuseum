@@ -96,7 +96,9 @@ namespace iMuseum
         public int getPkSource() { return this.pk_source; }
 
 
-        //СТРОКОВОЕ ПРЕДСТАВЛЕНИЕ ИСТОЧНИКА
+        /// <summary>
+        /// Строковое представление источника
+        /// </summary>
         private string sourceString;
 
 

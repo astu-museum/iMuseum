@@ -85,9 +85,8 @@
             this.label_author.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_author.Location = new System.Drawing.Point(250, 102);
             this.label_author.Name = "label_author";
-            this.label_author.Size = new System.Drawing.Size(93, 16);
+            this.label_author.Size = new System.Drawing.Size(0, 16);
             this.label_author.TabIndex = 10;
-            this.label_author.Text = "Автор: Игорь";
             // 
             // label_damage
             // 
