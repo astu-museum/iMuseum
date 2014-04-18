@@ -21,9 +21,6 @@ namespace iMuseum
         public static List<int> categoryAuthorFilter;
         public static List<int> categoryAuditoryFilter;
 
-        //Фил
-
-
         //Строковые представления того,что хранися в виде Интовых Чисел
         public static List<string> typeSobString = new List<string>(5) { "Собственность музея","На временном пользовании"};
         public static List<string> placeString = new List<string>(5) { "Выставка", "Резерв","На хранении у стороненго лица" };
