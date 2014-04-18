@@ -13,41 +13,30 @@ namespace iMuseum
     {
         int exponatId;
 
+        /// <summary>
+        /// Конструктор формы Подробнее об экспонате (по-умолчанию)
+        /// </summary>
         public Info()
         {
             InitializeComponent();
             exponatId = 0;
         }
 
+        /// <summary>
+        /// Конструктор формы Подробнее об экспонате (рабочий)
+        /// </summary>
+        /// <param name="pk"></param>
         public Info(Int32 pk)
         {
             InitializeComponent();
             exponatId = pk;
         }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         /// <summary>
-        /// Изменение информации об экспонате
+        /// Загрузка информации
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void editExp(object sender, EventArgs e)
-        {
-            Form2 f2 = new Form2();
-            f2.ShowDialog();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        
-
         private void Info_Load(object sender, EventArgs e)
         {
              User.load_exponatsp(exponatId);
@@ -57,6 +46,16 @@ namespace iMuseum
                  //MessageBox.Show(User.exponats[0].getPic());
                  pictureBox1.ImageLocation = User.exponats[0].getPic();
              }
+        }
+
+        /// <summary>
+        /// Печать
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void print(object sender, EventArgs e)
+        {
+
         }
     }
 }
