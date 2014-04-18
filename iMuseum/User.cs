@@ -123,8 +123,9 @@ namespace iMuseum
 
 
                 //Вставить нормальную клвёю роверку на даты
-                if ((datestart != superdate) && (exponats[i].date.Date < datestart.Date) || (exponats[i].date.Date > dateend.Date))
+              if ((datestart != superdate) &&( (exponats[i].date.Date < datestart.Date) || (exponats[i].date.Date > dateend.Date)))
                 {
+                  
                     exponats.RemoveAt(i);
                     i--;
                     continue;
