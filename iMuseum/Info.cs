@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Drawing.Printing;
 
 namespace iMuseum
 {
@@ -65,7 +67,46 @@ namespace iMuseum
         /// <param name="e"></param>
         private void print(object sender, EventArgs e)
         {
+            printDocument1.PrintPage += new PrintPageEventHandler(pre_print);
+            printDocument1.DocumentName = label_title.Text;
+            if (printDialog_exp.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.PrinterSettings = printDialog_exp.PrinterSettings;
 
+                printDocument1.Print();
+            }
+        }
+
+        /// <summary>
+        /// Метод печати
+        /// </summary>
+        /// <param name="expInfo"></param>
+        private void pre_print(object sender, PrintPageEventArgs e)
+        {
+            Bitmap printExp = new Bitmap(765, 510);
+            this.DrawToBitmap(printExp, new Rectangle(0, 0, 765, 510));
+
+            Rectangle rc = new Rectangle(10, 30, 755, 480);
+            printExp = GetBitmapRegion(rc, printExp);
+
+            Graphics g = e.Graphics;
+            g.DrawImage(printExp,0,0);
+        }
+
+        /// <summary>
+        /// Обрезка изображения
+        /// </summary>
+        /// <param name="rect">Область обрезки</param>
+        /// <param name="bmp">Изображение</param>
+        /// <returns></returns>
+        Bitmap GetBitmapRegion(Rectangle rect, Bitmap bmp)
+        {
+            Bitmap region = new Bitmap(rect.Width, rect.Height);
+            using (Graphics g = Graphics.FromImage(region))
+            {
+                g.DrawImage(bmp, 0, 0, rect, GraphicsUnit.Pixel);
+            }
+            return region;
         }
     }
 }
