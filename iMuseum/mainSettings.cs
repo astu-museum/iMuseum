@@ -97,20 +97,20 @@ namespace iMuseum
 
             if (User.name0 != "")
             {
-                textBox1.Text = User.name0;
-                checkBox1.Checked = true;
+                textBox2.Text = User.name0;
+                checkBox2.Checked = true;
             }
 
             if (User.source0 != "")
             {
-                textBox2.Text = User.source0;
-                checkBox2.Checked = true;
+                textBox3.Text = User.source0;
+                checkBox3.Checked = true;
             }
 
             if (User.inumber0 != "")
             {
-                textBox3.Text = User.inumber0;
-                checkBox3.Checked = true;
+                textBox1.Text = User.inumber0;
+                checkBox1.Checked = true;
             }
 
             if (User.datestart != User.superdate)
@@ -143,6 +143,223 @@ namespace iMuseum
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (checkBox8.Checked == true)
+            {
+
+                if (textBox8.Text == "")
+                {
+
+                    MessageBox.Show("Не оставляйте цену пустой");
+                    return;
+
+                }
+
+                if (textBox5.Text == "")
+                {
+
+                    MessageBox.Show("Не оставляйте цену пустой");
+                    return;
+
+                }
+
+
+                if (textBox6.Text == "")
+                {
+
+                    MessageBox.Show("Не оставляйте цену пустой");
+                    return;
+
+                }
+
+                if (textBox4.Text == "")
+                {
+
+                    MessageBox.Show("Не оставляйте цену пустой");
+                    return;
+
+                }
+
+                if (textBox8.TextLength > 8)
+                {
+                    MessageBox.Show("Дороговато для Краевого музея");
+                    return;
+                }
+
+                for (int i = 0; i < textBox8.Text.Length; i++)
+                {
+
+
+
+                    if ((textBox8.Text[i] < '0') || (textBox8.Text[i] > '9'))
+                    {
+                        MessageBox.Show("Стоимость(руб) только цифры");
+                        return;
+
+                    }
+                }
+
+
+                for (int i = 0; i < textBox5.Text.Length; i++)
+                {
+
+
+
+                    if ((textBox4.Text[i] < '0') || (textBox4.Text[i] > '9'))
+                    {
+                        MessageBox.Show("Стоимость(коп) только цифры");
+                        return;
+
+                    }
+                }
+
+                if (textBox5.TextLength > 2)
+                {
+                    MessageBox.Show("Копеек не больше 99");
+                    return;
+                }
+
+                if (textBox6.TextLength > 8)
+                {
+                    MessageBox.Show("Дороговато для Краевого музея");
+                    return;
+                }
+
+                for (int i = 0; i < textBox6.Text.Length; i++)
+                {
+
+
+
+                    if ((textBox6.Text[i] < '0') || (textBox6.Text[i] > '9'))
+                    {
+                        MessageBox.Show("Стоимость(руб) только цифры");
+                        return;
+
+                    }
+                }
+
+
+                for (int i = 0; i < textBox4.Text.Length; i++)
+                {
+
+
+
+                    if ((textBox4.Text[i] < '0') || (textBox4.Text[i] > '9'))
+                    {
+                        MessageBox.Show("Стоимость(коп) только цифры");
+                        return;
+
+                    }
+                }
+
+                if (textBox4.TextLength > 2)
+                {
+                    MessageBox.Show("Копеек не больше 99");
+                    return;
+                }
+            }
+
+            if (checkBox1.Checked == true)
+            {
+                User.inumber0 = textBox1.Text;
+            }
+            else
+            {
+                User.inumber0 = "";
+            }
+
+            if (checkBox2.Checked == true)
+            {
+                User.name0 = textBox2.Text;
+            }
+            else
+            {
+                User.name0 = "";
+            }
+
+            if (checkBox3.Checked == true)
+            {
+                User.source0 = textBox3.Text;
+            }
+            else
+            {
+                User.source0 = "";
+            }
+
+
+            if (checkBox4.Checked == true)
+            {
+                User.datestart = dateTimePicker1.Value;
+                User.dateend = dateTimePicker2.Value;
+            }
+            else
+            {
+                User.datestart = User.superdate;
+                User.dateend = User.superdate;
+            }
+
+            if (checkBox5.Checked == true)
+            {
+                if (comboBox1.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Выберите Тип собственности");
+                    return;
+                }
+
+                User.typesob0 = comboBox1.SelectedIndex;
+            }
+            else
+            {
+                User.typesob0 = -1;
+            }
+
+
+
+            if (checkBox6.Checked == true)
+            {
+                if (comboBox2.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Выберите Место Хранения");
+                    return;
+                }
+
+                User.place0 = comboBox2.SelectedIndex;
+            }
+            else
+            {
+                User.place0 = -1;
+            }
+
+            if (checkBox7.Checked == true)
+            {
+
+                if (comboBox3.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Выберите Состояние экспоната");
+                    return;
+                }
+
+                User.damage0 = comboBox3.SelectedIndex;
+            }
+            else
+            {
+                User.damage0 = -1;
+            }
+
+            if (checkBox8.Checked == true)
+            {
+                User.pricefrom = Convert.ToDouble(textBox8.Text) + (Convert.ToDouble(textBox5.Text)) / 100;
+                User.priceto = Convert.ToDouble(textBox6.Text) + (Convert.ToDouble(textBox4.Text)) / 100;
+
+
+            }
+            else
+            {
+                User.pricefrom = -1;
+                User.priceto = -1;
+            }
+
+            this.Close();
+
               
         }
 
