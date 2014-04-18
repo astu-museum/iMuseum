@@ -212,6 +212,11 @@ namespace iMuseum
 
         }
 
+        /// <summary>
+        /// Редактировать
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             try
