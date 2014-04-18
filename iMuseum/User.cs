@@ -884,7 +884,6 @@ namespace iMuseum
                     currentCustomer.sourceValue=sRow.NAME_;
                 }
 
-
                 //Просто отображаемые части
                 currentCustomer.date = customerRow.DATE_GET;
                 currentCustomer.inumber=customerRow.INUMBER;

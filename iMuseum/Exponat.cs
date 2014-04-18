@@ -115,6 +115,8 @@ namespace iMuseum
         public void setPkType(int id) { this.pk_type = id; }
         public int getPkType() { return this.pk_type; }
 
+
+
         /// <summary>
         /// ПК категории Экспоанат
         /// </summary>
