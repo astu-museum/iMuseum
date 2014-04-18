@@ -124,6 +124,7 @@ namespace iMuseum
         {
             User.load_exponats();
             User.filter();
+            User.find_exponats();
 
             //ТУТ ДЕЛАЕМ ФИЛЬТРЕЦ
 
