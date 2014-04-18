@@ -124,6 +124,7 @@ namespace iMuseum
         {
             User.load_exponats();
             User.filter();
+            User.find_exponats();
 
             //ТУТ ДЕЛАЕМ ФИЛЬТРЕЦ
 
@@ -142,7 +143,7 @@ namespace iMuseum
 
             dataGridView1.DataSource = User.exponats;
 
-         
+       
 
 
         }
@@ -154,12 +155,27 @@ namespace iMuseum
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
+            User.name0 = "";
+            User.source0 = "";
+            User.inumber0 = "";
+            User.place0 = -1;
+            User.damage0 = -1;
+            User.typesob0 = -1;
+            User.pricefrom = -1;
+            User.priceto = -1;
+            User.datestart = User.superdate;
+            User.dateend = User.superdate;
+
+
 
             User.typeFilter = new List<int>();
             User.categoryAuthorFilter = new List<int>();
             User.categoryAuditoryFilter = new List<int>();
             User.categoryExponatFilter = new List<int>();
             User.Checks = new List<int>();
+
+          //  User.datestart
+
 
             Load_Exponats();
         }

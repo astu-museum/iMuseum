@@ -21,6 +21,13 @@ namespace iMuseum
         public static List<int> categoryAuthorFilter;
         public static List<int> categoryAuditoryFilter;
 
+        //Поискостыль
+      public static string name0,source0,inumber0;
+      public static int place0, damage0, typesob0;
+      public static double pricefrom, priceto;
+      public static DateTime datestart, dateend;
+
+
         //Строковые представления того,что хранися в виде Интовых Чисел
         public static List<string> typeSobString = new List<string>(5) { "Собственность музея","На временном пользовании"};
         public static List<string> placeString = new List<string>(5) { "Выставка", "Резерв","На хранении у стороненго лица" };
@@ -29,6 +36,7 @@ namespace iMuseum
 
         //Создадим адаптер,шоб шифроваться
         public static DataSet1.SOURCEDataTable dtrip;
+        public static DateTime superdate = new DateTime(999,1,1);
 
 
         //Массив отметок,МУХАХАХА
@@ -52,6 +60,195 @@ namespace iMuseum
 
                 }
             }
+
+        }
+
+        /// <summary>
+        /// Поиск экспонатов
+        /// </summary>
+        public static void find_exponats()
+        {
+
+            for (int i = 0; i < exponats.Count; i++)
+            {
+                if (!exponats[i].name.ToUpper().Contains(name0.ToUpper()))
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (!exponats[i].inumber.ToUpper().Contains(inumber0.ToUpper()))
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (!exponats[i].sourceValue.ToUpper().Contains(source0.ToUpper()))
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+
+                if (exponats[i].getDamage() != damage0&&damage0!=-1)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].getTypeSob() != typesob0&&typesob0!=-1)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].getPlace() != place0&&place0!=-1)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].price < pricefrom || exponats[i].price > priceto&&pricefrom!=-1)
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+
+                //Вставить нормальную клвёю роверку на даты
+                if ((datestart != superdate) && (exponats[i].date.Date < datestart.Date) || (exponats[i].date.Date > dateend.Date))
+                {
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+
+            }
+
+
+        }
+
+        /// <summary>
+        /// Поиск экспонатов по выставке
+        /// </summary>
+        public static void find_exponats_exhibition()
+        {
+
+            for (int i = 0; i < exponats.Count; i++)
+            {
+                if (!exponats[i].name.ToUpper().Contains(name0.ToUpper()))
+                {
+
+                    //Выкидываем метку и сдвигаем остальные
+                   for(int j = 0;j < Checks.Count;j++){
+                        if (Checks[j] == i)
+                        {
+                           Checks.RemoveAt(j);
+                            j--;
+                        }
+                        else
+                        {
+                            if (Checks[j] > i)
+                            {
+                                Checks[j]--;
+                            }
+
+                        }
+                    }
+
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].getDamage()!=damage0&&damage0!=-1)
+                {
+
+                    for (int j = 0; j < Checks.Count; j++)
+                    {
+                        if (Checks[j] == i)
+                        {
+                            Checks.RemoveAt(j);
+                            j--;
+                        }
+                        else
+                        {
+                            if (Checks[j] > i)
+                            {
+                                Checks[j]--;
+                            }
+
+                        }
+                    }
+
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].getPlace() != place0&&place0!=-1)
+                {
+
+                    for (int j = 0; j < Checks.Count; j++)
+                    {
+                        if (Checks[j] == i)
+                        {
+                            Checks.RemoveAt(j);
+                            j--;
+                        }
+                        else
+                        {
+                            if (Checks[j] > i)
+                            {
+                                Checks[j]--;
+                            }
+
+                        }
+                    }
+
+
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                if (exponats[i].price < pricefrom || exponats[i].price > priceto && pricefrom!=-1)
+                {
+
+                    for (int j = 0; j < Checks.Count; j++)
+                    {
+                        if (Checks[j] == i)
+                        {
+                            Checks.RemoveAt(j);
+                            j--;
+                        }
+                        else
+                        {
+                            if (Checks[j] > i)
+                            {
+                                Checks[j]--;
+                            }
+
+                        }
+                    }
+
+                    exponats.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+
+            }
+
+
 
         }
 

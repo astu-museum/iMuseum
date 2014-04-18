@@ -188,6 +188,8 @@ namespace iMuseum
 
                 }
             }
+         
+            //Вставить проверку на год?
 
             for (int i = 0; i < textBox2.Text.Length; i++)
             {
