@@ -113,7 +113,7 @@ namespace iMuseum
                     continue;
                 }
 
-                if (exponats[i].price < pricefrom || exponats[i].price > priceto)
+                if (exponats[i].price < pricefrom || exponats[i].price > priceto&&pricefrom!=-1)
                 {
                     exponats.RemoveAt(i);
                     i--;
@@ -121,6 +121,7 @@ namespace iMuseum
                 }
 
 
+                //Вставить нормальную клвёю роверку на даты
                 if (exponats[i].date < datestart ||exponats[i].date > dateend)
                 {
                     exponats.RemoveAt(i);
@@ -218,7 +219,7 @@ namespace iMuseum
                     continue;
                 }
 
-                if (exponats[i].price < pricefrom || exponats[i].price > priceto)
+                if (exponats[i].price < pricefrom || exponats[i].price > priceto && pricefrom!=-1)
                 {
 
                     for (int j = 0; j < Checks.Count; j++)

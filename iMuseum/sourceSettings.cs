@@ -87,16 +87,39 @@ namespace iMuseum
 
         private void sourceSettings_Load(object sender, EventArgs e)
         {
-            textBox8.Text = (Convert.ToInt32(User.pricefrom)).ToString();
-            textBox5.Text = (Convert.ToInt32(User.pricefrom* 100) % 100).ToString();
 
-            textBox6.Text = (Convert.ToInt32(User.priceto)).ToString();
-            textBox4.Text = (Convert.ToInt32(User.priceto * 100) % 100).ToString();
+            if (User.pricefrom != -1)
+            {
+                textBox8.Text = (Convert.ToInt32(User.pricefrom)).ToString();
+                textBox5.Text = (Convert.ToInt32(User.pricefrom * 100) % 100).ToString();
 
-            textBox1.Text = User.name0;
 
-            comboBox2.SelectedIndex = User.place0;
-            comboBox3.SelectedIndex = User.damage0;
+                textBox6.Text = (Convert.ToInt32(User.priceto)).ToString();
+                textBox4.Text = (Convert.ToInt32(User.priceto * 100) % 100).ToString();
+
+                checkBox4.Checked = true;
+            }
+
+
+
+            if (User.name0 != "")
+            {
+                textBox1.Text = User.name0;
+                checkBox1.Checked = true;
+            }
+
+
+            if (User.place0 != -1)
+            {
+                comboBox2.SelectedIndex = User.place0;
+                checkBox2.Checked = true;
+            }
+
+            if (User.damage0 != -1)
+            {
+                comboBox3.SelectedIndex = User.damage0;
+                checkBox3.Checked = true;
+            }
 
 
         }
@@ -250,24 +273,54 @@ namespace iMuseum
             {
                 User.name0 = textBox1.Text;
             }
+            else
+            {
+                User.name0 = "";
+            }
 
 
             if (checkBox2.Checked == true)
             {
+                if (comboBox2.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Выберите Место Хранения");
+                    return;
+                }
+
                 User.place0 = comboBox2.SelectedIndex;
+            }
+            else
+            {
+                User.place0 = -1;
             }
 
             if (checkBox3.Checked == true)
             {
+
+                if (comboBox3.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Выберите Состояние экспоната");
+                    return;
+                }
+
                 User.damage0 = comboBox3.SelectedIndex;
+            }
+            else
+            {
+                User.damage0 = -1;
             }
 
             if (checkBox4.Checked == true)
             {
                 User.pricefrom = Convert.ToDouble(textBox8.Text) + (Convert.ToDouble(textBox5.Text)) / 100;
                 User.priceto = Convert.ToDouble(textBox6.Text) + (Convert.ToDouble(textBox4.Text)) / 100;
-           
-                    
+
+
+            }
+            else
+            {
+                User.pricefrom = -1;
+                User.priceto = -1;
             }
 
             this.Close();
