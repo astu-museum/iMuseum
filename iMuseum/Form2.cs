@@ -23,16 +23,70 @@ namespace iMuseum
         DataSet1.TYPEEXPONATDataTable texp;
 
         //Соханение лей
+        string t1, t2, t3, t4,t7,t6;
+        int co1, co2, co3, co4,co5,co6,co7,co8;
+        DateTime dte;
 
         void SaveFields()
         {
-            //s1 = 
+            t1 = textBox1.Text;
+            t2 = textBox2.Text;
+            t3 = textBox3.Text; 
+            t4 = textBox4.Text;
+            t7 = textBox7.Text; 
+            t6 = textBox6.Text;
+ 
+            co1 = comboBox1.SelectedIndex;
+            co2 = comboBox2.SelectedIndex;
+            co3 = comboBox3.SelectedIndex;
+            co4 = comboBox4.SelectedIndex;
+            co5 = comboBox5.SelectedIndex;
+            co7 = comboBox7.SelectedIndex;
+
+
+            dte = dateTimePicker1.Value;
         }
 
         //Загузка лей
         void LoadFields()
         {
 
+           textBox1.Text=t1;
+          textBox2.Text=t2;
+           textBox3.Text=t3;
+           textBox4.Text=t4;
+           textBox7.Text=t7;
+             textBox6.Text=t6;
+
+          comboBox1.SelectedIndex=co1;
+           comboBox2.SelectedIndex=co2;
+            comboBox3.SelectedIndex=co3;
+             comboBox4.SelectedIndex = co4;
+           comboBox5.SelectedIndex = co5;
+           comboBox7.SelectedIndex = co7;
+
+
+             dateTimePicker1.Value = dte;
+
+        }
+
+        void typS()
+        {
+            co6 = comboBox6.SelectedIndex;
+        }
+        void typL()
+        {
+            comboBox6.SelectedIndex = co6;
+        }
+
+
+        void souS()
+        {
+            co8 = comboBox8.SelectedIndex;
+        }
+        void souL()
+        {
+            comboBox8.SelectedIndex = co8;
         }
 
 
@@ -148,11 +202,18 @@ namespace iMuseum
 
         private void addSource(object sender, EventArgs e)
         {
+            SaveFields();
+            typS();
+
             AddSource asrc = new AddSource();
             asrc.ShowDialog();
 
             MiniLoad();
             Edit_Load();
+
+            LoadFields();
+            typL();
+
         }
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
@@ -552,11 +613,21 @@ namespace iMuseum
         /// <param name="e"></param>
         private void addType(object sender, EventArgs e)
         {
+            SaveFields();
+            souS();
+
             AddType AType = new AddType();
             AType.ShowDialog();
 
+            
+
             LoadTypes();
             Edit_Load();
+
+
+            LoadFields();
+            souL();
+
         }
 
         /// <summary>
