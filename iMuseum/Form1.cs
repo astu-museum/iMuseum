@@ -126,10 +126,6 @@ namespace iMuseum
             User.filter();
             User.find_exponats();
 
-            //ТУТ ДЕЛАЕМ ФИЛЬТРЕЦ
-
-           // dataGridView1.DataSource = null;
-
             number.DataPropertyName = "inumber";
             title.DataPropertyName = "name";
             source.DataPropertyName = "sourceValue";
@@ -139,13 +135,7 @@ namespace iMuseum
             damage.DataPropertyName = "damageStr";
             price.DataPropertyName = "price";
 
-
-
             dataGridView1.DataSource = User.exponats;
-
-       
-
-
         }
 
         /// <summary>
@@ -400,7 +390,9 @@ namespace iMuseum
         /// <param name="e"></param>
         private void flaggedExps(object sender, EventArgs e)
         {
-
+            FlaggedExponats fExps = new FlaggedExponats();
+            if (fExps.ShowDialog() == DialogResult.Cancel)
+                Load_Exponats();
         }
     }
 }

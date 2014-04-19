@@ -260,8 +260,16 @@ namespace iMuseum
         public void setFlagT()
         {
             DataSet1TableAdapters.EXPONATTableAdapter eta = new DataSet1TableAdapters.EXPONATTableAdapter();
-
             eta.SetFlagTrue(pk_exponat);
+        }
+
+        /// <summary>
+        /// Вернуть экспонат из списанных
+        /// </summary>
+        public void setFlagF()
+        {
+            DataSet1TableAdapters.EXPONATTableAdapter eta = new DataSet1TableAdapters.EXPONATTableAdapter();
+            eta.SetFlagFalse(pk_exponat);
         }
     }
 }
