@@ -183,7 +183,7 @@ namespace iMuseum
                     return;
                 }
 
-                if (MessageBox.Show("УДАЛИТЬ ЗАПИСЬ", "УДАЛЕНИЕ", MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBox.Show("Удалить экспонат?", "Удаление экспоната из выставки", MessageBoxButtons.YesNo) == DialogResult.No)
                 {
                     return;
                 }
@@ -319,6 +319,17 @@ namespace iMuseum
             {
                 GC.Collect();
             }
+        }
+
+        /// <summary>
+        /// Закрытие по нажатию клавиши ESC
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void closeByEsc(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
         }
     }
 }

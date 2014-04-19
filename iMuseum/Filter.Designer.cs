@@ -42,6 +42,7 @@
             this.checkBoxComboBox3 = new PresentationControls.CheckBoxComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +64,7 @@
             this.objectTypeCB.Location = new System.Drawing.Point(137, 12);
             this.objectTypeCB.Name = "objectTypeCB";
             this.objectTypeCB.Size = new System.Drawing.Size(272, 21);
-            this.objectTypeCB.TabIndex = 25;
+            this.objectTypeCB.TabIndex = 0;
             // 
             // label2
             // 
@@ -84,7 +85,7 @@
             this.checkBoxComboBox1.Location = new System.Drawing.Point(137, 39);
             this.checkBoxComboBox1.Name = "checkBoxComboBox1";
             this.checkBoxComboBox1.Size = new System.Drawing.Size(272, 21);
-            this.checkBoxComboBox1.TabIndex = 27;
+            this.checkBoxComboBox1.TabIndex = 1;
             // 
             // label3
             // 
@@ -105,7 +106,7 @@
             this.checkBoxComboBox2.Location = new System.Drawing.Point(137, 66);
             this.checkBoxComboBox2.Name = "checkBoxComboBox2";
             this.checkBoxComboBox2.Size = new System.Drawing.Size(272, 21);
-            this.checkBoxComboBox2.TabIndex = 29;
+            this.checkBoxComboBox2.TabIndex = 2;
             // 
             // label4
             // 
@@ -126,34 +127,49 @@
             this.checkBoxComboBox3.Location = new System.Drawing.Point(137, 93);
             this.checkBoxComboBox3.Name = "checkBoxComboBox3";
             this.checkBoxComboBox3.Size = new System.Drawing.Size(272, 21);
-            this.checkBoxComboBox3.TabIndex = 31;
+            this.checkBoxComboBox3.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(334, 132);
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.Location = new System.Drawing.Point(12, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 33;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Сброс";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(253, 132);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 34;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Применить";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button3.Location = new System.Drawing.Point(334, 132);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Отмена";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Filter
             // 
+            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.CancelButton = this.button3;
             this.ClientSize = new System.Drawing.Size(421, 167);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
@@ -190,5 +206,6 @@
         private PresentationControls.CheckBoxComboBox checkBoxComboBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

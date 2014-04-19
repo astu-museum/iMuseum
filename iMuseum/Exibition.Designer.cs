@@ -86,6 +86,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Exibition";
@@ -94,6 +95,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Выставки";
             this.Load += new System.EventHandler(this.Exibition_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.closeByEsc);
             this.ResumeLayout(false);
 
         }
