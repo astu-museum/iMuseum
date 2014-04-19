@@ -79,7 +79,7 @@ namespace iMuseum
                 int p = listBox1.SelectedIndex;
 
             }
-            catch (Exception ff)
+            catch (Exception)
             {
 
                 MessageBox.Show("Не выбрана строка для удаления");

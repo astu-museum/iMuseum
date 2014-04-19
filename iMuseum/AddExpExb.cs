@@ -211,6 +211,14 @@ namespace iMuseum
             foreach (DictionaryEntry de in mapPk)
             {
                 if((bool)de.Value){
+
+                    
+                    DataSet1TableAdapters.EXPONATTableAdapter ds = new DataSet1TableAdapters.EXPONATTableAdapter();
+                    ds.UpdateVist((int)de.Key);
+
+             
+
+
                     User.exhibitions[0].addExponat((int)de.Key);
                 }
 
@@ -219,7 +227,7 @@ namespace iMuseum
 
 
 
-
+             
                 User.exhibitions[0].save();
             this.Close();
         }

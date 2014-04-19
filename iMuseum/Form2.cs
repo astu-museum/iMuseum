@@ -22,6 +22,21 @@ namespace iMuseum
 
         DataSet1.TYPEEXPONATDataTable texp;
 
+        //Соханение лей
+
+        void SaveFields()
+        {
+            //s1 = 
+        }
+
+        //Загузка лей
+        void LoadFields()
+        {
+
+        }
+
+
+
         //После добавления нового источника грузим всё заново
         void MiniLoad()
         {
@@ -620,11 +635,14 @@ namespace iMuseum
           
             if (ceta.onExhibition(exponatId) != 0)
             {
-                MessageBox.Show("Экспонат \"" + textBox1.Text + "\" в данное время принадлежит одной или более выставок. Изменение его категорий,целевой аудитории и даты получения заблокировано");
+                MessageBox.Show("Экспонат \"" + textBox1.Text + "\" в данное время принадлежит одной или более выставок. Изменение его категорий,целевой аудитории,Места хранения и даты получения заблокировано");
                 comboBox2.Enabled = false;
                 comboBox3.Enabled = false;
                 comboBox4.Enabled = false;
                 dateTimePicker1.Enabled = false;
+
+                comboBox7.Enabled = false;
+           //    comboBox7.SelectedIndex = 0;
             }
 
         }

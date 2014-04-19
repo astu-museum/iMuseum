@@ -89,6 +89,8 @@ namespace iMuseum
         {
             Exibition exb = new Exibition();
             exb.ShowDialog();
+
+            Load_Exponats();
         }
 
         /// <summary>
