@@ -39,7 +39,9 @@ namespace iMuseum
 
         }
 
-        //Загружаем всю ересь из базы
+        /// <summary>
+        /// Загрузка данных из БД
+        /// </summary>
         void LoadSome()
         {
 
@@ -618,7 +620,7 @@ namespace iMuseum
           
             if (ceta.onExhibition(exponatId) != 0)
             {
-                MessageBox.Show("Экспонат \"" + textBox1.Text + "\" в данное время принадлежит одной или более выставок.Изменение его категорий,целевой аудитории и даты получения заблокировано");
+                MessageBox.Show("Экспонат \"" + textBox1.Text + "\" в данное время принадлежит одной или более выставок. Изменение его категорий,целевой аудитории и даты получения заблокировано");
                 comboBox2.Enabled = false;
                 comboBox3.Enabled = false;
                 comboBox4.Enabled = false;
