@@ -386,18 +386,6 @@ namespace iMuseum
                 return;
             }
 
-            /*
-            //Проверка нахождения на выставке
-            DataSet1TableAdapters.CATEGORYEXPONATTableAdapter ceta = new DataSet1TableAdapters.CATEGORYEXPONATTableAdapter();
-
-            if (ceta.onExhibition(User.exponats[dataGridView1.SelectedCells[0].RowIndex].getPkExponat()) != 0)
-            {
-                MessageBox.Show("Экспонат \"" + User.exponats[dataGridView1.SelectedCells[0].RowIndex].name + "\" в данное время принадлежит одной или более выставок. Его списание заблокировано.");
-
-                return;
-            }
-            */
-
             User.exponats[dataGridView1.SelectedCells[0].RowIndex].setFlagT();
             Load_Exponats();
         }
