@@ -378,6 +378,13 @@ namespace iMuseum
                 return;
             }
 
+            if (User.exponats[dataGridView1.SelectedCells[0].RowIndex].damageStr.ToString() != "Неудовлетворительное")
+            {
+                MessageBox.Show("Экспонат находится в достаточно хорошем состоянии.\nСписание невозможно.");
+                return;
+            }
+
+            /*
             //Проверка нахождения на выставке
             DataSet1TableAdapters.CATEGORYEXPONATTableAdapter ceta = new DataSet1TableAdapters.CATEGORYEXPONATTableAdapter();
 
@@ -387,6 +394,7 @@ namespace iMuseum
 
                 return;
             }
+            */
 
             User.exponats[dataGridView1.SelectedCells[0].RowIndex].setFlagT();
             Load_Exponats();
