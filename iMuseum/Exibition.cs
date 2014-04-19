@@ -103,5 +103,16 @@ namespace iMuseum
 
             Load_Exh();
         }
+
+        /// <summary>
+        /// Закрытие по нажатию клавиши ESC
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void closeByEsc(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }
