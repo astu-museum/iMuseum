@@ -63,5 +63,45 @@ namespace iMuseum
 
             Load_Exh();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            if (listBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Не выбрана выставка для удаления");
+                return;
+
+            }
+
+            try
+            {
+                int p = listBox1.SelectedIndex;
+
+            }
+            catch (Exception ff)
+            {
+
+                MessageBox.Show("Не выбрана строка для удаления");
+                return;
+            }
+
+
+            int t = Convert.ToInt32(texh.Rows[listBox1.SelectedIndex]["pk_exhibition"].ToString());
+
+            if (MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            DataSet1TableAdapters.EXHIBITIONTableAdapter regionTableAdapter = new DataSet1TableAdapters.EXHIBITIONTableAdapter();
+
+            regionTableAdapter.DeleteQuery(t);
+
+
+
+
+            Load_Exh();
+        }
     }
 }

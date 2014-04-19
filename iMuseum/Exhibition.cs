@@ -190,7 +190,10 @@ namespace iMuseum
         }
 
 
-        //СОХРАНЕНИЕ В БАЗУ
+        /// <summary>
+        /// СОХРАНЕНИЕ В БАЗУ экс
+        /// </summary>
+
         public void save()
         {
          // INSERT INTO "KOMRAZR"."EXHIBITION" ("NAME_", "DATESTART", "DATEEND") VALUES ( ?, ?, ?)
@@ -241,6 +244,16 @@ namespace iMuseum
                 ctex.InsertExp(pk_exhibition,exponats[i]);
             }
 
+        }
+
+        /// <summary>
+        /// Удаление выставки из базы
+        /// </summary>
+        public void delete_()
+        {
+            DataSet1TableAdapters.EXHIBITIONTableAdapter regionTableAdapter = new DataSet1TableAdapters.EXHIBITIONTableAdapter();
+
+            regionTableAdapter.DeleteQuery(pk_exhibition);
         }
  
 
