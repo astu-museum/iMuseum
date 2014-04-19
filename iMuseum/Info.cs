@@ -11,6 +11,9 @@ using System.Drawing.Printing;
 
 namespace iMuseum
 {
+    /// <summary>
+    /// Форма "Информация об экспонате"
+    /// </summary>
     public partial class Info : Form
     {
         int exponatId;
