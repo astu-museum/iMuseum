@@ -43,7 +43,10 @@ namespace iMuseum
         public static List<int> Checks;
 
 
-        //Генерашки
+        /// <summary>
+        /// Генерация
+        /// </summary>
+        /// <param name="count"></param>
         public static void generate(int count)
         {
 
@@ -461,45 +464,6 @@ namespace iMuseum
                 //Проверка соответствия типа
                 bool flag = false;
 
-               
-                /*
-                if (exhibitions[0].getTypes().Count == 0)
-                {
-                    flag = true;
-                }
-                else
-                {
-                    for (int j = 0; (j < exhibitions[0].getTypes().Count) && !flag; j++)
-                    {
-                        if (exponats[i].getPkType() == exhibitions[0].getTypes(j))
-                        {
-                            flag = true;
-                        }
-                    }
-                }
-
-                if (!flag)
-                {
-                    exponats.RemoveAt(i);
-                    i--;
-                    continue;
-                }
-                else
-                {
-                    flag = false;
-                }
-                 * */
-
-
-
-
-                //Проверка категории экспоната
-             //  if (exhibitions[0].getCategories().Count == 0)
-           //     {
-            //        flag = true;
-            //    }
-            //    else
-           //     {
                     for (int j = 0; (j < exhibitions[0].getCategories().Count) && !flag; j++)
                     {
                         if (exponats[i].getPkCategoryExp() == exhibitions[0].getCategories()[j])
@@ -507,7 +471,6 @@ namespace iMuseum
                             flag = true;
                         }
                     }
-             //   }
 
                     if (!flag)
                     {
@@ -520,16 +483,6 @@ namespace iMuseum
                         flag = false;
                     }
 
-
-
-
-                //Проверка категории Автора
-           //     if (exhibitions[0].getCategories().Count == 0)
-          //      {
-          //          flag = true;
-          //      }
-            //    else
-          //      {
                     for (int j = 0; (j < exhibitions[0].getCategories().Count) && !flag; j++)
                     {
                         if (exponats[i].getPkCategoryAut() == exhibitions[0].getCategories()[j])
@@ -537,8 +490,6 @@ namespace iMuseum
                             flag = true;
                         }
                     }
-           //     }
-
 
                     if (!flag)
                     {
@@ -551,17 +502,6 @@ namespace iMuseum
                         flag = false;
                     }
 
-
-                //Проверка категории Аудитории
-         //       if (exhibitions[0].getCategories().Count == 0)
-         //       {
-          //          flag = true;
-          //      }
-        //        else
-        //        {
-                    
-             
-            //    }
                     //Возможно дуткие объявления
                     int mini = 20000000;
                     DataSet1.CATEGORYDataTable dtt;
@@ -591,13 +531,6 @@ namespace iMuseum
                             }
                         }
 
-
-                        /*
-                        if (exponats[i].getPkCategoryAud() == categoryAuditoryFilter[j])
-                        {
-                            flag = true;
-                        }
-                         * */
                     }
 
 
@@ -863,7 +796,6 @@ namespace iMuseum
                 currentCustomer.setFio(customerRow.FIO);
                 currentCustomer.setPic(customerRow.PICREFERENCE);
 
-
                 //Нужен перевод в строковую форму
                 currentCustomer.setTypeSob(Convert.ToInt32(customerRow.TYPESOB));
                 currentCustomer.typeSobStr = User.typeSobString[currentCustomer.getTypeSob()];
@@ -891,14 +823,11 @@ namespace iMuseum
                 currentCustomer.price = Convert.ToDouble(customerRow.PRICE_);
                 
 
-                //ПРОВЕРКА,ЧТО НЕ СПИСАН???А НАДО?
+                //ПРОВЕРКА,ЧТО НЕ СПИСАН
                 if (currentCustomer.getFlag()==0)
                 {
                     User.exponats.Add(currentCustomer);
-               }
-                
-              
-
+                }
             }
         }
 
@@ -963,15 +892,7 @@ namespace iMuseum
                 {
                     User.exponats.Add(currentCustomer);
                 }
-
-
-
             }
         }
-
-
-
-
-
     }
 }

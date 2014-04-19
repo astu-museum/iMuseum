@@ -363,5 +363,44 @@ namespace iMuseum
         {
             this.Close();
         }
+
+        /// <summary>
+        /// Списать
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void spisat(object sender, EventArgs e)
+        {
+            try
+            {
+                int p = dataGridView1.SelectedCells[0].RowIndex;
+
+            }
+            catch (Exception ff)
+            {
+
+                MessageBox.Show("Не выбрана строка для списания");
+                return;
+            }
+
+            if (MessageBox.Show("Списать экспонат?", "Списание экспоната", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
+
+            User.exponats[dataGridView1.SelectedCells[0].RowIndex].setFlagT();
+
+            Load_Exponats();
+        }
+
+        /// <summary>
+        /// Списанные экспонаты
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void flaggedExps(object sender, EventArgs e)
+        {
+
+        }
     }
 }

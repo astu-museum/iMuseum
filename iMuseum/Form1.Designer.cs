@@ -54,6 +54,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +67,8 @@
             this.вЫСТАВКИToolStripMenuItem,
             this.нАСТРОЙКИПОИСКАToolStripMenuItem,
             this.иСТОЧНИКИToolStripMenuItem,
-            this.пОИСКToolStripMenuItem});
+            this.пОИСКToolStripMenuItem,
+            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
@@ -154,6 +156,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Списать";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.spisat);
             // 
             // dataGridView1
             // 
@@ -288,6 +291,13 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem
+            // 
+            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Name = "сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem";
+            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Size = new System.Drawing.Size(170, 20);
+            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Text = "СПИСАННЫЕ ЭКСПОНАТЫ";
+            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Click += new System.EventHandler(this.flaggedExps);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,6 +354,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.ToolStripMenuItem сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem;
     }
 }
 

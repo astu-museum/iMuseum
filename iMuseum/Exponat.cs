@@ -19,68 +19,7 @@ namespace iMuseum
         }
 
 
-        /*
-        // ПК ,который однзачно определяет Экспонат
-        private int pk_exponatValue;
-        /// <summary>
-        /// ПК ,который однзачно определяет Экспонат
-        /// </summary>
-        public int pk_exponat
-        {
-            get { return pk_exponatValue; }
-            set { pk_exponatValue = value; }
-        }
-
-        private int pk_sourceValue;
-
-        /// <summary>
-        ///  внешний ключ ,который однзачно определяет Источник Получения
-        /// </summary>
-        /// 
-    
-
-        public int pk_source
-        {
-            get { return pk_sourceValue; }
-            set { pk_sourceValue = value; }
-        }
-
-
-        private int pk_categoryexpValue;
-
-        /// <summary>
-        ///  ПК ,который однзачно определяет Категорию
-        /// </summary>
-        public int pk_categoryexp
-        {
-            get { return pk_categoryexpValue; }
-            set { pk_categoryexpValue = value; }
-        }
-
-
-        private int pk_categoryautValue;
-        /// <summary>
-        ///  ПК ,который однзачно определяет Категорию
-        /// </summary>
-        public int pk_categoryaut
-        {
-            get { return pk_categoryautValue; }
-            set { pk_categoryautValue = value; }
-        }
-
-
-        private int pk_categoryaudValue;
-        /// <summary>
-        ///  ПК ,который однзачно определяет Категорию
-        /// </summary>
-        public int pk_categoryaud
-        {
-            get { return pk_categoryaudValue; }
-            set { pk_categoryaudValue = value; }
-        }
-
-        */
-
+       
         /// <summary>
         /// ПК экспоната
         /// </summary>
@@ -310,18 +249,19 @@ namespace iMuseum
         /// </summary>
         public void delete_()
         {
-            DataSet1TableAdapters.EXPONATTableAdapter regionTableAdapter =
-              new DataSet1TableAdapters.EXPONATTableAdapter();
-
-
-
+            DataSet1TableAdapters.EXPONATTableAdapter regionTableAdapter = new DataSet1TableAdapters.EXPONATTableAdapter();
 
             regionTableAdapter.DeleteQuery(pk_exponat);
-
         }
 
+        /// <summary>
+        /// Списание экспоната
+        /// </summary>
+        public void setFlagT()
+        {
+            DataSet1TableAdapters.EXPONATTableAdapter eta = new DataSet1TableAdapters.EXPONATTableAdapter();
 
-
-
+            eta.SetFlagTrue(pk_exponat);
+        }
     }
 }
