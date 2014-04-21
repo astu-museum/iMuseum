@@ -61,11 +61,11 @@ namespace iMuseum
             catch (Exception ff)
             {
 
-                MessageBox.Show("Не выбрана строка для отмены списания");
+                MessageBox.Show("Не выбрана строка для отмены списания","Ошибка",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
 
-            if (MessageBox.Show("Отменить списание?", "Отмена списания экспоната", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Отменить списание?", "Отмена списания экспоната", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.No)
             {
                 return;
             }

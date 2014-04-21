@@ -265,7 +265,7 @@ namespace iMuseum
 
             if (textBox2.Text.Length > 100)
             {
-                MessageBox.Show("Сликшмо длинный Инвентарный Номер");
+                MessageBox.Show("Слишком длинный Инвентарный Номер");
                 return;
 
             }
@@ -281,7 +281,7 @@ namespace iMuseum
 
                 if (((textBox1.Text[i] < 'а') || (textBox1.Text[i] > 'я')) && ((textBox1.Text[i] < 'А') || (textBox1.Text[i] > 'Я')) && (textBox1.Text[i] != ' ') && (textBox1.Text[i] != '-') && ((textBox1.Text[i] < '0') || (textBox1.Text[i] > '9')))
                 {
-                    MessageBox.Show("Наименование содержит только  буквы,цифры,тире и пробелы");
+                    MessageBox.Show("Наименование содержит только буквы, цифры, тире и пробелы");
                     return;
 
                 }
@@ -305,7 +305,7 @@ namespace iMuseum
 
                 if (((textBox7.Text[i] < 'а') || (textBox7.Text[i] > 'я')) && ((textBox7.Text[i] < 'А') || (textBox7.Text[i] > 'Я')) && (textBox7.Text[i] != ' ') && (textBox7.Text[i] != '-'))
                 {
-                    MessageBox.Show("ФИО может содержать только буквы и пробелы");
+                    MessageBox.Show("ФИО может содержать только буквы, тире и пробелы");
                     return;
 
                 }
@@ -319,15 +319,10 @@ namespace iMuseum
                 {
                     cnt1++;
                 }
-                if (cnt1 > 1)
-                {
-                    MessageBox.Show("Сомнтиельно ,что у автора настолько множественная фамилия");
-                    return;
-                }
 
                 if ((cnt1 + cnt >= textBox7.Text.Length - 3 )&&(textBox7.Text!=" "))
                 {
-                    MessageBox.Show("Фио");
+                    MessageBox.Show("ФИО");
                     return;
                 }
 
@@ -557,15 +552,6 @@ namespace iMuseum
             int p =Convert.ToInt32(eta.CatAutQuery((Convert.ToInt32(cataut.Rows[comboBox2.SelectedIndex]["pk_category"].ToString()))));
 
 
-           
-           //long asdasd = comboBox2.SelectedValue.GetHashCode();
-       //    if (asdasd < 0) asdasd *= -1;
-
-        //    long asdasd = Convert.ToInt32(cataut.Rows[comboBox2.SelectedIndex]["pk_category"].ToString());
-        //    fir = asdasd.ToString() + (p + 1).ToString();
-           // MessageBox.Show(fir);
-
-
             long asdasd = (comboBox2.SelectedIndex + 1) * 100 + p;
             fir = asdasd.ToString();
 
@@ -581,14 +567,6 @@ namespace iMuseum
 
             int p = Convert.ToInt32(eta.CatExpQuery((Convert.ToInt32(catexp.Rows[comboBox3.SelectedIndex]["pk_category"].ToString()))));
 
-            //long asdasd = comboBox3.SelectedValue.GetHashCode();
-            //    if (asdasd < 0) asdasd *= -1;
-
-
-          //  long asdasd = Convert.ToInt32(catexp.Rows[comboBox3.SelectedIndex]["pk_category"].ToString());
-        //    sec = asdasd.ToString() + (p + 1).ToString();
-
-            // MessageBox.Show(fir);
 
             long asdasd = (comboBox3.SelectedIndex + 1) * 100 + p;
             sec = asdasd.ToString();
@@ -735,14 +713,14 @@ namespace iMuseum
           
             if (ceta.onExhibition(exponatId) != 0)
             {
-                MessageBox.Show("Экспонат \"" + textBox1.Text + "\" в данное время принадлежит одной или более выставок. Изменение его категорий,целевой аудитории,Места хранения и даты получения заблокировано");
+                MessageBox.Show("Экспонат \"" + textBox1.Text + "\" в данное время принадлежит одной или более выставок. Изменение его категорий, целевой аудитории, места хранения и даты получения заблокировано.",
+                    "Информация",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 comboBox2.Enabled = false;
                 comboBox3.Enabled = false;
                 comboBox4.Enabled = false;
                 dateTimePicker1.Enabled = false;
 
                 comboBox7.Enabled = false;
-           //    comboBox7.SelectedIndex = 0;
             }
 
         }
