@@ -50,6 +50,7 @@ namespace iMuseum
         //Загузка лей
         void LoadFields()
         {
+          
 
            textBox1.Text=t1;
           textBox2.Text=t2;
@@ -72,6 +73,7 @@ namespace iMuseum
 
         void typS()
         {
+            
             co6 = comboBox6.SelectedIndex;
         }
         void typL()
@@ -82,11 +84,22 @@ namespace iMuseum
 
         void souS()
         {
+
+           // MessageBox.Show(comboBox8.SelectedIndex.ToString());
             co8 = comboBox8.SelectedIndex;
         }
         void souL()
         {
-            comboBox8.SelectedIndex = co8;
+           // MessageBox.Show(co8.ToString());
+
+            if (co8 != -1)
+            {
+                comboBox8.SelectedIndex = co8;
+            }
+            else
+            {
+                comboBox8.SelectedIndex = -1;
+            }
         }
 
 
@@ -205,11 +218,18 @@ namespace iMuseum
             SaveFields();
             typS();
 
+     
             AddSource asrc = new AddSource();
             asrc.ShowDialog();
 
+           
             MiniLoad();
-            Edit_Load();
+
+
+            if (exponatId != 0)
+            {
+                Edit_Load();
+            }
 
             LoadFields();
             typL();
@@ -613,19 +633,28 @@ namespace iMuseum
         /// <param name="e"></param>
         private void addType(object sender, EventArgs e)
         {
+            
             SaveFields();
             souS();
 
+          
             AddType AType = new AddType();
             AType.ShowDialog();
 
-            
 
+        
             LoadTypes();
-            Edit_Load();
 
+
+            if (exponatId != 0)
+            {
+                Edit_Load();
+            }
+     
 
             LoadFields();
+
+
             souL();
 
         }
@@ -634,21 +663,21 @@ namespace iMuseum
         /// Заполнение полей при редактировании
         /// </summary>
         void Edit_Load(){
-          
+           
             textBox1.Text = User.exponats[0].name;
             textBox2.Text = User.exponats[0].inumber;
             textBox3.Text = (Convert.ToInt32(User.exponats[0].price)).ToString();
             textBox4.Text = (Convert.ToInt32(User.exponats[0].price * 100) % 100).ToString();
 
-            
-       
+
   
 
             
             comboBox1.SelectedIndex = User.exponats[0].getTypeSob();
             comboBox8.SelectedValue = User.exponats[0].sourceValue;
             dateTimePicker1.Value=User.exponats[0].date;
-          
+
+        
 
             textBox7.Text = User.exponats[0].getFio();
             comboBox5.SelectedIndex = User.exponats[0].getDamage();
