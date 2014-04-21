@@ -22,12 +22,16 @@ namespace iMuseum
 
         private void showDetails(object sender, EventArgs e)
         {
+            if (listBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Не выбрана выставка для просмотра");
+                return;
+            }
+
             //Передадим первичник нужной выставки
             int t = Convert.ToInt32(texh.Rows[listBox1.SelectedIndex]["pk_exhibition"].ToString());
-            ExbDetails exbdt = new ExbDetails(t);
 
-           
-           // MessageBox.Show(t.ToString());
+            ExbDetails exbdt = new ExbDetails(t);
 
             exbdt.ShowDialog();
             Load_Exh();
