@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("iMuseum")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Программное обеспечение для учета экспонатов и выставок")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("iMuseum Team")]
 [assembly: AssemblyProduct("iMuseum")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
