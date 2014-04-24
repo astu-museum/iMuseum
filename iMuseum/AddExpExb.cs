@@ -136,16 +136,7 @@ namespace iMuseum
 
             dataGridView1.DataSource = User.exponats;//User.exponats;
 
-         //   if (User.exponats.Count != 0)
-          //  {
-          
 
-             
-          //  }
-             //   MessageBox.Show(dataGridView1.Rows.Count.ToString());
-
-
-             //  MessageBox.Show(  dataGridView1.Rows.Count.ToString());
 
             
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -164,10 +155,6 @@ namespace iMuseum
 
                 dataGridView1.Rows[User.Checks[i]].Cells[0].Value = true;
 
-
-                //ПРоставим некоторые чеки
-
-              //  mapPk[User.exponats[User.Checks[i]].getPkExponat()] = true;
             }
 
 
@@ -192,17 +179,6 @@ namespace iMuseum
 
         private void button3_Click(object sender, EventArgs e)
         {
-           /* for (int i = 0; i < dataGridView1.Rows.Count;i++ )
-            {
-
-                if (dataGridView1.Rows[i].Cells[0].Value != null && (bool)dataGridView1.Rows[i].Cells[0].Value)
-                {
-                  //  MessageBox.Show(i.ToString());
-
-                    User.exhibitions[0].addExponat(User.exponats[i].getPkExponat());
-                  //  MessageBox.Show(User.exponats[i].name);
-                }
-            }*/
 
             Check_Load();
 

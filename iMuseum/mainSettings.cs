@@ -14,6 +14,7 @@ namespace iMuseum
         public mainSettings()
         {
             InitializeComponent();
+            dateTimePicker2.MinDate = dateTimePicker1.Value.AddDays(2);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace iMuseum
             comboBox2.SelectedIndex = -1;
             comboBox3.SelectedIndex = -1;
             dateTimePicker1.Value = DateTime.Today.Date;
-            dateTimePicker2.Value = DateTime.Today.Date;
+            dateTimePicker2.Value = DateTime.Today.Date.AddDays(1);
 
             checkBox1.Checked = false;
             checkBox2.Checked = false;
@@ -430,6 +431,11 @@ namespace iMuseum
                 textBox6.Enabled = false;
                 textBox8.Enabled = false;
             }
+        }
+
+        private void dtp1_ch(object sender, EventArgs e)
+        {
+            dateTimePicker2.MinDate = dateTimePicker1.Value.AddDays(1);
         }
     }
 }

@@ -19,19 +19,6 @@ namespace iMuseum
             nameValue = "";
         }
 
-      /*  private int pk_typeValue;
-
-
-        /// <summary>
-        ///  ПК ,который однзачно определяет Тип Экспоната
-        /// </summary>
-        public int pk_type
-        {
-            get { return pk_typeValue; }
-            set { pk_typeValue = value; }
-        }
-        */
-
         private int pk_type;
         public void setPkType(int id) { this.pk_type = id; }
         public int getPkType() { return this.pk_type; }

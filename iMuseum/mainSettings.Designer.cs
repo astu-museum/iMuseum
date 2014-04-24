@@ -121,9 +121,10 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(428, 183);
+            this.textBox4.MaxLength = 2;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(50, 20);
-            this.textBox4.TabIndex = 30;
+            this.textBox4.TabIndex = 19;
             // 
             // label7
             // 
@@ -139,7 +140,7 @@
             this.textBox6.Location = new System.Drawing.Point(353, 183);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(50, 20);
-            this.textBox6.TabIndex = 28;
+            this.textBox6.TabIndex = 18;
             // 
             // label5
             // 
@@ -153,9 +154,10 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(252, 183);
+            this.textBox5.MaxLength = 2;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(50, 20);
-            this.textBox5.TabIndex = 26;
+            this.textBox5.TabIndex = 17;
             // 
             // label4
             // 
@@ -187,7 +189,7 @@
             this.comboBox3.Location = new System.Drawing.Point(160, 160);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(342, 21);
-            this.comboBox3.TabIndex = 22;
+            this.comboBox3.TabIndex = 14;
             // 
             // comboBox2
             // 
@@ -200,7 +202,7 @@
             this.comboBox2.Location = new System.Drawing.Point(160, 137);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(342, 21);
-            this.comboBox2.TabIndex = 21;
+            this.comboBox2.TabIndex = 12;
             // 
             // comboBox1
             // 
@@ -212,7 +214,7 @@
             this.comboBox1.Location = new System.Drawing.Point(160, 114);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(342, 21);
-            this.comboBox1.TabIndex = 20;
+            this.comboBox1.TabIndex = 10;
             // 
             // label2
             // 
@@ -237,42 +239,43 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(353, 90);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(149, 20);
-            this.dateTimePicker2.TabIndex = 17;
+            this.dateTimePicker2.TabIndex = 8;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(179, 90);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(149, 20);
-            this.dateTimePicker1.TabIndex = 16;
+            this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dtp1_ch);
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(177, 183);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(50, 20);
-            this.textBox8.TabIndex = 15;
+            this.textBox8.TabIndex = 16;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(160, 67);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(343, 20);
-            this.textBox3.TabIndex = 10;
+            this.textBox3.TabIndex = 5;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(160, 44);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(343, 20);
-            this.textBox2.TabIndex = 9;
+            this.textBox2.TabIndex = 3;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(160, 22);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(343, 20);
-            this.textBox1.TabIndex = 8;
+            this.textBox1.TabIndex = 1;
             // 
             // checkBox8
             // 
@@ -280,7 +283,7 @@
             this.checkBox8.Location = new System.Drawing.Point(12, 185);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(81, 17);
-            this.checkBox8.TabIndex = 7;
+            this.checkBox8.TabIndex = 15;
             this.checkBox8.Text = "Стоимость";
             this.checkBox8.UseVisualStyleBackColor = true;
             this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox8_CheckedChanged);
@@ -291,7 +294,7 @@
             this.checkBox7.Location = new System.Drawing.Point(12, 162);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(80, 17);
-            this.checkBox7.TabIndex = 6;
+            this.checkBox7.TabIndex = 13;
             this.checkBox7.Text = "Состояние";
             this.checkBox7.UseVisualStyleBackColor = true;
             this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox7_CheckedChanged);
@@ -302,7 +305,7 @@
             this.checkBox6.Location = new System.Drawing.Point(12, 139);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(108, 17);
-            this.checkBox6.TabIndex = 5;
+            this.checkBox6.TabIndex = 11;
             this.checkBox6.Text = "Место хранения";
             this.checkBox6.UseVisualStyleBackColor = true;
             this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
@@ -313,7 +316,7 @@
             this.checkBox5.Location = new System.Drawing.Point(12, 116);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(124, 17);
-            this.checkBox5.TabIndex = 4;
+            this.checkBox5.TabIndex = 9;
             this.checkBox5.Text = "Тип собственности";
             this.checkBox5.UseVisualStyleBackColor = true;
             this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
@@ -324,7 +327,7 @@
             this.checkBox4.Location = new System.Drawing.Point(12, 93);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(107, 17);
-            this.checkBox4.TabIndex = 3;
+            this.checkBox4.TabIndex = 6;
             this.checkBox4.Text = "Дата получения";
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
@@ -335,7 +338,7 @@
             this.checkBox3.Location = new System.Drawing.Point(12, 70);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(129, 17);
-            this.checkBox3.TabIndex = 2;
+            this.checkBox3.TabIndex = 4;
             this.checkBox3.Text = "Источник получения";
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
@@ -346,7 +349,7 @@
             this.checkBox2.Location = new System.Drawing.Point(12, 47);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(102, 17);
-            this.checkBox2.TabIndex = 1;
+            this.checkBox2.TabIndex = 2;
             this.checkBox2.Text = "Наименование";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
@@ -367,7 +370,7 @@
             this.button1.Location = new System.Drawing.Point(365, 243);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 21;
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -378,7 +381,7 @@
             this.button2.Location = new System.Drawing.Point(446, 243);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 22;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -388,7 +391,7 @@
             this.button3.Location = new System.Drawing.Point(12, 243);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
+            this.button3.TabIndex = 20;
             this.button3.Text = "Сброс";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);

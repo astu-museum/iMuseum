@@ -104,7 +104,6 @@ namespace iMuseum
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 User.exhibitions[0].addExponat(Convert.ToInt32(dataGridView1.Rows[i].Cells["a"].Value));
-              //  MessageBox.Show(Convert.ToInt32(dataGridView1.Rows[i].Cells["a"].Value).ToString());
             }
 
         }
@@ -143,10 +142,6 @@ namespace iMuseum
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-
-               
-                //dataGridView1.Rows[i].Cells["damae"].Value = 14;
-
                dataGridView1.Rows[i].Cells["damae"].Value = (User.damageString[Convert.ToInt32(dataGridView1.Rows[i].Cells["bf"].Value.ToString())]).ToString();
             }
 

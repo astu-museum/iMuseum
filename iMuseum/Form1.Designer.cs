@@ -39,9 +39,14 @@
             this.нАСТРОЙКИПОИСКАToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.иСТОЧНИКИToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пОИСКToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.source = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,11 +55,6 @@
             this.mesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.damage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -136,6 +136,13 @@
             this.пОИСКToolStripMenuItem.Text = "ПОИСК";
             this.пОИСКToolStripMenuItem.Click += new System.EventHandler(this.searchSett);
             // 
+            // сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem
+            // 
+            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Name = "сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem";
+            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Size = new System.Drawing.Size(170, 20);
+            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Text = "СПИСАННЫЕ ЭКСПОНАТЫ";
+            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Click += new System.EventHandler(this.flaggedExps);
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -161,6 +168,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -185,76 +193,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1010, 558);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // number
-            // 
-            this.number.Frozen = true;
-            this.number.HeaderText = "Инв. номер";
-            this.number.Name = "number";
-            this.number.ReadOnly = true;
-            this.number.Width = 120;
-            // 
-            // title
-            // 
-            this.title.Frozen = true;
-            this.title.HeaderText = "Наименование";
-            this.title.Name = "title";
-            this.title.ReadOnly = true;
-            this.title.Width = 150;
-            // 
-            // source
-            // 
-            this.source.Frozen = true;
-            this.source.HeaderText = "Источник получения";
-            this.source.Name = "source";
-            this.source.ReadOnly = true;
-            this.source.Width = 150;
-            // 
-            // date
-            // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.date.DefaultCellStyle = dataGridViewCellStyle1;
-            this.date.Frozen = true;
-            this.date.HeaderText = "Дата получения";
-            this.date.MinimumWidth = 125;
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Width = 125;
-            // 
-            // typesob
-            // 
-            this.typesob.Frozen = true;
-            this.typesob.HeaderText = "Тип собственности";
-            this.typesob.MinimumWidth = 125;
-            this.typesob.Name = "typesob";
-            this.typesob.ReadOnly = true;
-            this.typesob.Width = 150;
-            // 
-            // mesto
-            // 
-            this.mesto.Frozen = true;
-            this.mesto.HeaderText = "Место хранения";
-            this.mesto.MinimumWidth = 150;
-            this.mesto.Name = "mesto";
-            this.mesto.ReadOnly = true;
-            this.mesto.Width = 150;
-            // 
-            // damage
-            // 
-            this.damage.Frozen = true;
-            this.damage.HeaderText = "Состояние";
-            this.damage.Name = "damage";
-            this.damage.ReadOnly = true;
-            this.damage.Width = 80;
-            // 
-            // price
-            // 
-            this.price.Frozen = true;
-            this.price.HeaderText = "Стоимость";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.Width = 70;
             // 
             // button3
             // 
@@ -291,12 +229,83 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
-            // сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem
+            // number
             // 
-            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Name = "сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem";
-            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Size = new System.Drawing.Size(170, 20);
-            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Text = "СПИСАННЫЕ ЭКСПОНАТЫ";
-            this.сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem.Click += new System.EventHandler(this.flaggedExps);
+            this.number.Frozen = true;
+            this.number.HeaderText = "Инв. номер";
+            this.number.Name = "number";
+            this.number.ReadOnly = true;
+            this.number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.number.Width = 120;
+            // 
+            // title
+            // 
+            this.title.Frozen = true;
+            this.title.HeaderText = "Наименование";
+            this.title.Name = "title";
+            this.title.ReadOnly = true;
+            this.title.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.title.Width = 150;
+            // 
+            // source
+            // 
+            this.source.Frozen = true;
+            this.source.HeaderText = "Источник получения";
+            this.source.Name = "source";
+            this.source.ReadOnly = true;
+            this.source.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.source.Width = 150;
+            // 
+            // date
+            // 
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.date.DefaultCellStyle = dataGridViewCellStyle1;
+            this.date.Frozen = true;
+            this.date.HeaderText = "Дата получения";
+            this.date.MinimumWidth = 125;
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.date.Width = 125;
+            // 
+            // typesob
+            // 
+            this.typesob.Frozen = true;
+            this.typesob.HeaderText = "Тип собственности";
+            this.typesob.MinimumWidth = 125;
+            this.typesob.Name = "typesob";
+            this.typesob.ReadOnly = true;
+            this.typesob.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.typesob.Width = 150;
+            // 
+            // mesto
+            // 
+            this.mesto.Frozen = true;
+            this.mesto.HeaderText = "Место хранения";
+            this.mesto.MinimumWidth = 150;
+            this.mesto.Name = "mesto";
+            this.mesto.ReadOnly = true;
+            this.mesto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.mesto.Width = 150;
+            // 
+            // damage
+            // 
+            this.damage.Frozen = true;
+            this.damage.HeaderText = "Состояние";
+            this.damage.Name = "damage";
+            this.damage.ReadOnly = true;
+            this.damage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.damage.Width = 80;
+            // 
+            // price
+            // 
+            this.price.Frozen = true;
+            this.price.HeaderText = "Стоимость";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.price.Width = 70;
             // 
             // Form1
             // 
@@ -344,6 +353,9 @@
         private System.Windows.Forms.ToolStripMenuItem иСТОЧНИКИToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пОИСКToolStripMenuItem;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.ToolStripMenuItem сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.DataGridViewTextBoxColumn source;
@@ -352,9 +364,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn damage;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Windows.Forms.ToolStripMenuItem сПИСАННЫЕЭКСПОНАТЫToolStripMenuItem;
     }
 }
 

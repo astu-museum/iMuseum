@@ -400,13 +400,6 @@ namespace iMuseum
                             if (p < mini) mini = p;
                         }
 
-
-                        /*
-                        if (exponats[i].getPkCategoryAud() == categoryAuditoryFilter[j])
-                        {
-                            flag = true;
-                        }
-                         * */
                     }
 
 
@@ -618,23 +611,6 @@ namespace iMuseum
                 currentCustomer.name = customerRow.NAME_;
 
 
-                
-
-                /*
-                    //ОПАСНОЕ ВПЛЕТЕНИЕ ИСТОЧНИКА
-                DataSet1TableAdapters.SOURCETableAdapter ta = new DataSet1TableAdapters.SOURCETableAdapter();
-
-
-                DataSet1.SOURCEDataTable dt = ta.HitlerSource(currentCustomer.getPkSource());
-
-                foreach (DataSet1.SOURCERow sRow in dt)
-                {
-                    currentCustomer.sourceValue = sRow.NAME_;
-                }
-
-           
-                */
-
 
                 //СЮДА ВГРУЗИТЬ КАТЕГОРИИ
                 DataSet1TableAdapters.CATEGORYTableAdapter vict = new DataSet1TableAdapters.CATEGORYTableAdapter();
@@ -715,23 +691,6 @@ namespace iMuseum
                 currentCustomer.datestart = customerRow.DATESTART;
                 currentCustomer.dateend = customerRow.DATEEND;
                 currentCustomer.name = customerRow.NAME_;
-
-
-                /*
-                    //ОПАСНОЕ ВПЛЕТЕНИЕ ИСТОЧНИКА
-                DataSet1TableAdapters.SOURCETableAdapter ta = new DataSet1TableAdapters.SOURCETableAdapter();
-
-
-                DataSet1.SOURCEDataTable dt = ta.HitlerSource(currentCustomer.getPkSource());
-
-                foreach (DataSet1.SOURCERow sRow in dt)
-                {
-                    currentCustomer.sourceValue = sRow.NAME_;
-                }
-
-                */
-
-               
 
                     User.exhibitions.Add(currentCustomer);
                 

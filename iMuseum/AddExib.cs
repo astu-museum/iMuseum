@@ -26,6 +26,7 @@ namespace iMuseum
         public AddExib()
         {
             InitializeComponent();
+            dateTimePicker2.MinDate = dateTimePicker1.Value.AddDays(2);
         }
 
         private void forming(object sender, EventArgs e)
@@ -147,20 +148,6 @@ namespace iMuseum
                 return;
             }
 
-            /*
-            for (int i = 1; i < objectTypeCB.Items.Count; i++)
-            {
-                if (objectTypeCB.CheckBoxItems[i].Checked)
-                {
-                    exh.addType(ty[i - 1]);
-                    exh.addCname(objectTypeCB.Items[i].ToString());
-
-                  
-                }
-
-
-            }
-             * */
 
             //ЗАБАБАХАЕМ ГЕНЕРАЦИЮ
             User.exhibitions.Add(exh);
@@ -211,17 +198,6 @@ namespace iMuseum
 
                 int p = Convert.ToInt32(dr.PK_CATEGORY);
 
-                /*
-                //ВЫСТАВИМ ЧЕКИ
-                for (int i = 0; i < User.categoryAuthorFilter.Count; i++)
-                {
-                    if (User.categoryAuthorFilter[i] == p)
-                    {
-                        checkBoxComboBox2.CheckBoxItems[checkBoxComboBox2.CheckBoxItems.Count - 1].Checked = true;
-                    }
-                }
-                 * */
-
                 av.Add(p);
             }
 
@@ -240,26 +216,13 @@ namespace iMuseum
 
                 int p = Convert.ToInt32(dr.PK_CATEGORY);
 
-                /*
-                //ВЫСТАВИМ ЧЕКИ
-                for (int i = 0; i < User.categoryAuditoryFilter.Count; i++)
-                {
-                    if (User.categoryAuditoryFilter[i] == p)
-                    {
-                        checkBoxComboBox3.CheckBoxItems[checkBoxComboBox3.CheckBoxItems.Count - 1].Checked = true;
-                    }
-                }*/
-
-
                 ad.Add(p);
             }
 
             //EXPONAT
             DataSet1TableAdapters.CATEGORYTableAdapter cte = new DataSet1TableAdapters.CATEGORYTableAdapter();
 
-
             catexp = cte.GetDataExp();
-
 
             foreach (DataSet1.CATEGORYRow dr in catexp.Rows)
             {
@@ -268,49 +231,8 @@ namespace iMuseum
 
                 int p = Convert.ToInt32(dr.PK_CATEGORY);
 
-                /*
-                //ВЫСТАВИМ ЧЕКИ
-                for (int i = 0; i < User.categoryExponatFilter.Count; i++)
-                {
-                    if (User.categoryExponatFilter[i] == p)
-                    {
-                        checkBoxComboBox1.CheckBoxItems[checkBoxComboBox1.CheckBoxItems.Count - 1].Checked = true;
-                    }
-                }*/
-
-
                 ex.Add(p);
             }
-
-            //TYPE
-
-            /*
-            DataSet1TableAdapters.TYPEEXPONATTableAdapter tta = new DataSet1TableAdapters.TYPEEXPONATTableAdapter();
-
-
-            texp = tta.GetData();
-
-
-            foreach (DataSet1.TYPEEXPONATRow dr in texp.Rows)
-            {
-                objectTypeCB.Items.Add(dr.NAME_);
-
-                int p = (Convert.ToInt32(dr.PK_TYPE));
-
-                /*
-                //ВЫСТАВИМ ЧЕКИ
-                for (int i = 0; i < User.typeFilter.Count; i++)
-                {
-                    if (User.typeFilter[i] == p)
-                    {
-                        objectTypeCB.CheckBoxItems[objectTypeCB.CheckBoxItems.Count - 1].Checked = true;
-                    }
-                }
-
-                ty.Add(p);
-            }
-        */
-       
 
 
         }
@@ -323,6 +245,11 @@ namespace iMuseum
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dtp1ch(object sender, EventArgs e)
+        {
+            dateTimePicker2.MinDate = dateTimePicker1.Value.AddDays(1);
         }
     }
 }
